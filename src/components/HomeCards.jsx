@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import Card from './Card';
 
 const HomeCards = () => {
@@ -8,12 +9,18 @@ const HomeCards = () => {
                     <Card>
                         <h2 className='text-2xl font-bold'>For Mortals</h2>
                         <p className='mt-2 mb-4'>Do your thing, dance your dance, eat the food</p>
-                        <a href='#' className='inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700'>Create Your Mortal</a>
+                        <NavLink to='/create' className='inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700'>Create Your Mortal</NavLink>
                     </Card>
                     <Card bg='bg-indigo-200'>
                         <h2 className='text-2xl font-bold'>For Vampires</h2>
                         <p className='mt-2 mb-4'>You&#39;re a vampire, Harry</p>
-                        <a href='#' className='inline-block bg-indigo-600 text-white rounded-lg px-4 py-2 hover:bg-indigo-700'>Continue Your Vampire</a>
+                        <NavLink to='/' className='inline-block bg-indigo-600 text-white rounded-lg px-4 py-2 hover:bg-indigo-700'>Continue Your Vampire</NavLink>
+                    </Card>
+                </div>
+                <div className='p-4 rounded-lg'>
+                    <Card>
+                        <h2 className='text-2xl font-bold'>How it Works</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed risus sit amet augue eleifend posuere at at nunc. In bibendum facilisis ante, ut tempus ex efficitur sollicitudin. Fusce euismod risus ac commodo rhoncus. Integer non lorem augue. Aliquam elementum luctus ex, eget imperdiet ante pellentesque in. Sed tristique lacinia sagittis. Quisque et tempor ante. Maecenas a tempus elit. Nulla facilisi. Cras dictum, magna ac venenatis vestibulum, libero mauris vehicula velit, sed ornare nisl nisl ut mi. Proin mollis varius est quis vulputate. Praesent at mi in neque tempor dignissim. Vivamus finibus nibh ut molestie auctor. Duis tincidunt id elit at blandit. Duis id quam ultrices, tincidunt arcu sed, aliquet ligula.</p>
                     </Card>
                 </div>
             </div>

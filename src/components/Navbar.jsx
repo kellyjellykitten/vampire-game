@@ -1,6 +1,9 @@
-import logo from "../assets/images/logo.png"
+import { NavLink } from 'react-router-dom';
+import logo from '../assets/images/logo.png';
 
 const Navbar = () => {
+    const linkClass = ({ isActive }) => isActive ? 'rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white' : 'rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white'
+
     return (
         <nav className="bg-gray-800">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -26,10 +29,18 @@ const Navbar = () => {
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
-                                <a href="#" className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
-                                <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-                                <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-                                <a href="#" className="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+                                <NavLink
+                                    to="/"
+                                    className={linkClass}
+                                    >Home</NavLink>
+                                <NavLink
+                                    to="/create"
+                                    className={linkClass}
+                                    >Create</NavLink>
+                                <NavLink
+                                    to="/inspiration"
+                                    className={linkClass}
+                                    >Inspiration</NavLink>
                             </div>
                         </div>
                     </div>
@@ -56,23 +67,12 @@ const Navbar = () => {
             {/* <!-- Mobile menu, show/hide based on menu state. --> */}
             <div className="sm:hidden" id="mobile-menu">
                 <div className="space-y-1 px-2 pb-3 pt-2">
-                    <a href="#" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-                    <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-                    <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-                    <a href="#" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
+                    <NavLink to="/" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white">Home</NavLink>
+                    <NavLink to="/create" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Create</NavLink>
+                    <NavLink to="/inspiration" className="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Inspiration</NavLink>
                 </div>
             </div>
         </nav>
     )
 }
 export default Navbar
-
-// <!--
-// Dropdown menu, show/hide based on menu state.
-// Entering: "transition ease-out duration-100"
-//     From: "transform opacity-0 scale-95"
-//     To: "transform opacity-100 scale-100"
-// Leaving: "transition ease-in duration-75"
-//     From: "transform opacity-100 scale-100"
-//     To: "transform opacity-0 scale-95"
-// -->
