@@ -2,6 +2,8 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import CreatePage from './pages/CreatePage';
+import VampireNamePage from './pages/VampireNamePage';
+import CharactersPage from './pages/CharactrersPage';
 import InspirationPage from './pages/InspirationPage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -11,6 +13,8 @@ const router = createBrowserRouter(
       {/* any routes under here use MainLayout */}
       <Route index element={<HomePage />} />
       <Route path='/create' element={<CreatePage />} />
+      <Route path='/create/name' element={<VampireNamePage />} />
+      <Route path='/create/characters' element={<CharactersPage />} />
       <Route path='/inspiration' element={<InspirationPage />} />
       <Route path='*' element={<NotFoundPage />} />
     </Route>

@@ -9,7 +9,7 @@ const HomeCards = () => {
                     <Card>
                         <h2 className='text-2xl font-bold'>For Mortals</h2>
                         <p className='mt-2 mb-4'>Do your thing, dance your dance, eat the food</p>
-                        <NavLink to='/create' className='inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700'>Create Your Mortal</NavLink>
+                        <NavLink to='/create' className='inline-block bg-black text-white rounded-lg px-4 py-2 hover:bg-gray-700'>Create Your Vampire</NavLink>
                     </Card>
                     <Card bg='bg-indigo-200'>
                         <h2 className='text-2xl font-bold'>For Vampires</h2>
