@@ -3,7 +3,9 @@ import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import CreatePage from './pages/CreatePage';
 import VampireNamePage from './pages/VampireNamePage';
-import CharactersPage from './pages/CharactrersPage';
+import SideCharactersPage from './pages/SideCharactersPage';
+import VampireSkillsPage from './pages/VampireSkillsPage';
+import VampireResourcesPage from './pages/VampireResourcesPage';
 import InspirationPage from './pages/InspirationPage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -14,7 +16,9 @@ const router = createBrowserRouter(
       <Route index element={<HomePage />} />
       <Route path='/create' element={<CreatePage />} />
       <Route path='/create/name' element={<VampireNamePage />} />
-      <Route path='/create/characters' element={<CharactersPage />} />
+      <Route path='/create/characters' element={<SideCharactersPage />} />
+      <Route path='/create/skills' element={<VampireSkillsPage />} />
+      <Route path='/create/resources' element={<VampireResourcesPage />} />
       <Route path='/inspiration' element={<InspirationPage />} />
       <Route path='*' element={<NotFoundPage />} />
     </Route>
