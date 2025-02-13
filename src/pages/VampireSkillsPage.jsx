@@ -1,10 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HelpModal from '../components/HelpModal';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
 
 const VampireSkillsPage = () => {
+    const [name, setName] = useState("")
+    const [sideCharacters, setSideCharacters] = useState([])
+
     const [skills, setSkills] = useState([
         { name: '' },
         { name: '' },
@@ -12,6 +15,18 @@ const VampireSkillsPage = () => {
     ]);
 
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const storedName = localStorage.getItem("vampireName");
+        const storedSideCharacters = localStorage.getItem("vampireSideCharacters");
+
+        if (storedName) {
+            setName(storedName);
+        }
+        if (storedSideCharacters) {
+            setSideCharacters(JSON.parse(storedSideCharacters));
+        }
+    }, [])
 
     // Handle change for each skill name input
     const handleChange = (index, value) => {
@@ -22,10 +37,7 @@ const VampireSkillsPage = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const form = event.target;
-        if (!form.checkValidity()) {
-            alert("Please fill out the required fields.")
-        }
+        localStorage.setItem("vampireSkills", JSON.stringify(skills));
         console.log('Skills:', skills);
         navigate('/create/resources');
     };
@@ -37,6 +49,20 @@ const VampireSkillsPage = () => {
 
     return (
         <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+            <div className="p-4">
+                <h2 className="font-semibold">Character Info</h2>
+                <p className="mt-2">Character Name: {name || "No name provided"}</p>
+                <h3>Side Characters:</h3>
+                <ul className="mt-2">
+                    {sideCharacters.length > 0 ? (
+                        sideCharacters.map((sideCharacter, index) => (
+                            <li key={index} className="p-2 border-b">{sideCharacter.description}</li>
+                        ))
+                    ) : (
+                        <li>No side characters provided</li>
+                    )}
+                </ul>
+            </div>
             <h1 className="text-3xl font-semibold text-gray-800 mb-6">Create Three Skills</h1>
             <p>Create three skills fitting for your vampire-to-be.</p>
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">

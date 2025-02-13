@@ -4,20 +4,17 @@ import NextButton from '../components/NextButton';
 import HelpModal from '../components/HelpModal';
 
 const VampireNamePage = () => {
-    const [name, setName] = useState('');
+    const [name, setName] = useState("");
 
     const navigate = useNavigate();
 
-    const handleChange = (event) => {
-        setName(event.target.value);
-    };
+    // const handleChange = (event) => {
+    //     setName(event.target.value);
+    // };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        if (!form.checkValidity()) {
-            alert("Please fill out the required fields.")
-        }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        localStorage.setItem("vampireName", name);
         console.log('Name:', name)
         navigate('/create/characters');
     };
@@ -33,7 +30,7 @@ const VampireNamePage = () => {
                     id="name"
                     name="name"
                     value={name}
-                    onChange={handleChange}
+                    onChange={(e) => setName(e.target.value)}
                     placeholder="Enter name, setting, and experience"
                     required
                     rows="6"

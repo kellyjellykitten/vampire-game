@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HelpModal from '../components/HelpModal';
 import NextButton from '../components/NextButton';
@@ -14,6 +14,14 @@ const SideCharactersPage = () => {
 
     const navigate = useNavigate();
 
+    const [name, setName] = useState("");
+    useEffect(() => {
+        const storedName = localStorage.getItem("vampireName");
+        if (storedName) {
+            setName(storedName);
+        }
+    }, [])
+
     const handleChange = (index, value) => {
         const updatedSideCharacters = [...sideCharacters];
         updatedSideCharacters[index].description = value;
@@ -22,6 +30,7 @@ const SideCharactersPage = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        localStorage.setItem("vampireSideCharacters", JSON.stringify(sideCharacters));
         console.log('Side characters:', sideCharacters)
         navigate('/create/skills');
     };
@@ -33,6 +42,10 @@ const SideCharactersPage = () => {
 
     return (
         <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+            <div className="p-4">
+                <h2 className="font-semibold">Character Info</h2>
+                <p className="mt-2">Character Name: {name || "No name provided"}</p>
+            </div>
             <h1 className="text-3xl font-semibold text-gray-800 mb-6">Create Three Mortal Characters</h1>
             <p>In one sentence each, create three characters that have some relationship to your soon-to-be-vampire. Describe their name and relationship.</p>
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
