@@ -23,7 +23,7 @@ const VampireNamePage = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
             <h1 className="text-3xl font-semibold text-gray-800 mb-6">Character Basics</h1>
             <p>Enter a sentence containing a name, setting, and one experience that encapsulates their history for your vampire. Example: &quot;I am Ada, a Slavic woman living on the edge of the wild Tatra Mountains.&quot;</p>
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">

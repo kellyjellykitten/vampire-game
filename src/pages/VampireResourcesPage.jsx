@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import HelpModal from '../components/HelpModal';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
 
@@ -26,7 +27,7 @@ const VampireResourcesPage = () => {
             alert("Please fill out the required fields.")
         }
         console.log('Resources:', resources);
-        navigate('/create/memories');
+        navigate('/create/experiences');
     };
 
     const handleBack = (event) => {
@@ -35,7 +36,7 @@ const VampireResourcesPage = () => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
             <h1 className="text-3xl font-semibold text-gray-800 mb-6">Create Three Resources</h1>
             <p>Create three resources for your vampire-to-be.</p>
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
@@ -60,6 +61,9 @@ const VampireResourcesPage = () => {
                 <NextButton onClick={handleSubmit} />
             </div>
         </form>
+        <HelpModal
+            content="Enter the name of your vampire blach bderkeb blah ablach blah blah blah"
+        />
         </div>
     )
 }

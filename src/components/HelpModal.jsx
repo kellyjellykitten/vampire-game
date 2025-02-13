@@ -20,7 +20,7 @@ const HelpModal = ({ content }) => {
                     <div className="bg-white p-6 rounded-lg w-1/3 max-w-md">
                         {/* Modal Header */}
                         <div className="flex justify-between items-center">
-                            <h2 className="text-xl font-semibold">Help</h2>
+                            <h1 className="text-xl font-semibold">Help</h1>
                             <button onClick={toggleModal} className="text-gray-500 hover:text-gray-700 text-lg">
                                 ✖
                             </button>
