@@ -8,8 +8,6 @@ const VampireNamePage = () => {
 
     const navigate = useNavigate();
 
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
     const handleChange = (event) => {
         setName(event.target.value);
     };
@@ -23,10 +21,6 @@ const VampireNamePage = () => {
         console.log('Name:', name)
         navigate('/create/characters');
     };
-
-    const toggleModal = () => {
-        setIsModalOpen(!isModalOpen);
-    }
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
@@ -51,8 +45,6 @@ const VampireNamePage = () => {
             </div>
         </form>
         <HelpModal
-            isOpen={isModalOpen}
-            onClose={toggleModal}
             content="Enter the name of your vampire blach bderkeb blah ablach blah blah blah"
         />
         </div>
