@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
 
-const VampireMarkPage = () => {
+const VampireConversionPage = () => {
     const navigate = useNavigate();
 
     const handleSubmit = (event) => {
@@ -19,7 +19,7 @@ const VampireMarkPage = () => {
 
     const handleBack = (event) => {
         event.preventDefault();
-        navigate('/create/experiences')
+        navigate('/create/memories')
     }
 
     return (
@@ -32,4 +32,4 @@ const VampireMarkPage = () => {
     )
 }
 
-export default VampireMarkPage;
+export default VampireConversionPage;

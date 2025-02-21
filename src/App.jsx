@@ -7,8 +7,8 @@ import VampireNamePage from './pages/VampireNamePage';
 import SideCharactersPage from './pages/SideCharactersPage';
 import VampireSkillsPage from './pages/VampireSkillsPage';
 import VampireResourcesPage from './pages/VampireResourcesPage';
-import VampireExperiencesPage from './pages/VampireExperiencesPage';
-import VampireMarkPage from './pages/VampireMarkPage';
+import VampireMemoriesPage from './pages/VampireMemoriesPage';
+import VampireConversionPage from './pages/VampireConversionPage';
 import VampireSummaryPage from './pages/VampireSummaryPage';
 import InspirationPage from './pages/InspirationPage';
 import NotFoundPage from './pages/NotFoundPage';
@@ -23,8 +23,8 @@ const router = createBrowserRouter(
       <Route path='/create/characters' element={<SideCharactersPage />} />
       <Route path='/create/skills' element={<VampireSkillsPage />} />
       <Route path='/create/resources' element={<VampireResourcesPage />} />
-      <Route path='/create/experiences' element={<VampireExperiencesPage />} />
-      <Route path='/create/mark' element={<VampireMarkPage />} />
+      <Route path='/create/memories' element={<VampireMemoriesPage />} />
+      <Route path='/create/conversion' element={<VampireConversionPage />} />
       <Route path='/create/summary' element={<VampireSummaryPage />} />
       <Route path='/inspiration' element={<InspirationPage />} />
       <Route path='*' element={<NotFoundPage />} />

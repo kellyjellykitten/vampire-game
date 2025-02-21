@@ -9,7 +9,7 @@ const VampireMarkPage = () => {
 
     const handleBack = (event) => {
         event.preventDefault();
-        navigate('/create/mark')
+        navigate('/create/conversion')
     }
 
     return (
