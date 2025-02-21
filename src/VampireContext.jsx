@@ -26,7 +26,7 @@ export const VampireProvider = ({ children }) => {
                 conversion: { immortal: "", mark: "" },
             };
     });
-    //Save to localstorage whenever characte updates
+    //Save to localstorage whenever character updates
     useEffect(() => {
         localStorage.setItem("vampire", JSON.stringify(vampire));
     }, [vampire]);
