@@ -1,5 +1,4 @@
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
-import { VampireProvider } from './VampireContext';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import CreatePage from './pages/CreatePage';
@@ -23,7 +22,7 @@ const router = createBrowserRouter(
       <Route path='/create/characters' element={<SideCharactersPage />} />
       <Route path='/create/skills' element={<VampireSkillsPage />} />
       <Route path='/create/resources' element={<VampireResourcesPage />} />
-      <Route path='/create/memories' element={<VampireMemoriesPage />} />
+      <Route path='/create/experiences' element={<VampireMemoriesPage />} />
       <Route path='/create/conversion' element={<VampireConversionPage />} />
       <Route path='/create/summary' element={<VampireSummaryPage />} />
       <Route path='/inspiration' element={<InspirationPage />} />
@@ -34,9 +33,7 @@ const router = createBrowserRouter(
 
 const App = () => {
     return (
-      <VampireProvider>
-        <RouterProvider router={router} />
-      </VampireProvider>
+      <RouterProvider router={router} />
   );
 };
 export default App

@@ -37,7 +37,7 @@ const VampireNamePage = () => {
                     type="text"
                     id="name"
                     name="name"
-                    value={name}
+                    value={name || ''}
                     onChange={(e) => setLocalName(e.target.value)}
                     placeholder="Enter name here"
                     required

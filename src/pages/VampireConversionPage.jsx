@@ -1,25 +1,20 @@
 // import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import HelpModal from '../components/HelpModal';
+import HelpModal from '../components/HelpModal';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
 
 const VampireConversionPage = () => {
     const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const form = event.target;
-        if (!form.checkValidity()) {
-            alert("Please fill out the required fields.")
-        }
-        // console.log('Resources:', resources);
+    const handleSubmit = (e) => {
+        e.preventDefault();
         navigate('/create/summary');
     };
 
     const handleBack = (event) => {
         event.preventDefault();
-        navigate('/create/memories')
+        navigate('/create/experiences')
     }
 
     return (
@@ -28,7 +23,11 @@ const VampireConversionPage = () => {
                 <BackButton onClick={handleBack} />
                 <NextButton onClick={handleSubmit} />
             </div>
+            <HelpModal
+                content="Enter experiences for your vampire character's memories."
+            />
         </div>
+        
     )
 }
 

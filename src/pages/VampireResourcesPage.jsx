@@ -29,7 +29,7 @@ const VampireResourcesPage = () => {
         localResources.forEach((resource, index) => {
             dispatch(setResources({ index, value: resource }));
         })
-        navigate('/create/memories');
+        navigate('/create/experiences');
     };
 
     const handleBack = (e) => {
