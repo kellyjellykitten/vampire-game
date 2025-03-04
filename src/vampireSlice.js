@@ -14,7 +14,11 @@ const initialState = {
             { id: "4", experiences: ["", "", ""] },
             { id: "5", experiences: ["", "", ""] },
         ],
-        conversion: [{ immortal: "", mark: "", conversionExperience: "" }],
+        conversion: [{
+            immortal: "",
+            mark: "",
+            conversionExperience: ""
+        }],
     },
 };
 
