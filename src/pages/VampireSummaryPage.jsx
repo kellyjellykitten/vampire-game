@@ -24,10 +24,19 @@ const VampireMarkPage = () => {
             <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-8">
                 <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Vampire Character Summary</h1>
                 
-                {/* Name Section */}
+                {/* Origin Section */}
                 <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Name</h2>
-                    <p className="text-lg">{vampire.name || 'No name provided'}</p>
+                    <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Origin</h2>
+                    {vampire.origin.map((origin, index) => (
+                        <div key={index}>
+                            <p className="text-lg mb-2">
+                                <strong>Name:</strong> {origin.name || 'No name provided'}
+                            </p>
+                            <p className="text-lg">
+                                <strong>Origin Experience:</strong> {origin.originExperience || 'Not specified'}
+                            </p>
+                        </div>
+                    ))}
                 </section>
 
                 {/* Side Characters Section */}
@@ -101,7 +110,6 @@ const VampireMarkPage = () => {
                     ))}
                 </section>
 
-                {/* Navigation Buttons */}
                 <div className="flex justify-between mt-8">
                     <BackButton onClick={handleBack} />
                     <NextButton onClick={handleSubmit} label="Finalize Vampire" />

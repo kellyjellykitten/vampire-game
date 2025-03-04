@@ -3,7 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 // initialize vampire object to state
 const initialState = {
     vampire: {
-        name: "",
+        origin: [{
+            name: "",
+            originExperience: ""
+        }],
         sideCharacters: ["", "", ""],
         skills: ["", "", ""],
         resources: ["", "", ""],
@@ -27,8 +30,8 @@ const vampireSlice = createSlice({
     name: "vampire",
     initialState,
     reducers: {
-        setName: (state, action) => {
-            state.vampire.name = action.payload;
+        setOrigin: (state, action) => {
+            state.vampire.origin[0] = action.payload;
         },
         setSideCharacters: (state, action) => {
             const { index, value } = action.payload;
@@ -72,7 +75,7 @@ const vampireSlice = createSlice({
 });
 
 export const {
-    setName,
+    setOrigin,
     setSideCharacters,
     setSkills,
     setResources,
