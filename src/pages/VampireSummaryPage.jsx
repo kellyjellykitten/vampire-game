@@ -4,19 +4,38 @@ import { useNavigate } from 'react-router-dom';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
 
-const VampireMarkPage = () => {
+const VampireSummaryPage = () => {
     const navigate = useNavigate();
 
     const vampire = useSelector((state) => state.vampire.vampire);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('Vampire created!');
+        navigate('/game');
     }
 
     const handleBack = (e) => {
         e.preventDefault();
         navigate('/create/conversion')
+    }
+
+    const exportVampire = () => {
+        // Get vampire from redux state
+        const vampireData = JSON.stringify(vampire, null, 2);
+        // Create a blob with the JSON data
+        const blob = new Blob([vampireData], { type: 'applicatioin/json' });
+        // Create a URL for the blob
+        const url = URL.createObjectURL(blob);
+        // Create a temp anchor element
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${vampire.origin[0].name || 'vampire'}_character.json`;
+        // Trigger a click on the anchor to start download
+        document.body.appendChild(a);
+        a.click();
+        // Clean up
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
     }
 
     return (
@@ -112,11 +131,17 @@ const VampireMarkPage = () => {
 
                 <div className="flex justify-between mt-8">
                     <BackButton onClick={handleBack} />
-                    <NextButton onClick={handleSubmit} label="Finalize Vampire" />
+                    <button
+                        onClick={exportVampire}
+                        className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
+                    >
+                        Export Vampire
+                    </button>
+                    <NextButton onClick={handleSubmit} text="Start Game" />
                 </div>
             </div>
         </div>
     )
 }
 
-export default VampireMarkPage;
+export default VampireSummaryPage;

@@ -71,6 +71,9 @@ const vampireSlice = createSlice({
             // since coversion is an array w/ 1 object, update index [0] to store new values
             state.vampire.conversion[0] = action.payload;
         },
+        importVampireCharacter: (state, action) => {
+            state.vampire = action.payload;
+        }
     },
 });
 
@@ -81,6 +84,7 @@ export const {
     setResources,
     setMemoryExperience,
     setConversion,
+    importVampireCharacter
 } = vampireSlice.actions;
 
 export default vampireSlice.reducer;

@@ -38,6 +38,10 @@ const Navbar = () => {
                                     className={linkClass}
                                     >Create</NavLink>
                                 <NavLink
+                                    to="/game"
+                                    className={linkClass}
+                                    >Start</NavLink>
+                                <NavLink
                                     to="/inspiration"
                                     className={linkClass}
                                     >Inspiration</NavLink>
