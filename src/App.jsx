@@ -10,6 +10,8 @@ import VampireMemoriesPage from './pages/VampireMemoriesPage';
 import VampireConversionPage from './pages/VampireConversionPage';
 import VampireSummaryPage from './pages/VampireSummaryPage';
 import StartPage from './pages/game/StartPage';
+import RollPage from './pages/game/RollPage';
+import PromptPage from './pages/game/PromptPage';
 import InspirationPage from './pages/InspirationPage';
 import NotFoundPage from './pages/NotFoundPage';
 
@@ -27,6 +29,8 @@ const router = createBrowserRouter(
       <Route path='/create/conversion' element={<VampireConversionPage />} />
       <Route path='/create/summary' element={<VampireSummaryPage />} />
       <Route path='/game' element={<StartPage />} />
+      <Route path='/game/roll' element={<RollPage />} />
+      <Route path='/game/roll/prompt' element={<PromptPage />} />
       <Route path='/inspiration' element={<InspirationPage />} />
       <Route path='*' element={<NotFoundPage />} />
     </Route>

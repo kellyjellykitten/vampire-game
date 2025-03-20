@@ -15,7 +15,7 @@ const StartPage = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        navigate('/game');
+        navigate('/game/roll');
     }
 
     const importVampire = (e) => {
@@ -64,8 +64,8 @@ const StartPage = () => {
                     <h2 className="text-2xl font-semibold mb-4">Before You Begin</h2>
                     {/* Game content here */}
                     <div className="h-40 bg-gray-700 rounded p-4 mb-4">
-                        <p>Import your character using the button below. Once imported, click the Show Character Sheet button to review your vampire&apos;s details.</p>
-                        <p className="pt-6">On the next page...</p>
+                        <p>Import your character using the button below. Once imported, your character sheet will display. Click the Hide Character Sheet button to hide your vampire&apos;s details.</p>
+                        <p className="pt-6">On the next page, you will roll dice to land on a prompt. Prompts.........</p>
                     </div>
                     {/* Character import section */}
                     <div className="mb-6 flex items-center space-x-4">
