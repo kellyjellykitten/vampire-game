@@ -24,17 +24,26 @@ const PromptPage = () => {
                     <h2 className="text-xl font-semibold mb-4">entry 1</h2>
                     <div className="mt-4 bg-gray-600 rounded-lg p-6">
                         <p className="text-center">You are recognized for what you are by another creature like yourself. Create an immortal character, lose a Resource, and gain a Skill. What did you lose to them?</p>
-                        <div className="mb-6">
-                            <label htmlFor="conversionExperience" className="block pt-6 mb-2 ">Experience</label>
+                        <div className="mb-10">
+                            <label className="block pt-6 mb-2">Experience</label>
                             <textarea
                                 placeholder="Answer prompt here..."
                                 required
                                 className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                 rows="3"
                             />
+                            <label className="block mb-2">Select which Memory to add this Experience to:
+                                <select name="selectedMemory" className="border border-gray-300 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2">
+                                    <option value="memory1">Memory 1</option>
+                                    <option value="memory2">Memory 2</option>
+                                    <option value="memory3">Memory 3</option>
+                                    <option value="memory4">Memory 4</option>
+                                    <option value="memory5">Memory 5</option>
+                                </select>
+                            </label>
                         </div>
-                        <div className="mb-6">
-                            <label htmlFor="conversionExperience" className="block mb-2 ">Immortal Character</label>
+                        <div className="mb-10">
+                            <label className="block mb-2">Immortal Character</label>
                             <textarea
                                 placeholder="Create new immortal..."
                                 required
@@ -42,7 +51,7 @@ const PromptPage = () => {
                                 rows="1"
                             />
                         </div>
-                        <div className="mb-6">
+                        <div className="mb-10">
                             <label htmlFor="conversionExperience" className="block mb-2 ">New Skill</label>
                             <input
                                 type="text"
@@ -50,6 +59,15 @@ const PromptPage = () => {
                                 required
                                 className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                             />
+                        </div>
+                        <div className="mb-6">
+                            <label className="block mb-2">Select a Skill to lose:
+                                <select name="selectedSkill" className="border border-gray-300 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block p-2">
+                                    <option value="skill1">Skill 1</option>
+                                    <option value="skill2">Skill 2</option>
+                                    <option value="skill3">Skill 3</option>
+                                </select>
+                            </label>
                         </div>
                     </div>
                     <div className="flex justify-between mt-8">
