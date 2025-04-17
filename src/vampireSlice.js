@@ -39,6 +39,10 @@ const vampireSlice = createSlice({
             if (!state.vampire.sideCharacters) {
                 state.vampire.sideCharacters = ["", "", ""];
             }
+            //if index is outside currenty array, extend the array
+            while (state.vampire.sideCharacters.length <= index) {
+                state.vampire.sideCharacters.push("");
+            }
             //update specific sideCharacter at given index
             state.vampire.sideCharacters[index] = value;
         },
@@ -47,12 +51,19 @@ const vampireSlice = createSlice({
             if (!state.vampire.skills) {
                 state.vampire.skills = ["", "", ""];
             }
+            //if index is ourside currenty array, extend the array
+            while (state.vampire.skills.length <= index) {
+                state.vampire.skills.push("");
+            }
             state.vampire.skills[index] = value;
         },
         setResources: (state, action) => {
             const { index, value } = action.payload;
             if (!state.vampire.resources) {
                 state.vampire.resources = ["", "", ""];
+            }
+            while (state.vampire.resources.length <= index) {
+                state.vampire.resources.push("");
             }
             state.vampire.resources[index] = value;
         },

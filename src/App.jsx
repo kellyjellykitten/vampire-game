@@ -30,7 +30,7 @@ const router = createBrowserRouter(
       <Route path='/create/summary' element={<VampireSummaryPage />} />
       <Route path='/game' element={<StartPage />} />
       <Route path='/game/roll' element={<RollPage />} />
-      <Route path='/game/roll/prompt' element={<PromptPage />} />
+      <Route path='/game/prompt' element={<PromptPage />} />
       <Route path='/inspiration' element={<InspirationPage />} />
       <Route path='*' element={<NotFoundPage />} />
     </Route>
