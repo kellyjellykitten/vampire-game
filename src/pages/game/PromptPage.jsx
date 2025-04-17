@@ -8,6 +8,8 @@ import {
     setSideCharacters
 } from '../../vampireSlice';
 import { getPromptById } from './PromptList';
+import CharacterSheetSidebar from '../../components/CharacterSheetSidebar';
+import SidebarToggleButton from '../../components/SidebarToggleButton';
 
 const PromptPage = () => {
     const navigate = useNavigate();
@@ -20,6 +22,9 @@ const PromptPage = () => {
     const [promptNumber, setPromptNumber] = useState(1);
     const [prompt, setPrompt] = useState(null);
 
+    // Character sheet sidebar state
+    const [showSidebar, setShowSidebar] = useState(false);
+
     // Local state for form inputs
     const [experience, setExperience] = useState('');
     const [selectedMemory, setSelectedMemory] = useState('1');
@@ -30,6 +35,11 @@ const PromptPage = () => {
     const [skillToLose, setSkillToLose] = useState('');
     const [sideCharacterToLose, setSideCharacterToLose] = useState('');
     const [showSummary, setShowSummary] = useState(false);
+
+    // Toggle sidebar visibility
+    const toggleSidebar = () => {
+        setShowSidebar(!showSidebar);
+    };
 
     // Effect to load prompt number from session storage
     useEffect(() => {
@@ -152,13 +162,25 @@ const PromptPage = () => {
     };
 
     const handleContinue = () => {
-        navigate('/game');
+        navigate('/game/roll');
+    };
+
+    if (!prompt) {
+        return <div className="">
+            <p className="text-xl">Loading prompt...</p>
+        </div>;
     };
 
     return (
         <div className="min-h-screen bg-gray-900 text-white p-4">
             <div className="max-w-4xl mx-auto">
                 <h1 className="text-4xl font-bold mb-6 text-center">Prompt #{promptNumber}</h1>
+
+                {/* Sidebar toggle button */}
+                <SidebarToggleButton isOpen={showSidebar} toggleSidebar={toggleSidebar} />
+
+                {/* Character sheet sidebar */}
+                <CharacterSheetSidebar isOpen={showSidebar} onClose={() => setShowSidebar(false)} />
 
                 {!showSummary ? (
                     <div className="bg-gray-800 rounded-lg p-6 mb-6">
@@ -199,7 +221,7 @@ const PromptPage = () => {
                                     </label>
                                 </div>
 
-                                {/* Side Character input */}
+                                {/* New Character input */}
                                 {prompt.instructions.addSideCharacter && (
                                     <div className="mb-10">
                                         <label className="block mb-2">New Side Character</label>
@@ -208,7 +230,6 @@ const PromptPage = () => {
                                             value={newSideCharacter}
                                             onChange={(e) => setNewSideCharacter(e.target.value)}
                                             placeholder="Enter new side character side..."
-                                            required
                                             className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                         />
                                     </div>
@@ -223,7 +244,6 @@ const PromptPage = () => {
                                             value={newSkill}
                                             onChange={(e) => setNewSkill(e.target.value)}
                                             placeholder="Enter new skill here..."
-                                            required
                                             className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                         />
                                     </div>
@@ -238,7 +258,6 @@ const PromptPage = () => {
                                             value={newResource}
                                             onChange={(e) => setNewResource(e.target.value)}
                                             placeholder="Enter new resource here..."
-                                            required
                                             className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                         />
                                     </div>

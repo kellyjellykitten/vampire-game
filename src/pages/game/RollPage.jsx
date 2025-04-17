@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import CharacterSheetSidebar from "../../components/CharacterSheetSidebar";
+import SidebarToggleButton from "../../components/SidebarToggleButton";
 
 const RollPage = () => {
     const navigate = useNavigate();
@@ -8,6 +10,14 @@ const RollPage = () => {
     const [d6Result, setD6Result] = useState(null);
     const [promptNumber, setPromptNumber] = useState(null);
     const [isRolling, setIsRolling] = useState(false);
+
+    // Character sheet sidebar state
+    const [showSidebar, setShowSidebar] = useState(false);
+
+    // Toggle sidebar visibility
+    const toggleSidebar = () => {
+        setShowSidebar(!showSidebar);
+    };
 
     const rollDice = (sides) => {
         return Math.floor(Math.random() * sides) + 1;
@@ -80,6 +90,13 @@ const RollPage = () => {
         <div className="min-h-screen bg-gray-900 text-white p-4">
             <div className="max-w-4xl mx-auto">
                 <h1 className="text-4xl font-bold mb-6 text-center">Determine Prompt #</h1>
+
+                {/* Sidebar toggle button */}
+                <SidebarToggleButton isOpen={showSidebar} toggleSidebar={toggleSidebar} />
+
+                {/* Character sheet sidebar */}
+                <CharacterSheetSidebar isOpen={showSidebar} onClose={() => setShowSidebar(false)} />
+
                 <div className="bg-gray-800 rounded-lg p-6 mb-6">
                     <h2 className="text-2xl font-semibold mb-4">Roll the Dice</h2>
                     <div className="bg-gray-700 rounded p-4 mb-4">
