@@ -1,4 +1,4 @@
-// Need logic for "Check a Skill" and "striking" memories, characters, etc
+// Need logic for "Check a Skill" and "striking" memories, characters, etc AND ADDING MARKS (ie prompt 15)
 
 export const gamePrompts = [
     {
@@ -86,6 +86,57 @@ export const gamePrompts = [
         instructions: {
             loseSideCharacter: true,
             loseMemory: true,
+            addExperience: true,
+        }
+    },
+    {
+        id: 11,
+        text: "How do you find solace from the raging hunger within you? You may lose one checked or unchecked Skill.",
+        instructions: {
+            loseSkill: true,
+            addExperience: true,
+        }
+    },
+    {
+        id: 12,
+        text: "New laws or social mores make it harder for you to hide among the populace. How are you nearly caught and destroyed? Check a Skill. Create a Skill. Create a mortal criminal who assists you.",
+        instructions: {
+            addSkill: true,
+            addSideCharacter: true,
+            addExperience: true,
+        }
+    },
+    {
+        id: 13,
+        text: "Generations of the same family serve you. This line starts from any living mortal Character, or from the descendants of a dead mortal Character. What bizarre rituals do they tie to their servitude? Lose a Resource and create a Servitors of the Lineage Resource.",
+        instructions: {
+            loseResource: true,
+            addResource: true,
+            addExperience: true,
+        }
+    },
+    {
+        id: 14,
+        text: "An enemy Character uses a lost Resource to turn your few friends against you. Check three Skills to regain the Resource, or check one Skill to barely survive. Which former friend did you kill? Where do you flee?",
+        instructions: {
+            addResource: true,
+            loseSideCharacter: true,
+            addExperience: true,
+        }
+    },
+    {
+        id: 15,
+        text: "While traveling you come into conflict with another immortal. Gain a Mark. Who are they? What trick did you play upon them? Create a new immortal Character.",
+        instructions: {
+            addSideCharacter: true,
+            addExperience: true,
+        }
+    },
+    {
+        id: 16,
+        text: "Some mortals have banded together to hunt you, well-armed and wise to your tricks. How do you defeat or evade them? Create a mortal hunter related to one of your checked Skills. Check a Skill.",
+        instructions: {
+            addSideCharacter: true,
             addExperience: true,
         }
     },

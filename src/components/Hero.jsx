@@ -4,7 +4,7 @@ const Hero = ({
     // eslint-disable-next-line react/prop-types
     title = 'Become a vampire',
     // eslint-disable-next-line react/prop-types
-    subtitle = 'Gather resources, hone skills, suck blood',
+    subtitle = 'Murder mortals. Escape exposure. Indulge immortality.',
 }) => {
     return (
         <section className='bg-red-900 py-20 mb-4'>

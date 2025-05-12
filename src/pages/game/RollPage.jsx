@@ -64,14 +64,20 @@ const RollPage = () => {
             }
         }, 1000);
     };
+    
+    // load stored prompt number from session storage
+    const storedPromptNumber = parseInt(sessionStorage.getItem('promptNumber'));
 
     const calculatePromptNumber = (d10, d6) => {
-        let result = d10 - d6;
-        // Ensure result is within 1-10
-        if (result < 1) result = 1;
-        if (result > 10) result = 10;
-
-        setPromptNumber(result);
+        if (storedPromptNumber) {
+            let result = storedPromptNumber + (d10 - d6);
+            if (result < 1) result = 1;
+            setPromptNumber(result);
+        } else {
+            let result = d10 - d6;
+            if (result < 1) result = 1;
+            setPromptNumber(result);
+        }
     };
 
     const handlePromptNav = () => {
@@ -102,6 +108,17 @@ const RollPage = () => {
                     <div className="bg-gray-700 rounded p-4 mb-4">
                         <p>Click on the d10 and the d6 to roll the dice. Your prompt number is determined by subtracting the result of the d6 from the result of the d10. Once both dice have been rolled, your prompt number will appear on screen, along with a button to be taken to the prompt.</p>
                     </div>
+                    {storedPromptNumber ? (
+                        <div className="mt-8 p-6 bg-gray-700 rounded-lg text-center">
+                            <h3 className="text-xl mb-2">Your last prompt number was:</h3>
+                            <p className="text-6xl font-bold text-yellow-400 mb-6">{storedPromptNumber}</p>
+                            <p>Click below to roll the dice for your next prompt number</p>
+                        </div>
+                    ) : (
+                        <div className="mt-8 p-6 bg-gray-700 rounded-lg text-center">
+                            <h3 className="text-xl mb-2">Click below to roll dice for your first prompt number</h3>
+                        </div>
+                    )}
                     <div className="flex flex-wrap gap-6 justify-center mt-8">
                         {/* d10 roll section */}
                         <div className="text-center">
