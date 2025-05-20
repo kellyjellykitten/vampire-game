@@ -10,6 +10,7 @@ import {
 import { getPromptById } from './PromptList';
 import CharacterSheetSidebar from '../../components/CharacterSheetSidebar';
 import SidebarToggleButton from '../../components/SidebarToggleButton';
+import MultiSelectDropdown from '../../components/MultiSelectDropdown';
 
 const PromptPage = () => {
     const navigate = useNavigate();
@@ -31,9 +32,17 @@ const PromptPage = () => {
     const [newSkill, setNewSkill] = useState('');
     const [newResource, setNewResource] = useState('');
     const [newSideCharacter, setNewSideCharacter] = useState('');
-    const [resourceToLose, setResourceToLose] = useState('');
-    const [skillToLose, setSkillToLose] = useState('');
-    const [sideCharacterToLose, setSideCharacterToLose] = useState('');
+
+    //Multi-select states
+    const [resourcesToLose, setResourcesToLose] = useState([]);
+    const [skillsToLose, setSkillsToLose] = useState([]);
+    const [sideCharactersToLose, setSideCharactersToLose] = useState([]);
+
+    // Config for multi-selects set based on prompt instructions
+    const [resourceLoseCount, setResourceLoseCount] = useState(1);
+    const [skillLoseCount, setSkillLoseCount] = useState(1);
+    const [sideCharacterLoseCount, setSideCharacterLoseCount] = useState(1);
+
     const [showSummary, setShowSummary] = useState(false);
 
     // Toggle sidebar visibility
@@ -45,7 +54,15 @@ const PromptPage = () => {
     useEffect(() => {
         const storedPromptNumber = parseInt(sessionStorage.getItem('promptNumber')) || 1;
         setPromptNumber(storedPromptNumber);
-        setPrompt(getPromptById(storedPromptNumber));
+        const loadedPrompt = getPromptById(storedPromptNumber);
+        setPrompt(loadedPrompt);
+
+        // Set multi-select counts based on prompt instructions
+        if (loadedPrompt) {
+            setResourceLoseCount(loadedPrompt.instructions.loseResourceCount || 1);
+            setSkillLoseCount(loadedPrompt.instructions.loseSkillCount || 1);
+            setSideCharacterLoseCount(loadedPrompt.instructions.loseSideCharacterCount || 1);
+        }
     }, []);
 
     // Filter out empty resources, skills, & characters for dropdowns
@@ -114,35 +131,41 @@ const PromptPage = () => {
                     }));
                 }
             }
-            // Remove resource if required
-            if (prompt.instructions.loseResource && resourceToLose) {
-                const resourceIndex = vampire.resources.findIndex(res => res === resourceToLose);
-                if (resourceIndex !== -1) {
-                    dispatch(setResources({
-                        index: resourceIndex,
-                        value: '' //Clear the resource
-                    }));
-                }
+            // Handle multiple resource losses
+            if (prompt.instructions.loseResource && resourcesToLose > 0) {
+                resourcesToLose.forEach(resourceToLose => {
+                    const resourceIndex = vampire.resources.findIndex(res => res === resourceToLose);
+                    if (resourceIndex !== -1) {
+                        dispatch(setResources({
+                            index: resourceIndex,
+                            value: '' // Clear the resource
+                        }));
+                    }
+                });
             }
-            // Remove skill if required
-            if (prompt.instructions.loseSkill && skillToLose) {
-                const skillIndex = vampire.skills.findIndex(skill => skill === skillToLose);
-                if (skillIndex !== -1) {
-                    dispatch(setSkills({
-                        index: skillIndex,
-                        value: ''
-                    }));
-                }
+            // Handle multiple skill losses
+            if (prompt.instructions.loseSkill && skillsToLose.length > 0) {
+                skillsToLose.forEach(skillToLose => {
+                    const skillIndex = vampire.skills.findIndex(skill => skill === skillToLose);
+                    if (skillIndex !== -1) {
+                        dispatch(setSkills({
+                            index: skillIndex,
+                            value: ''
+                        }));
+                    }
+                });
             }
-            // Remove character if required
-            if (prompt.instructions.loseSideCharacter && sideCharacterToLose) {
-                const sideCharIndex = vampire.sideCharacters.findIndex(char => char === sideCharacterToLose);
-                if (sideCharIndex !== -1) {
-                    dispatch(setSideCharacters({
-                        index: sideCharIndex,
-                        value: ''
-                    }));
-                }
+            // Handle multiple character losses
+            if (prompt.instructions.loseSideCharacter && sideCharactersToLose.length > 0) {
+                sideCharactersToLose.forEach(sideCharacterToLose => {
+                    const sideCharIndex = vampire.sideCharacters.findIndex(char => char === sideCharacterToLose);
+                    if (sideCharIndex !== -1) {
+                        dispatch(setSideCharacters({
+                            index: sideCharIndex,
+                            value: ''
+                        }));
+                    }
+                });
             }
         }
         // Show updated vampire summary
@@ -155,6 +178,9 @@ const PromptPage = () => {
         setNewSkill('');
         setNewResource('');
         setNewSideCharacter('');
+        setResourcesToLose([]);
+        setSkillsToLose([]);
+        setSideCharactersToLose([]);
     };
 
     const handleBack = () => {
@@ -229,7 +255,7 @@ const PromptPage = () => {
                                             type="text"
                                             value={newSideCharacter}
                                             onChange={(e) => setNewSideCharacter(e.target.value)}
-                                            placeholder="Enter new side character side..."
+                                            placeholder="Enter new side character..."
                                             className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                         />
                                     </div>
@@ -263,70 +289,43 @@ const PromptPage = () => {
                                     </div>
                                 )}
 
-                                {/* Resource to lose section */}
+                                {/* Resource(s) to lose section */}
                                 {prompt.instructions.loseResource && availableResources.length > 0 && (
-                                    <div className="mb-6">
-                                        <label className="block mb-2">
-                                            Select a Resource to lose:
-                                            <select
-                                                value={resourceToLose}
-                                                onChange={(e) => setResourceToLose(e.target.value)}
-                                                className="ml-2 border border-gray-300 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 p-2"
-                                                required
-                                            >
-                                                <option value="" disabled>Select a resource</option>
-                                                {availableResources.map((resource, index) => (
-                                                    <option key={index} value={resource}>
-                                                        {resource}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </label>
-                                    </div>
+                                    <MultiSelectDropdown
+                                        items={availableResources}
+                                        selectedItems={resourcesToLose}
+                                        onChange={setResourcesToLose}
+                                        label={`Select Resource${resourceLoseCount > 1 ? 's' : ''} to lose`}
+                                        placeholder="Select resources to lose"
+                                        required={prompt.instructions.loseResource}
+                                        max={resourceLoseCount}
+                                    />
                                 )}
 
-                                {/* Skill to lose section */}
+                                {/* Skill(s) to lose section */}
                                 {prompt.instructions.loseSkill && availableSkills.length > 0 && (
-                                    <div className="mb-6">
-                                        <label className="block mb-2">
-                                            Select a Skill to lose:
-                                            <select
-                                                value={skillToLose}
-                                                onChange={(e) => setSkillToLose(e.target.value)}
-                                                className="ml-2 border border-gray-300 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 p-2"
-                                                required
-                                            >
-                                                <option value="" disabled>Select a skill</option>
-                                                {availableSkills.map((skill, index) => (
-                                                    <option key={index} value={skill}>
-                                                        {skill}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </label>
-                                    </div>
+                                    <MultiSelectDropdown
+                                        items={availableSkills}
+                                        selectedItems={skillsToLose}
+                                        onChange={setSkillsToLose}
+                                        label={`Select Skill${skillLoseCount > 1 ? 's' : ''} to lose`}
+                                        placeholder="Select skills to lose"
+                                        required={prompt.instructions.loseSkill}
+                                        max={skillLoseCount}
+                                    />
                                 )}
 
-                                {/* Character to lose section */}
+                                {/* Character(s) to lose section */}
                                 {prompt.instructions.loseSideCharacter && availableSideCharacters.length > 0 && (
-                                    <div className="mb-6">
-                                        <label className="block mb-2">
-                                            Select a Character to lose:
-                                            <select
-                                                value={sideCharacterToLose}
-                                                onChange={(e) => setSideCharacterToLose(e.target.value)}
-                                                className="ml-2 border border-gray-300 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 p-2"
-                                                required
-                                            >
-                                                <option value="" disabled>Select a character</option>
-                                                {availableSideCharacters.map((sideCharacter, index) => (
-                                                    <option key={index} value={sideCharacter}>
-                                                        {sideCharacter}
-                                                    </option>
-                                                ))}
-                                            </select>
-                                        </label>
-                                    </div>
+                                    <MultiSelectDropdown
+                                        items={availableSideCharacters}
+                                        selectedItems={sideCharactersToLose}
+                                        onChange={setSideCharactersToLose}
+                                        label={`Select Character${sideCharacterLoseCount > 1 ? 's' : ''} to lose`}
+                                        placeholder="Select characters to lose"
+                                        required={prompt.instructions.loseSideCharacter}
+                                        max={sideCharacterLoseCount}
+                                    />
                                 )}
                             </div>
 
@@ -348,7 +347,7 @@ const PromptPage = () => {
                         </form>
                     </div>
                 ) : (
-                    // Show chracter summary after submitting
+                    // Show character summary after submitting
                     <div className="bg-gray-800 rounded-lg p-6 mb-6">
                         <h2 className="text-2xl font-semibold mb-6 text-center">Updated Character Sheet</h2>
 
@@ -370,11 +369,11 @@ const PromptPage = () => {
                                 {vampire.sideCharacters.map((character, index) => (
                                     <li key={index} className={`
                                         ${character === newSideCharacter ? 'text-green-400' : ''}
-                                        ${character === sideCharacterToLose ? 'line-through text-red-400' : ''}
+                                        ${sideCharactersToLose.includes(character) ? 'line-through text-red-400' : ''}
                                     `}>
                                         {character || 'Empty character slot'}
                                         {character === newSideCharacter && ' (New)'}
-                                        {character === sideCharacterToLose && ' (Lost)'}
+                                        {sideCharactersToLose.includes(character) && ' (Lost)'}
                                     </li>
                                 ))}
                             </ul>
@@ -387,11 +386,11 @@ const PromptPage = () => {
                                 {vampire.skills.map((skill, index) => (
                                     <li key={index} className={`
                                         ${skill === newSkill ? 'text-green-400' : ''}
-                                        ${skill === skillToLose ? 'line-through text-red-400' : ''}
+                                        ${skillsToLose.includes(skill) ? 'line-through text-red-400' : ''}
                                     `}>
                                         {skill || 'Empty skill slot'}
                                         {skill === newSkill && ' (New)'}
-                                        {skill === skillToLose && ' (Lost)'}
+                                        {skillsToLose.includes(skill) && ' (Lost)'}
                                     </li>
                                 ))}
                             </ul>
@@ -404,11 +403,11 @@ const PromptPage = () => {
                                 {vampire.resources.map((resource, index) => (
                                     <li key={index} className={`
                                         ${resource === newResource ? 'text-green-400' : ''}
-                                        ${resource === resourceToLose ? 'line-through text-red-400' : ''}
+                                        ${resourcesToLose.includes(resource) ? 'line-through text-red-400' : ''}
                                     `}>
                                         {resource || 'Empty resource slot'}
                                         {resource === newResource && ' (New)'}
-                                        {resource === resourceToLose && ' (Lost)'}
+                                        {resourcesToLose.includes(resource) && ' (Lost)'}
                                     </li>
                                 ))}
                             </ul>

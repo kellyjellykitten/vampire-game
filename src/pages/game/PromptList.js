@@ -1,5 +1,3 @@
-// Need logic for "Check a Skill" and "striking" memories, characters, etc AND ADDING MARKS (ie prompt 15)
-
 export const gamePrompts = [
     {
         id: 1,
@@ -7,6 +5,7 @@ export const gamePrompts = [
         instructions: {
             addSideCharacter: true,
             loseSideCharacter: true,
+            loseSideCharacterCount: 1,
             addSkill: true,
             addExperience: true,
         }
@@ -33,6 +32,7 @@ export const gamePrompts = [
         text: "You are exposed and flee to a neighboring region. Lose any stationary Resources. Check a Skill. A mortal flees with you. What new name do you adopt among these strangers?",
         instructions: {
             loseResource: true,
+            loseResourceCount: 4,
             addSkill: true,
             addExperience: true,
         }
@@ -43,6 +43,7 @@ export const gamePrompts = [
         instructions: {
             addSideCharacter: true,
             loseSideCharacter: true,
+            loseSideCharacterCount: 1,
             addExperience: true,
         }
     },
@@ -68,6 +69,7 @@ export const gamePrompts = [
         instructions: {
             addSideCharacter: true,
             loseResource: true,
+            loseResourceCount: 1,
             addSkill: true,
             addExperience: true,
         }
@@ -85,6 +87,7 @@ export const gamePrompts = [
         text: "The stars pinwheel above you at night. The seasons are a blur. You are as an automaton, unconscious of the passage of decades. A century passes. Strike out a Memory. Strike out all mortal Characters.",
         instructions: {
             loseSideCharacter: true,
+            loseSideCharacterCount: 5,
             loseMemory: true,
             addExperience: true,
         }
@@ -94,6 +97,7 @@ export const gamePrompts = [
         text: "How do you find solace from the raging hunger within you? You may lose one checked or unchecked Skill.",
         instructions: {
             loseSkill: true,
+            loseSkillCount: 1,
             addExperience: true,
         }
     },
@@ -111,6 +115,7 @@ export const gamePrompts = [
         text: "Generations of the same family serve you. This line starts from any living mortal Character, or from the descendants of a dead mortal Character. What bizarre rituals do they tie to their servitude? Lose a Resource and create a Servitors of the Lineage Resource.",
         instructions: {
             loseResource: true,
+            loseResourceCount: 1,
             addResource: true,
             addExperience: true,
         }
@@ -121,6 +126,7 @@ export const gamePrompts = [
         instructions: {
             addResource: true,
             loseSideCharacter: true,
+            loseSideCharacterCount: 1,
             addExperience: true,
         }
     },
@@ -145,7 +151,7 @@ export const gamePrompts = [
 // Function to get a prompt by prompt number (1-10)
 export const getPromptById = (promptId) => {
     // Make sure we have a valid number between 1-10
-    const safePromptId = Math.max(1, Math.min(10, promptId));
+    const safePromptId = Math.max(1, Math.min(16, promptId));
     
     // Find the prompt with matching ID, or return the first prompt as fallback
     return gamePrompts.find(prompt => prompt.id === safePromptId) || gamePrompts[0];
