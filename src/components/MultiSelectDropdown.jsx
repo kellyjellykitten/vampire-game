@@ -36,7 +36,7 @@ const MultiSelectDropdown = ({
         <div className="relative mb-6">
             <label className="block mb-2">
                 {label} {max !== null && `(Select up to ${max})`}
-                {required && <span className="text-red-500 ml-1">*</span>}
+                {required}
             </label>
             
             <div
