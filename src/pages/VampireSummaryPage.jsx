@@ -39,9 +39,9 @@ const VampireSummaryPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-            <div className="w-full max-w-2xl bg-white shadow-lg rounded-lg p-8">
-                <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">Vampire Character Summary</h1>
+        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white p-4">
+            <div className="w-full max-w-2xl bg-gray-600 shadow-lg rounded-lg p-8">
+                <h1 className="text-3xl font-bold text-center mb-8">Vampire Character Summary</h1>
                 
                 {/* Origin Section */}
                 <section className="mb-6">
@@ -133,7 +133,7 @@ const VampireSummaryPage = () => {
                     <BackButton onClick={handleBack} />
                     <button
                         onClick={exportVampire}
-                        className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
+                        className="px-4 py-2 bg-amber-800 text-white rounded-md hover:bg-amber-700 transition-colors"
                     >
                         Export Vampire
                     </button>

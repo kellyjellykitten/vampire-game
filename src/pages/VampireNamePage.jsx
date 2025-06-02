@@ -50,13 +50,13 @@ const VampireNamePage = () => {
     };
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-            <h1 className="text-3xl font-semibold text-gray-800 mb-6">Vampire Name and Origin</h1>
+        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white p-4">
+            <h1 className="text-3xl font-semibold mb-6">Vampire Name and Origin</h1>
             <p className="mb-6">Name and first experience (&quot;origin experience&quot;) that is a broad summary of the your vampire&apos;s life before becoming undead -- when, where, who.</p>
 
-            <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
+            <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-600 p-6 rounded-lg shadow-md">
                 <div className="mb-6">
-                    <label htmlFor="name" className="block text-lg font-medium text-gray-700 mb-2">Name</label>
+                    <label htmlFor="name" className="block text-lg font-medium  mb-2">Name</label>
                     <input
                         type="text"
                         id="name"
@@ -64,12 +64,12 @@ const VampireNamePage = () => {
                         onChange={(e) => handleInputChange('name', e.target.value)}
                         placeholder="Enter name"
                         required
-                        className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
                 </div>
 
                 <div className="mb-6">
-                    <label htmlFor="originExperience" className="block text-lg font-medium text-gray-700 mb-2">Origin Experience</label>
+                    <label htmlFor="originExperience" className="block text-lg font-medium mb-2">Origin Experience</label>
                     <textarea
                         id="originExperience"
                         value={originDetails.originExperience}
@@ -77,7 +77,7 @@ const VampireNamePage = () => {
                         placeholder="Describe from where and when your vampire-to-be originates"
                         required
                         rows="6"
-                        className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
                 </div>
 

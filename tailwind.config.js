@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Sora', 'sans-serif'],
+        'trade-winds': ['Trade Winds', 'cursive'],
       }
     },
   },

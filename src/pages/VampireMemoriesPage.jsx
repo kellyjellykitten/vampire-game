@@ -74,63 +74,64 @@ const VampireMemoriesPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-            <h1 className="text-3xl font-semibold text-gray-800 mb-6">Create Experiences</h1>
+        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white p-4">
+            <h1 className="text-3xl font-semibold mb-6">Create Experiences</h1>
             <p className="mb-6">Create experiences for your vampire-to-be.</p>
             
-            <form onSubmit={handleSubmit} className="w-full max-w-lg">
+            <form onSubmit={handleSubmit} className="w-full max-w-lg bg-gray-600 p-6 rounded-lg shadow-md">
                 {/* Memory 2 Input */}
-                <div className="mb-6 p-4 bg-white rounded shadow">
+                <div className="mb-6">
                     <h3 className="text-lg font-semibold mb-2">Memory 2</h3>
                     <div className="mb-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label htmlFor="memoryTwoExperience" className="block text-md font-medium mb-2">
                             Experience:
                         </label>
-                        <input
-                            type="text"
-                            className="w-full p-2 border rounded"
+                        <textarea
+                            id="memoryTwoExperience"
+                            className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             value={memoryInputs.memory2}
                             onChange={(e) => handleInputChange('memory2', e.target.value)}
                             placeholder="Enter an experience..."
+                            rows="4"
                         />
                     </div>
                 </div>
                 
                 {/* Memory 3 Input */}
-                <div className="mb-6 p-4 bg-white rounded shadow">
+                <div className="mb-6">
                     <h3 className="text-lg font-semibold mb-2">Memory 3</h3>
                     <div className="mb-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-md font-medium mb-2">
                             Experience:
                         </label>
-                        <input
-                            type="text"
-                            className="w-full p-2 border rounded"
+                        <textarea
+                            className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             value={memoryInputs.memory3}
                             onChange={(e) => handleInputChange('memory3', e.target.value)}
                             placeholder="Enter an experience..."
+                            rows="4"
                         />
                     </div>
                 </div>
                 
                 {/* Memory 4 Input */}
-                <div className="mb-6 p-4 bg-white rounded shadow">
+                <div className="mb-6">
                     <h3 className="text-lg font-semibold mb-2">Memory 4</h3>
                     <div className="mb-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-1">
+                        <label className="block text-md font-medium mb-2">
                             Experience:
                         </label>
-                        <input
-                            type="text"
-                            className="w-full p-2 border rounded"
+                        <textarea
+                            className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                             value={memoryInputs.memory4}
                             onChange={(e) => handleInputChange('memory4', e.target.value)}
                             placeholder="Enter an experience..."
+                            rows="4"
                         />
                     </div>
                 </div>
                 
-                <div className="flex justify-between mt-6">
+                <div className="flex justify-around">
                     <BackButton onClick={handleBack} />
                     <NextButton onClick={handleSubmit} />
                 </div>

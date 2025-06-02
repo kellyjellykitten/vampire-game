@@ -59,13 +59,13 @@ const VampireConversionPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-            <h1 className="text-3xl font-semibold text-gray-800 mb-6">Create an Immortal, Mark, and Conversion Experience</h1>
+        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white p-4">
+            <h1 className="text-3xl font-semibold mb-6">Create an Immortal, Mark, and Conversion Experience</h1>
             <p className="mb-6">Create the immortal that turned your vampire-to-be into a vampire, the mark it left, and a sentence encapsulating the experience.</p>
 
-            <form onSubmit={handleSubmit} className="w-full max-w-lg">
+            <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-600 text-white p-6 rounded-lg shadow-md">
                 <div className="mb-6">
-                    <label htmlFor="immortal" className="block text-lg font-medium text-gray-700 mb-2">Immortal Name</label>
+                    <label htmlFor="immortal" className="block text-lg font-medium mb-2">Immortal Name</label>
                     <input
                         id="immortal"
                         type="text"
@@ -73,12 +73,12 @@ const VampireConversionPage = () => {
                         onChange={(e) => handleInputChange('immortal', e.target.value)}
                         placeholder="Enter immortal's name"
                         required
-                        className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
                 </div>
 
                 <div className="mb-6">
-                    <label htmlFor="mark" className="block text-lg font-medium text-gray-700 mb-2">Mark</label>
+                    <label htmlFor="mark" className="block text-lg font-medium mb-2">Mark</label>
                     <input
                         id="mark"
                         type="text"
@@ -86,24 +86,24 @@ const VampireConversionPage = () => {
                         onChange={(e) => handleInputChange('mark', e.target.value)}
                         placeholder="Describe the mark left behind"
                         required
-                        className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
                 </div>
 
                 <div className="mb-6">
-                    <label htmlFor="conversionExperience" className="block text-lg font-medium text-gray-700 mb-2">Conversion Experience</label>
+                    <label htmlFor="conversionExperience" className="block text-lg font-medium mb-2">Conversion Experience</label>
                     <textarea
                         id="conversionExperience"
                         value={conversionDetails.conversionExperience}
                         onChange={(e) => handleInputChange('conversionExperience', e.target.value)}
                         placeholder="Describe the moment of conversion in one sentence"
                         required
-                        className="w-full p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        className="w-full text-black p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         rows="3"
                     />
                 </div>
                 
-                <div className="flex justify-between mt-6">
+                <div className="flex justify-around">
                     <BackButton onClick={handleBack} />
                     <NextButton onClick={handleSubmit} />
                 </div>
