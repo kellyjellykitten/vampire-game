@@ -74,11 +74,11 @@ const VampireMemoriesPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white p-4">
+        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
             <h1 className="text-3xl font-semibold mb-6">Create Experiences</h1>
             <p className="mb-6">Create experiences for your vampire-to-be.</p>
             
-            <form onSubmit={handleSubmit} className="w-full max-w-lg bg-gray-600 p-6 rounded-lg shadow-md">
+            <form onSubmit={handleSubmit} className="w-full max-w-lg bg-gray-700 p-6 rounded-lg shadow-md">
                 {/* Memory 2 Input */}
                 <div className="mb-6">
                     <h3 className="text-lg font-semibold mb-2">Memory 2</h3>

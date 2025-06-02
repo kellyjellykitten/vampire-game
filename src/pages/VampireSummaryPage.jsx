@@ -39,8 +39,8 @@ const VampireSummaryPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white p-4">
-            <div className="w-full max-w-2xl bg-gray-600 shadow-lg rounded-lg p-8">
+        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
+            <div className="w-full max-w-2xl bg-gray-700 shadow-lg rounded-lg p-8">
                 <h1 className="text-3xl font-bold text-center mb-8">Vampire Character Summary</h1>
                 
                 {/* Origin Section */}

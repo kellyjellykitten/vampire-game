@@ -38,10 +38,10 @@ const VampireResourcesPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white p-4">
+        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
             <h1 className="text-3xl font-semibold mb-6">Create Three Resources</h1>
             <p className="mb-6">Create three resources for your vampire-to-be.</p>
-        <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-600 text-white p-6 rounded-lg shadow-md">
+        <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">
             {localResources.map((resource, index) => (
                 <div key={index} className="mb-6">
                     <label htmlFor={`resource-name-${index}`} className="block text-lg font-medium mb-2">Resource {index + 1}</label>

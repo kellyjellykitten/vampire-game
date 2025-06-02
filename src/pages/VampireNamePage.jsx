@@ -50,11 +50,11 @@ const VampireNamePage = () => {
     };
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white p-4">
+        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
             <h1 className="text-3xl font-semibold mb-6">Vampire Name and Origin</h1>
             <p className="mb-6">Name and first experience (&quot;origin experience&quot;) that is a broad summary of the your vampire&apos;s life before becoming undead -- when, where, who.</p>
 
-            <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-600 p-6 rounded-lg shadow-md">
+            <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 p-6 rounded-lg shadow-md">
                 <div className="mb-6">
                     <label htmlFor="name" className="block text-lg font-medium  mb-2">Name</label>
                     <input
