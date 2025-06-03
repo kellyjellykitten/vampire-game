@@ -22,7 +22,7 @@ const Hero = () => {
 
             <div className="relative z-10 max-w-4xl mx-auto md:ml-36 md:mr-auto px-6">
                 <h1 className="font-trade-winds text-5xl md:text-7xl lg:text-8xl mb-6 md:mb-12 tracking-wide text-left">
-                    <span className="bg-gradient-to-b from-white via-gray-100 to-gray-400 bg-clip-text text-transparent drop-shadow-2xl">The Vampire&apos;s Memory Palace</span>
+                    <span className="bg-gradient-to-b from-white via-gray-100 to-gray-400 bg-clip-text text-transparent drop-shadow-2xl">Vampirebound</span>
                 </h1>
                 
                 <p className="text-lg md:text-2xl lg:text-3xl text-gray-200 mb-12 md:mb-20 font-medium text-left">Murder mortals. Escape exposure. Indulge immortality.</p>
