@@ -1,9 +1,9 @@
 // eslint-disable-next-line react/prop-types
-const NextButton = ({ onClick, text = "Next", additionalClasses = "" }) => {
+const NextButton = ({ onClick, text = "Next" }) => {
     return (
         <button
             onClick={onClick}
-            className={`px-6 py-3 text-white bg-red-900 rounded-md hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-blue-500 ${additionalClasses}`}
+            className="bg-purple-800 hover:bg-purple-700 text-white px-7 py-3 rounded-lg text-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl"
         >{text}</button>
     )
 }

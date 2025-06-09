@@ -12,7 +12,7 @@ import VampireSummaryPage from './pages/VampireSummaryPage';
 import StartPage from './pages/game/StartPage';
 import RollPage from './pages/game/RollPage';
 import PromptPage from './pages/game/PromptPage';
-import InspirationPage from './pages/InspirationPage';
+import HelpPage from './pages/HelpPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 const router = createBrowserRouter(
@@ -31,7 +31,7 @@ const router = createBrowserRouter(
       <Route path='/game' element={<StartPage />} />
       <Route path='/game/roll' element={<RollPage />} />
       <Route path='/game/prompt' element={<PromptPage />} />
-      <Route path='/inspiration' element={<InspirationPage />} />
+      <Route path='/help' element={<HelpPage />} />
       <Route path='*' element={<NotFoundPage />} />
     </Route>
   )

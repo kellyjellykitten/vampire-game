@@ -1,12 +1,17 @@
-const InspirationPage = () => {
+import { MdOpenInNew } from "react-icons/md";
+import { FaRegCopyright } from "react-icons/fa";
+
+const HelpPage = () => {
     const sections = [
+        { id: 'rules', title: 'Rules' },
         { id: 'origin', title: 'Origin' },
         { id: 'side-characters', title: 'Side characters' },
         { id: 'skills', title: 'Skills' },
         { id: 'resources', title: 'Resources' },
         { id: 'conversion', title: 'Conversion' },
         { id: 'memories', title: 'Memories' },
-        { id: 'completed-vampires', title: 'Completed vampires' }
+        { id: 'completed-vampires', title: 'Completed vampires' },
+        { id: 'credits', title: 'Credits' }
     ];
 
     const scrollToSection = (sectionId) => {
@@ -23,11 +28,11 @@ const InspirationPage = () => {
                 <div className="text-center mb-12">
                     <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-6">
                         <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
-                            Inspiration
+                            Rules & Inspiration
                         </span>
                     </h1>
                     <p className="text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
-                        Use this page to explore examples of the different aspects of character creation. You will find examples for your character&apos;s origin, mortal side characters, skills, resources, and conversion, in addition to completed character sheets. For further help, examples of experience entries and how they fit into memories have been included. A help modal is provided on each page of chracter creation to provide instructions. //// This page is designed to help you along the vampire creation process. While each page during  vampire creation will have a help modal, below are some general instructions and rules, along with examples for each aspect of the creation process are included as inspiration for your vampire. Examples of completed vampire characters are included at the bottom of the page.
+                        This page is designed to help you along the vampire creation process. While each page during vampire creation will have a help modal, below are some general instructions and rules, along with examples for each aspect of the creation process for inspiration. Examples of completed vampire characters are included at the bottom of the page.
                     </p>
                 </div>
                 {/* Jump To nav box */}
@@ -59,6 +64,13 @@ const InspirationPage = () => {
                         </div>
                         {/* Section content */}
                         <div className="text-left ml-12">
+                            {section.id === 'rules' && (
+                                <div className="space-y-6">
+                                    <p className="text-gray-200 leading-relaxed">
+                                        Content for {section.title} will be added here.
+                                    </p>
+                                </div>
+                            )}
                             {section.id === 'origin' && (
                                 <div className="space-y-6">
                                     <p className="text-gray-200 leading-relaxed">
@@ -112,6 +124,16 @@ const InspirationPage = () => {
                                     </p>
                                 </div>
                             )}
+                            {section.id === 'credits' && (
+                                <div className="space-y-6">
+                                    <p className="text-gray-200 leading-relaxed">
+                                        This game is based on the solo role-playing journaling game Thousand Year Old Vampire by Tim Hutchings. While I have altered the prompts, the game mechanics remain the same as in the original game. You can find more information about Thousand Year Old Vampire <a className="underline text-red-300 hover:text-red-400" href="https://thousandyearoldvampire.com/" target="_blank">here</a> (https://thousandyearoldvampire.com/).
+                                    </p>
+                                    <p className="text-gray-200">
+                                        Website made by <a className="underline text-red-300 hover:text-red-400" href="https://kellylloyd.kiwi/" target="_blank" title="View my Portfolio">Kelly Lloyd</a> <FaRegCopyright className="inline text-gray-300 text-xl" /> 2025. GitHub <a href="https://github.com/kellyjellykitten" target="_blank" title="View my GitHub"><MdOpenInNew className="inline text-red-300 hover:text-red-400 text-2xl" /></a>
+                                    </p>
+                                </div>
+                            )}
                         </div>
                     </section>
                 ))}
@@ -120,4 +142,4 @@ const InspirationPage = () => {
     )
 };
 
-export default InspirationPage;
+export default HelpPage;

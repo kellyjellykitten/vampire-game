@@ -11,8 +11,8 @@
 - Homepage text
 - Instructions text on every creation page
 - Text for help modal (all shoudld include a link to inspiratino page that opens in new tab so it doesn't redirect user from creation)
-- More prompts
-- Adding additional entries to prompts in case same prompt is re-encountered
+- Alter prompts to make my own
+- Adding additional entries to prompts in case same prompt is re-encountered?
 - Inspiration page
 
 ## Gameplay
@@ -26,3 +26,6 @@
 ## App-wide Considerations
 - A log or diary of the player's prompt answers 
 - Possible log-in feature so user has an account & doesn't need to import & export their character every time ("Continue function")
+
+
+# mini-navbar on creation pages

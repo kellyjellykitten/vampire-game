@@ -10,7 +10,7 @@ const Navbar = () => {
         { label: 'Home', to: '/' },
         { label: 'Create', to: '/create' },
         { label: 'Play', to: '/game' },
-        { label: 'Inspiration', to: '/inspiration' }
+        { label: 'Help', to: '/help' }
     ];
 
     const toggleMobileMenu = () => {

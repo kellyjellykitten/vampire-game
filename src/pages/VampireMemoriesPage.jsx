@@ -74,9 +74,15 @@ const VampireMemoriesPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-            <h1 className="text-3xl font-semibold mb-6">Create Experiences</h1>
-            <p className="mb-6">Create experiences for your vampire-to-be.</p>
+        <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-b from-black to-slate-900 text-white p-4">
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+                <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
+                    Experiences
+                </span>
+            </h1>
+            <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
+                <p className="text-base md:text-lg mb-6">Create three experiences for your vampire-to-be. Each experience should be one sentence and written in the present tense. The three experiences should be of different topics and pull in a side character you created in the previous steps.</p>
+            </div>
             
             <form onSubmit={handleSubmit} className="w-full max-w-lg bg-gray-700 p-6 rounded-lg shadow-md">
                 {/* Memory 2 Input */}
@@ -138,7 +144,20 @@ const VampireMemoriesPage = () => {
             </form>
             
             <HelpModal
-                content="Enter experiences for your vampire character's memories."
+                title="Experiences Help"
+                content={
+                    <div>
+                        <p className="mb-3">
+                            Your vampire can hold 5 memories. Think of memories like containers with slots -- each one can hold three experiences. During character creation, your origin experience was slotted into Memory 1. On this page, you create three separate experiences of different topics. An experience should tie in one of your side characters and perhaps a resource as well.
+                        </p>
+                        <p className="mb-3">
+                            For example: <span className="text-red-300 italic">I go fishing with George at Lake Yuru and catch the rare gumbraya fish with my bare hands.</span> - or - <span className="text-red-300 italic">I go to a jelly-fishing convention with Patrick where I win a golden jelly-fishing net.</span>
+                        </p>
+                        <p>
+                            Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.
+                        </p>
+                    </div>
+                }
             />
         </div>
     )

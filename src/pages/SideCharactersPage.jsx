@@ -37,9 +37,16 @@ const SideCharactersPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-            <h1 className="text-3xl font-semibold mb-6">Create Three Side Characters</h1>
-            <p className="mb-6">In one sentence each, create three mortal characters that have some relationship to your soon-to-be-vampire. Describe their name and relationship.</p>
+        <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-b from-black to-slate-900 text-white p-4">
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+                <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
+                    Side Characters
+                </span>
+            </h1>
+            <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
+                <p className="text-base md:text-lg mb-6">In one sentence each, create three mortal characters that have some relationship to your vampire-to-be. Give their name and a brief description of the nature of their relationship to you. Don&apos;t get too attached -- some of these characters may end up your victims later on!</p>
+            </div>
+
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">
             {/* map loops over each sideCharacter & creates a section with input for the description. Each text area is tied to its own specific side character */}
             {localSideCharacters.map((sideCharacter, index) => (
@@ -65,7 +72,20 @@ const SideCharactersPage = () => {
             </div>
         </form>
         <HelpModal
-            content="Enter the three characters blach bderkeb blah ablach blah blah blah"
+            title="Side Character Help"
+            content={
+                <div>
+                    <p className="mb-3">
+                        Your three side characters can be of any relation to you, so long as there is a connection to you in your mortal life. They could be a family member, a friend, or even a rival. Describe them in one sentence each.
+                    </p>
+                    <p className="mb-3">
+                        For example: <span className="text-red-300 italic">Greta, the owner of the general store from which I buy my fruits.</span> - or - <span className="text-red-300 italic">Patrick, my trusted best friend and starfish with whom I go jelly-fishing.</span>
+                    </p>
+                    <p>
+                        Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.
+                    </p>
+                </div>
+            }
         />
         </div>
     )

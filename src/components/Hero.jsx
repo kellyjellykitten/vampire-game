@@ -28,7 +28,7 @@ const Hero = () => {
                 <p className="text-lg md:text-2xl lg:text-3xl text-gray-200 mb-12 md:mb-20 font-medium text-left">Murder mortals. Escape exposure. Indulge immortality.</p>
 
                 <div className="flex flex-col gap-6 items-start mb-20">
-                    <NavLink to="/create" className="bg-transparent border-2 border-white text-white px-4 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-white hover:text-black transition-colors duration-300">Create Your Vampire</NavLink>
+                    <NavLink to="/create" className="bg-transparent border-2 border-white text-white px-4 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-red-900/60  transition-colors duration-300">Create Your Vampire</NavLink>
                     <div className="text-left mt-2">
                         <p className="text-gray-300 md:text-base text-sm mb-6 font-medium">Already created your vampire?</p>
                         <NavLink to="/game" className="bg-transparent border-2 border-white text-white px-4 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-white hover:text-black transition-colors duration-300">Begin/Continue Your Adventure</NavLink>

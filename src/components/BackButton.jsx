@@ -3,7 +3,7 @@ const BackButton = ({ onClick, text = "Back", additionalClasses = "" }) => {
     return (
         <button
             onClick={onClick}
-            className={`px-6 py-3 text-white bg-purple-900 rounded-md hover:bg-purple-800 focus:outline-none focus:ring-2 focus:ring-blue-500 ${additionalClasses}`}
+            className={`px-7 py-3 text-white bg-gray-800 hover:bg-gray-900 rounded-lg text-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500 ${additionalClasses}`}
         >{text}</button>
     )
 }

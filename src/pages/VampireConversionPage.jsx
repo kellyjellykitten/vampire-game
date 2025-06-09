@@ -59,9 +59,15 @@ const VampireConversionPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-            <h1 className="text-3xl font-semibold mb-6">Create an Immortal, Mark, and Conversion Experience</h1>
-            <p className="mb-6">Create the immortal that turned your vampire-to-be into a vampire, the mark it left, and a sentence encapsulating the experience.</p>
+        <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-b from-black to-slate-900 text-white p-4">
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+                <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
+                    Conversion
+                </span>
+            </h1>
+            <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
+                <p className="text-base md:text-lg mb-6">Create the immortal that turned your vampire-to-be into a vampire, the mark it left, and a sentence encapsulating the experience.</p>
+            </div>
 
             <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">
                 <div className="mb-6">
@@ -110,7 +116,20 @@ const VampireConversionPage = () => {
 
             </form>
             <HelpModal
-                content="Instructions for conversion"
+                title="Conversion Help"
+                content={
+                    <div>
+                        <p className="mb-3">
+                            instructions for conversioneinfefwefwef
+                        </p>
+                        <p className="mb-3">
+                            For example: <span className="text-red-300 italic">I go fishing with George at Lake Yuru and catch the rare gumbraya fish with my bare hands.</span> - or - <span className="text-red-300 italic">I go to a jelly-fishing convention with Patrick where I win a golden jelly-fishing net.</span>
+                        </p>
+                        <p>
+                            Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.
+                        </p>
+                    </div>
+                }
             />
         </div>
         

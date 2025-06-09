@@ -10,10 +10,26 @@ const CreatePage = () => {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-            <h1 className="text-2xl md:text-3xl font-semibold mb-6">Create Your Vampire</h1>
-            <div className="w-full max-w-md bg-gray-600 p-6 rounded-lg shadow-md">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed risus sit amet augue eleifend posuere at at nunc. In bibendum facilisis ante, ut tempus ex efficitur sollicitudin. Fusce euismod risus ac commodo rhoncus. Integer non lorem augue. Aliquam elementum luctus ex, eget imperdiet ante pellentesque in. Sed tristique lacinia sagittis. Quisque et tempor ante. Maecenas a tempus elit. Nulla facilisi. Cras dictum, magna ac venenatis vestibulum, libero mauris vehicula velit, sed ornare nisl nisl ut mi. Proin mollis varius est quis vulputate. Praesent at mi in neque tempor dignissim. Vivamus finibus nibh ut molestie auctor. Duis tincidunt id elit at blandit. Duis id quam ultrices, tincidunt arcu sed, aliquet ligula.</p>
+        <div className="bg-gradient-to-b from-black to-gray-900 text-white p-4 min-h-screen ">
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+                <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
+                    Create Your Vampire
+                </span>
+            </h1>
+            <div className="max-w-xl mx-auto bg-gray-700 p-6 rounded-lg">
+                <p className="mt-2">On the next pages, you will creat your vampire-to-be. There are six steps in the character creation:</p>
+                <div className="max-w-sm mx-auto">
+                    <ul className="list-decimal space-y-2 mt-4 ml-4 mr-4">
+                        <li><span className="text-red-300">Origin:</span> The name of your mortal, where they&apos;re from, and who they are</li>
+                        <li><span className="text-red-300">Side Characters:</span> Three mortals with whom your character has some relationship with</li>
+                        <li><span className="text-red-300">Skills:</span> Three skills your mortal excels in</li>
+                        <li><span className="text-red-300">Resources:</span> Three items belonging to your character</li>
+                        <li><span className="text-red-300">Memories:</span> You will come up with three experiences to place into memory containers</li>
+                        <li><span className="text-red-300">Conversion:</span> The immortal that turned you into a vampire, how it happened, and what mark they left on you</li>
+                    </ul>
+                </div>
+                <p className="mt-4">Each page will have a help modal in the top right corner in case you need help with any of the steps.</p>
+                <p className="mt-4">Once you have created your vampire, you will be able to download your character sheet and import it into the game to begin your blood-sucking adventures!</p>
             </div>
             <div className="flex justify-center mt-8">
                 <NextButton onClick={handleSubmit} />

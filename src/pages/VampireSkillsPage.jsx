@@ -38,9 +38,16 @@ const VampireSkillsPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-            <h1 className="text-3xl font-semibold mb-6">Create Three Skills</h1>
-            <p className="mb-6">Create three skills fitting for your vampire-to-be.</p>
+        <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-b from-black to-slate-900 text-white p-4">
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+                <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
+                    Skills
+                </span>
+            </h1>
+            <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
+                <p className="text-base md:text-lg mb-6">Create three skills fitting for your vampire-to-be. These skills can be anything from beer-making to swordfighting.</p>
+            </div>
+            
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">
             {localSkills.map((skill, index) => (
                 <div key={index} className="mb-6">
@@ -64,7 +71,20 @@ const VampireSkillsPage = () => {
             </div>
         </form>
         <HelpModal
-            content="Enter the name of your vampire blach bderkeb blah ablach blah blah blah"
+            title="Skills Help"
+            content={
+                    <div>
+                        <p className="mb-3">
+                            Here, you are describing your vampire&apos;s life when they were still a mortal. First, enter in a name for your character. Then, in one sentence, declare your name, where you are from, and the time period you are from. You can include your character&apos;s occupation if they have one. 
+                        </p>
+                        <p className="mb-3">
+                            For example: <span className="text-red-300 italic">Persuasion</span> - or - <span className="text-red-300 italic">Cooking Krabby Patties</span>
+                        </p>
+                        <p>
+                            Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.
+                        </p>
+                    </div>
+            }
         />
         </div>
     )

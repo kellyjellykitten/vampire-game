@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setOrigin, setMemoryExperience } from '../vampireSlice';
 import NextButton from '../components/NextButton';
+import BackButton from '../components/BackButton';
 import HelpModal from '../components/HelpModal';
 
 const VampireNamePage = () => {
@@ -49,11 +50,22 @@ const VampireNamePage = () => {
         navigate('/create/characters');
     };
 
-    return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-            <h1 className="text-3xl font-semibold mb-6">Vampire Name and Origin</h1>
-            <p className="mb-6">Name and first experience (&quot;origin experience&quot;) that is a broad summary of the your vampire&apos;s life before becoming undead -- when, where, who.</p>
+    const handleBack = (e) => {
+        e.preventDefault();
+        navigate('/create')
+    }
 
+    return (
+        <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-b from-black to-slate-900 text-white p-4">
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+                <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
+                    Vampire Origin
+                </span>
+            </h1>
+            <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
+                <p className="text-base md:text-lg mb-6">Name and first experience (&quot;origin experience&quot;) that is a broad summary of your vampire&apos;s life before they lost mortality -- when, where, who. Your experience should be one sentence in length and written in present tense (I am...).</p>
+            </div>
+            
             <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 p-6 rounded-lg shadow-md">
                 <div className="mb-6">
                     <label htmlFor="name" className="block text-lg font-medium  mb-2">Name</label>
@@ -81,12 +93,26 @@ const VampireNamePage = () => {
                     />
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-around">
+                    <BackButton onClick={handleBack} />
                     <NextButton onClick={handleSubmit} />
                 </div>
             </form>
             <HelpModal
-                content="Enter the name of your vampire blach bderkeb blah ablach blah blah blah"
+                title="Origin Help"
+                content={
+                    <div>
+                        <p className="mb-3">
+                            Here, you are describing your vampire&apos;s life when they were still a mortal. First, enter in a name for your character. Then, in one sentence, declare your name, where you are from, and the time period you are from. You can include your character&apos;s occupation if they have one. 
+                        </p>
+                        <p className="mb-3">
+                            For example: <span className="text-red-300 italic">I am Silvor, a Slavic man living on the edge of the mountains in 16th century Poland.</span> - or - <span className="text-red-300 italic">I am Spongebob, a fry-cooking sponge from modern-day Bikini Bottom</span>
+                        </p>
+                        <p>
+                            Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.
+                        </p>
+                    </div>
+                }
             />
         </div>
     )
