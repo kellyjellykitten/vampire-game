@@ -44,7 +44,7 @@ const SideCharactersPage = () => {
                 </span>
             </h1>
             <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
-                <p className="text-base md:text-lg mb-6">In one sentence each, create three mortal characters that have some relationship to your vampire-to-be. Give their name and a brief description of the nature of their relationship to you. Don&apos;t get too attached -- some of these characters may end up your victims later on!</p>
+                <p className="text-base md:text-lg mb-6">In one sentence each, create three mortal characters that have some relationship to your vampire-to-be. Enter their name and a brief description of the nature of their relationship to you. Don&apos;t get too attached -- some of these characters may end up your victims later on!</p>
             </div>
 
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">

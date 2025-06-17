@@ -53,11 +53,15 @@ const StartPage = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gray-900 text-white p-4">
+        <div className="bg-gradient-to-b from-black to-gray-900 text-white p-4 min-h-screen">
             <ToastContainer />
 
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl font-bold mb-6 text-center">Begin Your Adventure</h1>
+                <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+                    <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
+                        Begin Your Adventure
+                    </span>
+                </h1>
         
                 {/* Game interface */}
                 <div className="bg-gray-800 rounded-lg p-6 mb-6">

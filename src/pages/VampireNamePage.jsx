@@ -74,7 +74,7 @@ const VampireNamePage = () => {
                         id="name"
                         value={originDetails.name}
                         onChange={(e) => handleInputChange('name', e.target.value)}
-                        placeholder="Enter name"
+                        placeholder="Ex: Frodo"
                         required
                         className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
@@ -86,7 +86,7 @@ const VampireNamePage = () => {
                         id="originExperience"
                         value={originDetails.originExperience}
                         onChange={(e) => handleInputChange('originExperience', e.target.value)}
-                        placeholder="Describe from where and when your vampire-to-be originates"
+                        placeholder="Ex: I am Frodo, a hobbit hailing from Bag End in the Shire Reckoning year 1400"
                         required
                         rows="6"
                         className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"

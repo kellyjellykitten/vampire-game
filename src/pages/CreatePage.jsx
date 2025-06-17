@@ -10,7 +10,7 @@ const CreatePage = () => {
     }
 
     return (
-        <div className="bg-gradient-to-b from-black to-gray-900 text-white p-4 min-h-screen ">
+        <div className="bg-gradient-to-b from-black to-gray-900 text-white p-4 min-h-screen">
             <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
                 <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                     Create Your Vampire
@@ -28,7 +28,7 @@ const CreatePage = () => {
                         <li><span className="text-red-300">Conversion:</span> The immortal that turned you into a vampire, how it happened, and what mark they left on you</li>
                     </ul>
                 </div>
-                <p className="mt-4">Each page will have a help modal in the top right corner in case you need help with any of the steps.</p>
+                <p className="mt-4">Each page will have a &quot;?&quot; icon in the top right corner that opens up a help window in case you need assistance during any of the steps.</p>
                 <p className="mt-4">Once you have created your vampire, you will be able to download your character sheet and import it into the game to begin your blood-sucking adventures!</p>
             </div>
             <div className="flex justify-center mt-8">
