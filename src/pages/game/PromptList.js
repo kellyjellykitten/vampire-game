@@ -148,9 +148,9 @@ export const gamePrompts = [
     },
 ];
 
-// Function to get a prompt by prompt number (1-10)
+// Function to get a prompt by prompt number
 export const getPromptById = (promptId) => {
-    // Make sure we have a valid number between 1-10
+    // Make sure we have a valid number between 1-30
     const safePromptId = Math.max(1, Math.min(16, promptId));
     
     // Find the prompt with matching ID, or return the first prompt as fallback

@@ -6,7 +6,6 @@ import SidebarToggleButton from "../../components/SidebarToggleButton";
 const RollPage = () => {
     const navigate = useNavigate();
 
-    const [d10Result, setD10Result] = useState(null);
     const [d6Result, setD6Result] = useState(null);
     const [promptNumber, setPromptNumber] = useState(null);
     const [isRolling, setIsRolling] = useState(false);
@@ -23,27 +22,6 @@ const RollPage = () => {
         return Math.floor(Math.random() * sides) + 1;
     };
 
-    const handleD10Roll = () => {
-        setIsRolling(true);
-
-        const rollInterval = setInterval(() => {
-            const tempRoll = rollDice(10);
-            setD10Result(tempRoll);
-        }, 50);
-
-        setTimeout(() => {
-            clearInterval(rollInterval);
-            const finalResult = rollDice(10);
-            setD10Result(finalResult);
-            setIsRolling(false);
-
-            // If d6 already rolled, calculate prompt #
-            if (d6Result !== null) {
-                calculatePromptNumber(finalResult, d6Result);
-            }
-        }, 1000)
-    };
-
     const handleD6Roll = () => {
         setIsRolling(true);
 
@@ -58,24 +36,20 @@ const RollPage = () => {
             setD6Result(finalResult);
             setIsRolling(false);
 
-            // If d10 already rolled, calculate prompt #
-            if (d10Result !== null) {
-                calculatePromptNumber(d10Result, finalResult);
-            }
+            calculatePromptNumber(finalResult);
+            
         }, 1000);
     };
     
     // load stored prompt number from session storage
     const storedPromptNumber = parseInt(sessionStorage.getItem('promptNumber'));
 
-    const calculatePromptNumber = (d10, d6) => {
+    const calculatePromptNumber = (d6) => {
         if (storedPromptNumber) {
-            let result = storedPromptNumber + (d10 - d6);
-            if (result < 1) result = 1;
+            let result = storedPromptNumber + (d6);
             setPromptNumber(result);
         } else {
-            let result = d10 - d6;
-            if (result < 1) result = 1;
+            let result = d6;
             setPromptNumber(result);
         }
     };
@@ -87,7 +61,6 @@ const RollPage = () => {
     }
 
     const resetRolls = () => {
-        setD10Result(null);
         setD6Result(null);
         setPromptNumber(null);
     };
@@ -110,12 +83,12 @@ const RollPage = () => {
                 <div className="bg-gray-800 rounded-lg p-6 mb-6">
                     <h2 className="text-2xl font-semibold mb-4">Roll the Dice</h2>
                     <div className="bg-gray-700 rounded p-4 mb-4">
-                        <p>Click on the d10 and the d6 to roll the dice. Your prompt number is determined by subtracting the result of the d6 from the result of the d10. Once both dice have been rolled, your prompt number will appear on screen, along with a button to be taken to the prompt.</p>
+                        <p>Click on d6 to roll the dice. Your prompt number is determined by the result of the d6. Once the dice has been rolled, your prompt number will appear on screen, along with a button to be taken to the prompt.</p>
                     </div>
                     {storedPromptNumber ? (
                         <div className="mt-8 p-6 bg-gray-700 rounded-lg text-center">
                             <h3 className="text-xl mb-2">Your last prompt number was:</h3>
-                            <p className="text-6xl font-bold text-yellow-400 mb-6">{storedPromptNumber}</p>
+                            <p className="text-6xl font-bold text-red-400 mb-6">{storedPromptNumber}</p>
                             <p>Click below to roll the dice for your next prompt number</p>
                         </div>
                     ) : (
@@ -124,22 +97,6 @@ const RollPage = () => {
                         </div>
                     )}
                     <div className="flex flex-wrap gap-6 justify-center mt-8">
-                        {/* d10 roll section */}
-                        <div className="text-center">
-                            <button
-                                onClick={handleD10Roll}
-                                className={`bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-lg text-xl transition-colors duration-200 ${isRolling || d10Result !== null ? 'opacity-75 cursor-not-allowed' : ''}`}
-                                disabled={isRolling || d10Result !== null}
-                            >
-                                {isRolling ? 'Rolling...' : 'Roll d10'}
-                            </button>
-                            {d10Result !== null && (
-                                <div className="mt-4 bg-gray-600 rounded-lg p-6 text-center">
-                                    <p className="text-lg mb-2">d10 Result:</p>
-                                    <p className="text-5xl font-bold text-blue-400">{d10Result}</p>
-                                </div>
-                            )}
-                        </div>
                         {/* d6 roll section */}
                         <div className="text-center">
                             <button
@@ -161,7 +118,7 @@ const RollPage = () => {
                     {promptNumber !== null && (
                         <div className="mt-8 p-6 bg-gray-700 rounded-lg text-center">
                             <h3 className="text-xl mb-2">Your Prompt Number is:</h3>
-                            <p className="text-6xl font-bold text-yellow-400 mb-6">{promptNumber}</p>
+                            <p className="text-6xl font-bold text-red-400 mb-6">{promptNumber}</p>
                             <button
                                 onClick={handlePromptNav}
                                 className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors duration-200"
@@ -171,7 +128,7 @@ const RollPage = () => {
                         </div>
                     )}
                     {/* Reset button */}
-                    {(d10Result !== null || d6Result !== null) && (
+                    {(d6Result !== null) && (
                         <div className="mt-6 text-center">
                             <button
                                 onClick={resetRolls}

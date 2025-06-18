@@ -127,7 +127,7 @@ const HelpPage = () => {
                             {section.id === 'credits' && (
                                 <div className="space-y-6">
                                     <p className="text-gray-200 leading-relaxed">
-                                        This game is based on the solo role-playing journaling game Thousand Year Old Vampire by Tim Hutchings. While I have altered the prompts, the game mechanics remain the same as in the original game. You can find more information about Thousand Year Old Vampire <a className="underline text-red-300 hover:text-red-400" href="https://thousandyearoldvampire.com/" target="_blank">here</a> (https://thousandyearoldvampire.com/).
+                                        This game is inspired by the solo role-playing journaling game Thousand Year Old Vampire by Tim Hutchings. You can find more information about Thousand Year Old Vampire <a className="underline text-red-300 hover:text-red-400" href="https://thousandyearoldvampire.com/" target="_blank">here</a> (https://thousandyearoldvampire.com/).
                                     </p>
                                     <p className="text-gray-200">
                                         Website made by <a className="underline text-red-300 hover:text-red-400" href="https://kellylloyd.kiwi/" target="_blank" title="View my Portfolio">Kelly Lloyd</a> <FaRegCopyright className="inline text-gray-300 text-xl" /> 2025. GitHub <a href="https://github.com/kellyjellykitten" target="_blank" title="View my GitHub"><MdOpenInNew className="inline text-red-300 hover:text-red-400 text-2xl" /></a>
