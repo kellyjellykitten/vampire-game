@@ -17,7 +17,7 @@ const CreatePage = () => {
                 </span>
             </h1>
             <div className="max-w-xl mx-auto bg-gray-700 p-6 rounded-lg">
-                <p className="mt-2">On the next pages, you will creat your vampire-to-be. There are six steps in the character creation:</p>
+                <p className="mt-2">On the next pages, you will create your vampire-to-be. There are six steps in the character creation:</p>
                 <div className="max-w-sm mx-auto">
                     <ul className="list-decimal space-y-2 mt-4 ml-4 mr-4">
                         <li><span className="text-red-300">Origin:</span> The name of your mortal, where they&apos;re from, and who they are</li>

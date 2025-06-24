@@ -83,7 +83,7 @@ const RollPage = () => {
                 <div className="bg-gray-800 rounded-lg p-6 mb-6">
                     <h2 className="text-2xl font-semibold mb-4">Roll the Dice</h2>
                     <div className="bg-gray-700 rounded p-4 mb-4">
-                        <p>Click on d6 to roll the dice. Your prompt number is determined by the result of the d6. Once the dice has been rolled, your prompt number will appear on screen, along with a button to be taken to the prompt.</p>
+                        <p>Click on d6 to roll the dice. Your first prompt number is determined by the result of the d6. From then on, your d6 result will be added to your current prompt number to determine your next prompt. Once the dice has been rolled, your prompt number will appear on screen, along with a button to be taken to the prompt.</p>
                     </div>
                     {storedPromptNumber ? (
                         <div className="mt-8 p-6 bg-gray-700 rounded-lg text-center">
@@ -101,7 +101,7 @@ const RollPage = () => {
                         <div className="text-center">
                             <button
                                 onClick={handleD6Roll}
-                                className={`bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-lg text-xl transition-colors duration-200 ${isRolling || d6Result !== null ? 'opacity-75 cursor-not-allowed' : ''}`}
+                                className={`bg-emerald-700 hover:bg-emerald-800 text-white font-bold py-4 px-6 rounded-lg text-xl transition-colors duration-300 ${isRolling || d6Result !== null ? 'opacity-75 cursor-not-allowed' : ''}`}
                                 disabled={isRolling || d6Result !== null}
                             >
                                 {isRolling ? 'Rolling...' : 'Roll d6'}
@@ -109,7 +109,7 @@ const RollPage = () => {
                             {d6Result !==null && (
                                 <div className="mt-4 bg-gray-600 rounded-lg p-6 text-center">
                                     <p className="text-lg mb-2">d6 Result:</p>
-                                    <p className="text-5xl font-bold text-green-400">{d6Result}</p>
+                                    <p className="text-5xl font-bold text-emerald-500">{d6Result}</p>
                                 </div>
                             )}
                         </div>
@@ -121,7 +121,7 @@ const RollPage = () => {
                             <p className="text-6xl font-bold text-red-400 mb-6">{promptNumber}</p>
                             <button
                                 onClick={handlePromptNav}
-                                className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors duration-200"
+                                className="bg-purple-800 hover:bg-purple-900 text-white px-7 py-3 rounded-lg text-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl"
                             >
                                 Go To Prompt
                             </button>
@@ -132,7 +132,7 @@ const RollPage = () => {
                         <div className="mt-6 text-center">
                             <button
                                 onClick={resetRolls}
-                                className="mt-4 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition-colors duration-200"
+                                className="mt-4 px-5 py-2 text-white bg-gray-800 hover:bg-gray-900 rounded-lg  transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500"
                                 disabled={isRolling}
                             >
                                 Reset Rolls

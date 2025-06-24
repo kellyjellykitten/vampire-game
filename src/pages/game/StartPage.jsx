@@ -67,9 +67,9 @@ const StartPage = () => {
                 <div className="bg-gray-800 rounded-lg p-6 mb-6">
                     <h2 className="text-2xl font-semibold mb-4">Before You Begin</h2>
                     {/* Game content here */}
-                    <div className="h-40 bg-gray-700 rounded p-4 mb-4">
+                    <div className="bg-gray-700 rounded p-4 mb-4">
                         <p>Import your character using the button below. Once imported, your character sheet will display. Click the Hide Character Sheet button to hide your vampire&apos;s details.</p>
-                        <p className="pt-6">On the next page, you will roll dice to land on a prompt. Prompts.........</p>
+                        <p className="pt-6">On the next page, you will roll dice to determine your prompt number.</p>
                     </div>
                     {/* Character import section */}
                     <div className="mb-6 flex items-center space-x-4">
@@ -82,14 +82,14 @@ const StartPage = () => {
                         />
                         <label
                             htmlFor="import-vampire"
-                            className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors cursor-pointer"
+                            className="px-4 py-2 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors duration-300 cursor-pointer"
                         >
                         Import Character
                         </label>
             
                         <button
                             onClick={toggleCharacterSheet}
-                            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                            className="px-4 py-2 text-white bg-gray-800 hover:bg-gray-900 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500"
                         >
                         {showCharacterSheet ? "Hide Character Sheet" : "Show Character Sheet"}
                         </button>
@@ -196,28 +196,6 @@ const StartPage = () => {
             )}
         </div>
     </div>
-        // <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-        //     <h1 className="text-3xl font-semibold text-gray-800 mb-6">Begin Your Adventure</h1>
-        //     <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
-        //         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed risus sit amet augue eleifend posuere at at nunc. In bibendum facilisis ante, ut tempus ex efficitur sollicitudin. Fusce euismod risus ac commodo rhoncus. Integer non lorem augue. Aliquam elementum luctus ex, eget imperdiet ante pellentesque in. Sed tristique lacinia sagittis. Quisque et tempor ante. Maecenas a tempus elit. Nulla facilisi. Cras dictum, magna ac venenatis vestibulum, libero mauris vehicula velit, sed ornare nisl nisl ut mi. Proin mollis varius est quis vulputate. Praesent at mi in neque tempor dignissim. Vivamus finibus nibh ut molestie auctor. Duis tincidunt id elit at blandit. Duis id quam ultrices, tincidunt arcu sed, aliquet ligula.</p>
-        //     </div>
-        //     <input
-        //         type="file"
-        //         accept=".json"
-        //         onChange={importVampire}
-        //         className="hidden"
-        //         id="import-vampire"
-        //     />
-        //     <label
-        //         htmlFor="import-vampire"
-        //         className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors cursor-pointer"
-        //     >
-        //         Import Vampire
-        //     </label>
-        //     <div className="flex justify-center">
-        //         <NextButton onClick={handleSubmit} />
-        //     </div>
-        // </div>
     )
 };
 

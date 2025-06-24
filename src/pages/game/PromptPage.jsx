@@ -170,6 +170,9 @@ const PromptPage = () => {
         }
         // Show updated vampire summary
         setShowSummary(true);
+        if (promptNumber >= 25) {
+            navigate('/game/gameover')
+        }
     };
 
     const handleReset = () => {
@@ -198,9 +201,11 @@ const PromptPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-900 text-white p-4">
+        <div className="bg-gradient-to-b from-black to-gray-900 text-white p-4 min-h-screen">
             <div className="max-w-4xl mx-auto">
-                <h1 className="text-4xl font-bold mb-6 text-center">Prompt #{promptNumber}</h1>
+                <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center"> 
+                    <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">Prompt #{promptNumber}</span>
+                </h1>
 
                 {/* Sidebar toggle button */}
                 <SidebarToggleButton isOpen={showSidebar} toggleSidebar={toggleSidebar} />
@@ -210,15 +215,14 @@ const PromptPage = () => {
 
                 {!showSummary ? (
                     <div className="bg-gray-800 rounded-lg p-6 mb-6">
-                        <h2 className="text-xl font-semibold mb-4">Instructions</h2>
+                        
                         <div className="flex flex-wrap bg-gray-700 rounded p-4 mb-4">
-                            <p>Answer in one sentence. This creates an experience, which you will need to add to a memory of similar subject.</p>
+                            <p className="text-center m-6 text-lg">{prompt.text}</p>
                         </div>
 
                         <form onSubmit={handleSubmit}>
-                            <h2 className="text-xl font-semibold mb-4">Prompt #{promptNumber}</h2>
                             <div className="mt-4 bg-gray-600 rounded-lg p-6">
-                                <p className="text-center mb-6">{prompt.text}</p>
+                                
 
                                 {/* Experience input - always required */}
                                 <div className="mb-10">
@@ -333,13 +337,13 @@ const PromptPage = () => {
                                 <button
                                     type="button"
                                     onClick={handleBack}
-                                    className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
+                                    className="px-7 py-3 text-white bg-gray-800 hover:bg-gray-900 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500"
                                 >
                                     Back to Dice Roll
                                 </button>
                                 <button
                                     type="submit"
-                                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                                    className="bg-purple-800 hover:bg-purple-900 text-white px-7 py-3 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl"
                                 >
                                     Submit
                                 </button>

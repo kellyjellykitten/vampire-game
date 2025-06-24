@@ -23,7 +23,7 @@ const VampireSummaryPage = () => {
         // Get vampire from redux state
         const vampireData = JSON.stringify(vampire, null, 2);
         // Create a blob with the JSON data
-        const blob = new Blob([vampireData], { type: 'applicatioin/json' });
+        const blob = new Blob([vampireData], { type: 'application/json' });
         // Create a URL for the blob
         const url = URL.createObjectURL(blob);
         // Create a temp anchor element
@@ -39,19 +39,22 @@ const VampireSummaryPage = () => {
     }
 
     return (
-        <div className="relative flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
-            <div className="w-full max-w-2xl bg-gray-700 shadow-lg rounded-lg p-8">
-                <h1 className="text-3xl font-bold text-center mb-8">Vampire Character Summary</h1>
+        <div className="bg-gradient-to-b from-black to-gray-900 text-white p-4 min-h-screen">
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mt-16 mb-6 text-center">
+                <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">Creation Complete!</span>
+            </h1>
+            <div className="max-w-xl mx-auto bg-gray-700 p-6 rounded-lg">
+                <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center">Vampire Character Summary</h2>
                 
                 {/* Origin Section */}
                 <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Origin</h2>
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Origin</h3>
                     {vampire.origin.map((origin, index) => (
-                        <div key={index}>
-                            <p className="text-lg mb-2">
+                        <div key={index} className="mb-4">
+                            <p className="text-sm md:text-base">
                                 <strong>Name:</strong> {origin.name || 'No name provided'}
                             </p>
-                            <p className="text-lg">
+                            <p className="text-sm md:text-base">
                                 <strong>Origin Experience:</strong> {origin.originExperience || 'Not specified'}
                             </p>
                         </div>
@@ -60,8 +63,8 @@ const VampireSummaryPage = () => {
 
                 {/* Side Characters Section */}
                 <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Side Characters</h2>
-                    <ul className="list-disc pl-5">
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Side Characters</h3>
+                    <ul className="list-disc pl-5 text-sm md:text-base">
                         {vampire.sideCharacters.map((character, index) => (
                             <li key={index} className="text-lg">
                                 {character || `Side Character ${index + 1}: Not specified`}
@@ -72,7 +75,7 @@ const VampireSummaryPage = () => {
 
                 {/* Skills Section */}
                 <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Skills</h2>
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Skills</h3>
                     <ul className="list-disc pl-5">
                         {vampire.skills.map((skill, index) => (
                             <li key={index} className="text-lg">
@@ -129,11 +132,11 @@ const VampireSummaryPage = () => {
                     ))}
                 </section>
 
-                <div className="flex justify-between mt-8">
+                <div className="flex justify-center mt-8">
                     <BackButton onClick={handleBack} />
                     <button
                         onClick={exportVampire}
-                        className="px-4 py-2 bg-amber-800 text-white rounded-md hover:bg-amber-700 transition-colors"
+                        className="bg-emerald-700 hover:bg-emerald-800 text-white font-medium py-4 px-6 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
                     >
                         Export Vampire
                     </button>

@@ -3,7 +3,7 @@ const NextButton = ({ onClick, text = "Next" }) => {
     return (
         <button
             onClick={onClick}
-            className="bg-purple-800 hover:bg-purple-700 text-white px-7 py-3 rounded-lg text-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl"
+            className="bg-purple-800 hover:bg-purple-900 text-white px-7 py-3 rounded-lg text-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl"
         >{text}</button>
     )
 }
