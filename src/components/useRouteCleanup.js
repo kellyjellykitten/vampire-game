@@ -7,7 +7,7 @@ export const useRouteCleanup = () => {
 
     useEffect(() => {
         // Pages that should preserve prompt numbers
-        const gamePages = ['/game', '/game/roll', '/game/prompt', '/game/gameover'];
+        const gamePages = ['/game/roll', '/game/prompt', '/game/gameover'];
         
         // Check if current path is NOT a game page
         const isGamePage = gamePages.some(gamePage => 

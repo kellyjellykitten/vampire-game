@@ -4,6 +4,7 @@
 - Not found page
 - Sidebar character sheet positioning
 - Mobile styling for forms
+- Graphics
 
 ## Content
 - Homepage text

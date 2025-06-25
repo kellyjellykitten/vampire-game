@@ -49,6 +49,8 @@ const PromptPage = () => {
         setShowSidebar(!showSidebar);
     };
 
+    const [showCharacterSheet, setShowCharacterSheet] = useState(false);
+
     // Effect to load prompt number from session storage
     useEffect(() => {
         const storedPromptNumber = parseInt(sessionStorage.getItem('promptNumber')) || 1;
@@ -170,13 +172,16 @@ const PromptPage = () => {
                 });
             }
         }
+        
         // Show updated vampire summary
         setShowSummary(true);
         if (promptNumber >= 25) {
             navigate('/game/gameover')
         }
     };
-
+    const toggleCharacterSheet = () => {
+            setShowCharacterSheet(!showCharacterSheet);
+    }
     const handleReset = () => {
         setShowSummary(false);
         setNewMemory('');
@@ -242,7 +247,7 @@ const PromptPage = () => {
                                         placeholder="Answer prompt here..."
                                         required
                                         className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                                        rows="3"
+                                        rows="4"
                                     />
                                 </div>
 
@@ -441,6 +446,101 @@ const PromptPage = () => {
                         </div>
                     </div>
                 )}
+                {/* Character sheet */}
+                {showCharacterSheet && (
+                <div className="bg-gray-800 rounded-lg p-6 animate-fadeIn">
+                    <h2 className="text-3xl font-bold text-center mb-8">Character Sheet</h2>
+            
+                    {/* Origin Section */}
+                    <section className="mb-6">
+                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Origin</h2>
+                        {vampire.origin.map((origin, index) => (
+                            <div key={index}>
+                                <p className="text-lg mb-2">
+                                    <strong>Name:</strong> {origin.name || 'No name provided'}
+                                </p>
+                                <p className="text-lg">
+                                    <strong>Origin Experience:</strong> {origin.originExperience || 'Not specified'}
+                                </p>
+                            </div>
+                        ))}
+                    </section>
+
+                    {/* Side Characters Section */}
+                    <section className="mb-6">
+                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Side Characters</h2>
+                        <ul className="list-disc pl-5">
+                            {vampire.sideCharacters.map((character, index) => (
+                                <li key={index} className="text-lg">
+                                    {character || `Side Character ${index + 1}: Not specified`}
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+
+                    {/* Skills Section */}
+                    <section className="mb-6">
+                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Skills</h2>
+                        <ul className="list-disc pl-5">
+                            {vampire.skills.map((skill, index) => (
+                                <li key={index} className="text-lg">
+                                    {skill || `Skill ${index + 1}: Not specified`}
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+
+                    {/* Resources Section */}
+                    <section className="mb-6">
+                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Resources</h2>
+                        <ul className="list-disc pl-5">
+                            {vampire.resources.map((resource, index) => (
+                                <li key={index} className="text-lg">
+                                    {resource || `Resource ${index + 1}: Not specified`}
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+
+                    {/* Memories Section */}
+                    <section className="mb-6">
+                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Memories</h2>
+                        <ul className="list-disc pl-5">
+                            {vampire.memories.map((mem, index) => (
+                                <li key={index} className="text-lg">
+                                    {mem || `Memory ${index + 1}: Not specified`}
+                                </li>
+                            ))}
+                        </ul>
+                    </section>
+
+                    {/* Conversion Section */}
+                    <section className="mb-6">
+                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Conversion</h2>
+                        {vampire.conversion.map((conversion, index) => (
+                            <div key={index}>
+                                <p className="text-lg mb-2">
+                                    <strong>Immortal:</strong> {conversion.immortal || 'Not specified'}
+                                </p>
+                                <p className="text-lg mb-2">
+                                    <strong>Mark:</strong> {conversion.mark || 'Not specified'}
+                                </p>
+                                <p className="text-lg">
+                                <strong>Conversion Experience:</strong> {conversion.conversionExperience || 'Not specified'}
+                                </p>
+                            </div>
+                        ))}
+                    </section>
+                </div>
+            )}
+            </div>
+            <div className="flex justify-center mt-2">
+                <button
+                    onClick={toggleCharacterSheet}
+                    className="px-4 py-2 text-white bg-gray-800 hover:bg-gray-900 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500"
+                >
+                    {showCharacterSheet ? "Hide Character Sheet" : "Show Character Sheet"}
+                </button>
             </div>
         </div>
     )
