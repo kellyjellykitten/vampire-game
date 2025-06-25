@@ -189,7 +189,15 @@ const PromptPage = () => {
     };
 
     const handleBack = () => {
-        navigate('/game/roll')
+        // Revert to previous prompt #
+        const previousPromptNumber = sessionStorage.getItem('previousPromptNumber');
+        if (previousPromptNumber && previousPromptNumber !== '0') {
+            sessionStorage.setItem('promptNumber', previousPromptNumber);
+        } else {
+            sessionStorage.removeItem('promptNumber')
+        }
+        sessionStorage.removeItem('previousPromptNumber');
+        navigate('/game/roll');
     };
 
     const handleContinue = () => {

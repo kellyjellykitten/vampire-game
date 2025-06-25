@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import CharacterSheetSidebar from "../../components/CharacterSheetSidebar";
 import SidebarToggleButton from "../../components/SidebarToggleButton";
@@ -9,6 +9,7 @@ const RollPage = () => {
     const [d6Result, setD6Result] = useState(null);
     const [promptNumber, setPromptNumber] = useState(null);
     const [isRolling, setIsRolling] = useState(false);
+    const [currentPromptNumber, setCurrentPromptNumber] = useState(null);
 
     // Character sheet sidebar state
     const [showSidebar, setShowSidebar] = useState(false);
@@ -17,6 +18,14 @@ const RollPage = () => {
     const toggleSidebar = () => {
         setShowSidebar(!showSidebar);
     };
+
+    // Load stored prompt # from session storage on component mount
+    useEffect(() => {
+        const storedPromptNumber = parseInt(sessionStorage.getItem('promptNumber'));
+        if (storedPromptNumber) {
+            setCurrentPromptNumber(storedPromptNumber);
+        }
+    }, []);
 
     const rollDice = (sides) => {
         return Math.floor(Math.random() * sides) + 1;
@@ -40,23 +49,23 @@ const RollPage = () => {
             
         }, 1000);
     };
-    
-    // load stored prompt number from session storage
-    const storedPromptNumber = parseInt(sessionStorage.getItem('promptNumber'));
 
     const calculatePromptNumber = (d6) => {
-        if (storedPromptNumber) {
-            let result = storedPromptNumber + (d6);
+        let result;
+        if (currentPromptNumber) {
+            result = currentPromptNumber + (d6);
             setPromptNumber(result);
         } else {
-            let result = d6;
-            setPromptNumber(result);
+            result = d6;
         }
+        setPromptNumber(result);
     };
 
     const handlePromptNav = () => {
-        // Store prompt # in session storage for PromptPage to access
+        // Store new prompt # in session storage for PromptPage to access
         sessionStorage.setItem('promptNumber', promptNumber);
+        // Store current prompt # to revert to if user goes back
+        sessionStorage.setItem('previousPromptNumber', currentPromptNumber || 0);
         navigate('/game/prompt');
     }
 
@@ -85,10 +94,10 @@ const RollPage = () => {
                     <div className="bg-gray-700 rounded p-4 mb-4">
                         <p>Click on d6 to roll the dice. Your first prompt number is determined by the result of the d6. From then on, your d6 result will be added to your current prompt number to determine your next prompt. Once the dice has been rolled, your prompt number will appear on screen, along with a button to be taken to the prompt.</p>
                     </div>
-                    {storedPromptNumber ? (
+                    {currentPromptNumber ? (
                         <div className="mt-8 p-6 bg-gray-700 rounded-lg text-center">
                             <h3 className="text-xl mb-2">Your last prompt number was:</h3>
-                            <p className="text-6xl font-bold text-red-400 mb-6">{storedPromptNumber}</p>
+                            <p className="text-6xl font-bold text-red-400 mb-6">{currentPromptNumber}</p>
                             <p>Click below to roll the dice for your next prompt number</p>
                         </div>
                     ) : (

@@ -7,11 +7,16 @@ const GameOverPage = () => {
     const vampire = useSelector((state) => state.vampire.vampire);
 
     const handleRestart = () => {
-        localStorage.removeItem('promptNumber');
+        // Clear prompt # from session storage
+        sessionStorage.removeItem('promptNumber');
+        sessionStorage.removeItem('previousPromptNumber');
         navigate('/game')
     }
 
     const handleNewGame = () => {
+        // Clear prompt # from session storage
+        sessionStorage.removeItem('promptNumber');
+        sessionStorage.removeItem('previousPromptNumber');
         navigate('/create')
     }
 

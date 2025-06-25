@@ -14,11 +14,17 @@ import PromptPage from './pages/game/PromptPage';
 import GameOverPage from './pages/game/GameOverPage';
 import HelpPage from './pages/HelpPage';
 import NotFoundPage from './pages/NotFoundPage';
+import { useRouteCleanup } from './components/useRouteCleanup';
+
+const AppWithCleanup = () => {
+  useRouteCleanup();
+  return <MainLayout />
+}
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<MainLayout />}>
-      {/* any routes under here use MainLayout */}
+    <Route path='/' element={<AppWithCleanup />}>
+      {/* any routes under here use MainLayout with cleanup */}
       <Route index element={<HomePage />} />
       <Route path='/create' element={<CreatePage />} />
       <Route path='/create/name' element={<VampireNamePage />} />
