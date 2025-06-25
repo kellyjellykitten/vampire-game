@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setSideCharacters } from '../vampireSlice';
+import { setSideCharacters, setMemoryExperience } from '../vampireSlice';
 import HelpModal from '../components/HelpModal';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
@@ -14,6 +14,7 @@ const SideCharactersPage = () => {
     const sideCharacters = vampire.sideCharacters || ["", "", ""];
 
     const [localSideCharacters, setLocalSideCharacters] = useState([...sideCharacters]);
+    const [localCharMemories, setLocalCharMemories] = useState([...charMemories]);
     
     const navigate = useNavigate();
 
@@ -23,11 +24,23 @@ const SideCharactersPage = () => {
         setLocalSideCharacters(updatedSideCharacters);
     };
 
+    const handleCharMemoriesChange = (index, value) => {
+        const updatedCharMemories = [...localCharMemories];
+        updatedCharMemories[index] = value;
+        setLocalCharMemories(updatedCharMemories);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
         localSideCharacters.forEach((sideCharacter, index) => {
             dispatch(setSideCharacters({ index, value: sideCharacter }));
         });
+
+        localCharMemories.forEach((charMemory, index) => {
+            dispatch(setMemoryExperience({ index, value: charMemory }));
+        });
+
         navigate('/create/skills');
     };
 
@@ -51,7 +64,7 @@ const SideCharactersPage = () => {
             {/* map loops over each sideCharacter & creates a section with input for the description. Each text area is tied to its own specific side character */}
             {localSideCharacters.map((sideCharacter, index) => (
                 <div key={index} className="mb-6">
-                    {/* "for" references each textarea's unique id (description-0m description-1, description-2) for screen readers */}
+                    {/* "for" references each textarea's unique id (description-0 description-1, description-2) for screen readers */}
                     <label htmlFor={`description-${index}`} className="block text-lg font-medium mb-2">Side Character {index + 1}</label>
                     {/* name attribute is added in case need to submit form data to backend */}
                     <textarea

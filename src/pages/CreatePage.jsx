@@ -24,7 +24,7 @@ const CreatePage = () => {
                         <li><span className="text-red-300">Side Characters:</span> Three mortals with whom your character has some relationship with</li>
                         <li><span className="text-red-300">Skills:</span> Three skills your mortal excels in</li>
                         <li><span className="text-red-300">Resources:</span> Three items belonging to your character</li>
-                        <li><span className="text-red-300">Memories:</span> You will come up with three experiences to place into memory containers</li>
+                        <li><span className="text-red-300">Memories:</span> You will come up with three memories from your time as a mortal</li>
                         <li><span className="text-red-300">Conversion:</span> The immortal that turned you into a vampire, how it happened, and what mark they left on you</li>
                     </ul>
                 </div>

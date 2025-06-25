@@ -42,8 +42,7 @@ const VampireNamePage = () => {
 
         // Dispatch action to set origin experience in first memory
         dispatch(setMemoryExperience({
-            memoryId: "1",
-            experienceIndex: 0,
+            index: 0,
             value: originDetails.originExperience
         }));
 

@@ -10,13 +10,7 @@ const initialState = {
         sideCharacters: ["", "", ""],
         skills: ["", "", ""],
         resources: ["", "", ""],
-        memories: [
-            { id: "1", experiences: ["", "", ""] },
-            { id: "2", experiences: ["", "", ""] },
-            { id: "3", experiences: ["", "", ""] },
-            { id: "4", experiences: ["", "", ""] },
-            { id: "5", experiences: ["", "", ""] },
-        ],
+        memories: ["", "", "", "", ""],
         conversion: [{
             immortal: "",
             mark: "",
@@ -68,15 +62,14 @@ const vampireSlice = createSlice({
             state.vampire.resources[index] = value;
         },
         setMemoryExperience: (state, action) => {
-            // memoryID identifies which memory to update
-            // experienceIndex identifies which experience inside the memory to update
-            // value is the new expreiences text the user enters
-            const { memoryId, experienceIndex, value } = action.payload;
-            // use find() to locate the memory w/ matching id. if found, update the experience at the specified experienceIndex
-            const memory = state.vampire.memories.find((mem) => mem.id === memoryId);
-            if (memory) {
-                memory.experiences[experienceIndex] = value;
+            const { index, value } = action.payload;
+            if (!state.vampire.memories) {
+                state.vampire.memories = ["", "", "", "", ""];
             }
+            while (state.vampire.memories.length <= index) {
+                state.vampire.memories.push("");
+            }
+            state.vampire.memories[index] = value;
         },
         setConversion: (state, action) => {
             // since coversion is an array w/ 1 object, update index [0] to store new values
