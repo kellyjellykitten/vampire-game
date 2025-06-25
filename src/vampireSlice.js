@@ -39,7 +39,7 @@ const vampireSlice = createSlice({
             if (!state.vampire.sideCharacters) {
                 state.vampire.sideCharacters = ["", "", ""];
             }
-            //if index is outside currenty array, extend the array
+            //if index is outside current array, extend the array
             while (state.vampire.sideCharacters.length <= index) {
                 state.vampire.sideCharacters.push("");
             }
@@ -51,7 +51,7 @@ const vampireSlice = createSlice({
             if (!state.vampire.skills) {
                 state.vampire.skills = ["", "", ""];
             }
-            //if index is ourside currenty array, extend the array
+            //if index is outside current array, extend the array
             while (state.vampire.skills.length <= index) {
                 state.vampire.skills.push("");
             }

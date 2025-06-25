@@ -65,11 +65,12 @@ const StartPage = () => {
         
                 {/* Game interface */}
                 <div className="bg-gray-800 rounded-lg p-6 mb-6">
-                    <h2 className="text-2xl font-semibold mb-4">Before You Begin</h2>
+                    <h2 className="text-2xl font-semibold mb-4">Instructions</h2>
                     {/* Game content here */}
                     <div className="bg-gray-700 rounded p-4 mb-4">
-                        <p>Import your character using the button below. Once imported, your character sheet will display. Click the Hide Character Sheet button to hide your vampire&apos;s details.</p>
-                        <p className="pt-6">On the next page, you will roll dice to determine your prompt number.</p>
+                        <p>If you are coming straight from character creation, you may click on the Show Character Sheet button to review your vampire&apos;s details, then click Start to begin.</p>
+                        <p className="pt-6">If you exported your character, import the file clicking the Import Character button below. Once imported, your character sheet will display.</p>
+                        <p className="pt-6">On the next page, you will roll dice to determine your first prompt number.</p>
                     </div>
                     {/* Character import section */}
                     <div className="mb-6 flex items-center space-x-4">
