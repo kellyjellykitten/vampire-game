@@ -6,7 +6,6 @@ import VampireNamePage from './pages/VampireNamePage';
 import SideCharactersPage from './pages/SideCharactersPage';
 import VampireSkillsPage from './pages/VampireSkillsPage';
 import VampireResourcesPage from './pages/VampireResourcesPage';
-import VampireMemoriesPage from './pages/VampireMemoriesPage';
 import VampireConversionPage from './pages/VampireConversionPage';
 import VampireSummaryPage from './pages/VampireSummaryPage';
 import StartPage from './pages/game/StartPage';
@@ -26,7 +25,6 @@ const router = createBrowserRouter(
       <Route path='/create/characters' element={<SideCharactersPage />} />
       <Route path='/create/skills' element={<VampireSkillsPage />} />
       <Route path='/create/resources' element={<VampireResourcesPage />} />
-      <Route path='/create/experiences' element={<VampireMemoriesPage />} />
       <Route path='/create/conversion' element={<VampireConversionPage />} />
       <Route path='/create/summary' element={<VampireSummaryPage />} />
       <Route path='/game' element={<StartPage />} />

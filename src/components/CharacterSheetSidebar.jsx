@@ -65,16 +65,12 @@ const CharacterSheetSidebar = ({ isOpen, onClose }) => {
                     {/* Memories Section */}
                     <section className="mb-4">
                         <h3 className="text-lg font-semibold mb-1 border-b pb-1">Memories</h3>
-                        {vampire.memories.map((memory) => (
-                            <div key={memory.id} className="mb-2">
-                                <h4 className="text-sm font-medium">Memory {memory.id}</h4>
-                                <ul className="list-disc pl-5 text-sm">
-                                    {memory.experiences.map((exp, index) => (
-                                        exp && <li key={index}>{exp}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
+                        <ul className="list-disc pl-5 text-sm">
+                            {vampire.memories.map((mem, index) => (
+                                mem && <li key={index}>{mem}</li>
+                            ))}
+                            {!vampire.memories.some(mem => mem) && <li className="text-gray-500">None</li>}
+                        </ul>
                     </section>
                 </div>
             )}

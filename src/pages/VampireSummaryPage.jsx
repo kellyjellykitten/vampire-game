@@ -87,7 +87,7 @@ const VampireSummaryPage = () => {
 
                 {/* Resources Section */}
                 <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Resources</h2>
+                    <h3 className="text-2xl font-semibold mb-4 border-b pb-2">Resources</h3>
                     <ul className="list-disc pl-5">
                         {vampire.resources.map((resource, index) => (
                             <li key={index} className="text-lg">
@@ -99,24 +99,19 @@ const VampireSummaryPage = () => {
 
                 {/* Memories Section */}
                 <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Memories</h2>
-                    {vampire.memories.map((memory, memoryIndex) => (
-                        <div key={memory.id} className="mb-4">
-                            <h3 className="text-xl font-medium mb-2">Memory {memoryIndex + 1}</h3>
-                            <ul className="list-disc pl-5">
-                                {memory.experiences.map((experience, expIndex) => (
-                                    <li key={expIndex} className="text-lg">
-                                        {experience || `Experience ${expIndex + 1}: Not specified`}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                    <h3 className="text-2xl font-semibold mb-4 border-b pb-2">Memories</h3>
+                    <ul className="list-disc pl-5">
+                        {vampire.memories.map((memory, index) => (
+                            <li key={index} className="text-lg">
+                                {memory || `Memory ${index + 1}: Not specified`}
+                            </li>
+                        ))}
+                    </ul>
                 </section>
 
                 {/* Conversion Section */}
                 <section className="mb-6">
-                    <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Conversion</h2>
+                    <h3 className="text-2xl font-semibold mb-4 border-b pb-2">Conversion</h3>
                     {vampire.conversion.map((conversion, index) => (
                         <div key={index}>
                             <p className="text-lg mb-2">

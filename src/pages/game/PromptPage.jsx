@@ -27,8 +27,7 @@ const PromptPage = () => {
     const [showSidebar, setShowSidebar] = useState(false);
 
     // Local state for form inputs
-    const [experience, setExperience] = useState('');
-    const [selectedMemory, setSelectedMemory] = useState('1');
+    const [newMemory, setNewMemory] = useState('');
     const [newSkill, setNewSkill] = useState('');
     const [newResource, setNewResource] = useState('');
     const [newSideCharacter, setNewSideCharacter] = useState('');
@@ -73,16 +72,19 @@ const PromptPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Find the first empty experience slot in the selected memory
-        const memory = vampire.memories.find(mem => mem.id === selectedMemory);
-        const emptyExperienceIndex = memory?.experiences.findIndex(exp => !exp) || 0;
-
-        // Update memory experience
-        dispatch(setMemoryExperience({
-            memoryId: selectedMemory,
-            experienceIndex: emptyExperienceIndex,
-            value: experience
-        }));
+        // Add new memory to memories array
+        const emptyMemoryIndex = vampire.memories.findIndex(mem => !mem);
+        if (emptyMemoryIndex !== -1) {
+            dispatch(setMemoryExperience({
+                index: emptyMemoryIndex,
+                value: newMemory
+            }));
+        } else {
+            dispatch(setMemoryExperience({
+                index: vampire.memories.length,
+                value: newMemory
+            }))
+        }
 
         // Apply changes based on prompt instructions
         if (prompt) {
@@ -177,7 +179,7 @@ const PromptPage = () => {
 
     const handleReset = () => {
         setShowSummary(false);
-        setExperience('');
+        setNewMemory('');
         setNewSkill('');
         setNewResource('');
         setNewSideCharacter('');
@@ -223,32 +225,17 @@ const PromptPage = () => {
                         <form onSubmit={handleSubmit}>
                             <div className="mt-4 bg-gray-600 rounded-lg p-6">
                                 
-
-                                {/* Experience input - always required */}
+                                {/* Memory input - always required */}
                                 <div className="mb-10">
-                                    <label className="block pt-6 mb-2">Experience</label>
+                                    <label className="block pt-6 mb-2">Memory</label>
                                     <textarea
-                                        value={experience}
-                                        onChange={(e) => setExperience(e.target.value)}
+                                        value={newMemory}
+                                        onChange={(e) => setNewMemory(e.target.value)}
                                         placeholder="Answer prompt here..."
                                         required
                                         className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                                         rows="3"
                                     />
-                                    <label className="block mb-2 mt-4">
-                                        Select which Memory to add this Experience to:
-                                        <select
-                                            value={selectedMemory}
-                                            onChange={(e) => setSelectedMemory(e.target.value)}
-                                            className="ml-2 border border-gray-300 text-black rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 p-2"
-                                        >
-                                            {vampire.memories.map((memory) => (
-                                                <option key={memory.id} value={memory.id}>
-                                                    Memory {memory.id}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </label>
                                 </div>
 
                                 {/* New Character input */}
@@ -420,19 +407,14 @@ const PromptPage = () => {
                         {/* Memories Section */}
                         <section className="mb-6">
                             <h3 className="text-xl font-semibold mb-2 border-b pb-2">Memories</h3>
-                            {vampire.memories.map((memory) => (
-                                <div key={memory.id} className="mb-4">
-                                    <h4 className="font-medium">Memory {memory.id} {memory.id === selectedMemory && '(Updated)'}</h4>
-                                    <ul className="list-disc pl-5">
-                                        {memory.experiences.map((exp, index) => (
-                                            <li key={index} className={`${memory.id === selectedMemory && exp === experience ? 'text-green-400' : ''}`}>
-                                                {exp || 'Empty experience slot'}
-                                                {memory.id === selectedMemory && exp === experience && ' (New)'}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
+                            <ul className="list-disc pl-5">
+                                {vampire.memories.map((mem, index) => (
+                                    <li key={index} className={`${mem === newMemory ? 'text-green-400' : ''}`}>
+                                        {mem || 'Empty memory slot'}
+                                        {mem === newMemory && ' (New)'}
+                                    </li>
+                                ))}
+                            </ul>
                         </section>
 
                         <div className="flex justify-between mt-8">

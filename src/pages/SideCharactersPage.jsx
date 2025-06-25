@@ -12,9 +12,12 @@ const SideCharactersPage = () => {
 
     // ensure sideCharacters exists before accessing
     const sideCharacters = vampire.sideCharacters || ["", "", ""];
+    // ensure memories exist & get relevant indices (1, 2, 3)
+    const memories = vampire.memories || ["", "", "", "", ""]
+    const characterMemories = [memories[1] || "", memories[2] || "", memories[3] || ""];
 
     const [localSideCharacters, setLocalSideCharacters] = useState([...sideCharacters]);
-    const [localCharMemories, setLocalCharMemories] = useState([...charMemories]);
+    const [localCharMemories, setLocalCharMemories] = useState([...characterMemories]);
     
     const navigate = useNavigate();
 
@@ -38,7 +41,7 @@ const SideCharactersPage = () => {
         });
 
         localCharMemories.forEach((charMemory, index) => {
-            dispatch(setMemoryExperience({ index, value: charMemory }));
+            dispatch(setMemoryExperience({ index: index + 1, value: charMemory }));
         });
 
         navigate('/create/skills');
@@ -61,23 +64,39 @@ const SideCharactersPage = () => {
             </div>
 
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">
-            {/* map loops over each sideCharacter & creates a section with input for the description. Each text area is tied to its own specific side character */}
+            {/* map loops over each sideCharacter & creates a section with inputs for character and memory */}
             {localSideCharacters.map((sideCharacter, index) => (
-                <div key={index} className="mb-6">
-                    {/* "for" references each textarea's unique id (description-0 description-1, description-2) for screen readers */}
-                    <label htmlFor={`description-${index}`} className="block text-lg font-medium mb-2">Side Character {index + 1}</label>
-                    {/* name attribute is added in case need to submit form data to backend */}
-                    <textarea
-                        id="sideCharacter"
-                        name="sideCharacter"
-                        value={sideCharacter}
-                        onChange={(e) => handleSideCharacterChange(index, e.target.value)}
-                        placeholder="Enter description here"
-                        required
-                        rows="3"
-                        className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                    />
+                <div key={index} className="mb-8">
+                    <div className="mb-4">
+                        <label htmlFor={`character-${index}`} className="block text-lg font-medium mb-2">Side Character {index + 1}</label>
+                        <textarea
+                            id={`character-${index}`}
+                            name={`character-${index}`}
+                            value={sideCharacter}
+                            onChange={(e) => handleSideCharacterChange(index, e.target.value)}
+                            placeholder="Enter character name and description here"
+                            required
+                            rows="2"
+                            className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
+                    <div className="mb-4">
+                        <label htmlFor={`memory-${index}`} className="block text-lg font-medium mb-2">
+                            Memory with {`Character ${index + 1}`}
+                        </label>
+                        <textarea
+                            id={`memory-${index}`}
+                            name={`memory-${index}`}
+                            value={localCharMemories[index]}
+                            onChange={(e) => handleCharMemoriesChange(index, e.target.value)}
+                            placeholder="Describe a memory you have with this character"
+                            required
+                            rows="3"
+                            className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        />
+                    </div>
                 </div>
+
             ))}
             <div className="flex justify-around">
                 <BackButton onClick={handleBack} />
@@ -93,6 +112,9 @@ const SideCharactersPage = () => {
                     </p>
                     <p className="mb-3">
                         For example: <span className="text-red-300 italic">Greta, the owner of the general store from which I buy my fruits.</span> - or - <span className="text-red-300 italic">Patrick, my trusted best friend and starfish with whom I go jelly-fishing.</span>
+                    </p>
+                    <p className="mb-3">
+                        Then, describe a specific memory you have with each character during your mortal life. For example: <span className="text-red-300 italic">Patrick and I attend a jelly-fishing contest, where I become a hero by capturing a queen jellyfish.</span>
                     </p>
                     <p>
                         Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.

@@ -43,10 +43,9 @@ const VampireConversionPage = () => {
             conversionExperience: conversionDetails.conversionExperience
         }));
 
-        // Dispatch action to set the conversion experience in the final memory
+        // Dispatch action to set the conversion experience in memories index 4
         dispatch(setMemoryExperience({
-            memoryId: "5",
-            experienceIndex: 0,
+            index: 4,
             value: conversionDetails.conversionExperience
         }));
 
@@ -55,7 +54,7 @@ const VampireConversionPage = () => {
 
     const handleBack = (e) => {
         e.preventDefault();
-        navigate('/create/experiences')
+        navigate('/create/resources')
     }
 
     return (
@@ -102,7 +101,7 @@ const VampireConversionPage = () => {
                         id="conversionExperience"
                         value={conversionDetails.conversionExperience}
                         onChange={(e) => handleInputChange('conversionExperience', e.target.value)}
-                        placeholder="Describe the moment of conversion in one sentence"
+                        placeholder="Describe how you were converted"
                         required
                         className="w-full text-black p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                         rows="3"

@@ -162,18 +162,13 @@ const StartPage = () => {
                     {/* Memories Section */}
                     <section className="mb-6">
                         <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Memories</h2>
-                        {vampire.memories.map((memory, memoryIndex) => (
-                            <div key={memory.id} className="mb-4">
-                                <h3 className="text-xl font-medium mb-2">Memory {memoryIndex + 1}</h3>
-                                <ul className="list-disc pl-5">
-                                    {memory.experiences.map((experience, expIndex) => (
-                                        <li key={expIndex} className="text-lg">
-                                            {experience || `Experience ${expIndex + 1}: Not specified`}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
+                        <ul className="list-disc pl-5">
+                            {vampire.memories.map((mem, index) => (
+                                <li key={index} className="text-lg">
+                                    {mem || `Memory ${index + 1}: Not specified`}
+                                </li>
+                            ))}
+                        </ul>
                     </section>
 
                     {/* Conversion Section */}

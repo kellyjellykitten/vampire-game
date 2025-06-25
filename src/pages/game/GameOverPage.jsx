@@ -7,6 +7,7 @@ const GameOverPage = () => {
     const vampire = useSelector((state) => state.vampire.vampire);
 
     const handleRestart = () => {
+        localStorage.removeItem('promptNumber');
         navigate('/game')
     }
 
@@ -73,16 +74,12 @@ const GameOverPage = () => {
                     {/* Memories Section */}
                     <section className="mb-6">
                         <h3 className="text-lg md:text-xl font-semibold mb-2 border-b pb-1">Memories</h3>
-                        {vampire.memories.map((memory) => (
-                            <div key={memory.id} className="mb-4">
-                                <h4 className="text-sm md:text-base font-medium">Memory {memory.id}</h4>
-                                <ul className="list-disc pl-5 text-sm md:text-base">
-                                    {memory.experiences.map((exp, index) => (
-                                        exp && <li key={index}>{exp}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
+                        <ul className="list-disc pl-5 text-sm md:text-base">
+                            {vampire.memories.map((mem, index) => (
+                                mem && <li key={index}>{mem}</li>
+                            ))}
+                            {!vampire.memories.some(mem => mem) && <li className="text-gray-500">None</li>}
+                        </ul>
                     </section>
             </div>
             <div className="max-w-xl mx-auto flex justify-between mt-4">
