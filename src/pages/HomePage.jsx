@@ -6,19 +6,19 @@ const HomePage = () => {
         {
             id: 'chracter-creation',
             title: 'Craft Your Immortal Identity',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed ultricies lorem, at ornare metus. Integer imperdiet libero id risus gravida, ac auctor massa viverra. Curabitur non leo non dolor molestie luctus. Vestibulum tristique feugiat vestibulum. Nunc pellentesque, nunc id sollicitudin ornare, nibh nulla auctor dolor, eget cursus nisl lectus.',
+            description: 'You begin as a mortal, living a life you’ve created for yourself. You have possessions, be they valuable items or useful assets. You have skills that demonstrate your capabilities and characteristics. You have people around you that you’ve formed some sort of relationship with, whether friend or foe. And in an instance, everything changes as immortality claims you. By the imparting of another immortal, you are a vampire now – and you must survive as one.',
             backgroundImage: '/src/assets/images/character-creation-bg.png'
         },
         {
             id: 'survival-mechanics',
             title: 'Navigate the Mortal World',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus fermentum urna, nec pharetra sapien ornare a. Integer ultricies lacus urna. Aenean velit libero, dictum a tincidunt at, fermentum sit amet tortor. Nullam sollicitudin varius est et sodales. Nunc eu.',
+            description: 'You see the world around you with devoid, pale eyes, and know you must hide your true nature. But how will you feed your ever-growing tormenting hunger? How will you ensure your survival? Or aspire beyond, to the possibility of endless power and domination over all mortals? Events occur and each one brings its own challenges. You will meet new people and kill others once precious to you. Gather found items and discard old ones. Discover new skills and forget others. ',
             backgroundImage: '/src/assets/images/survival-mechanics-bg.png'
         },
         {
             id: 'story-branches',
             title: 'Forge Your Dark Legacy',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas erat sapien, viverra non efficitur nec, semper sed tellus. Integer erat sapien, semper id eleifend ut, finibus non leo. Fusce fermentum molestie gravida. Etiam vel dui purus. Duis lobortis ac ipsum vitae consectetur. Pellentesque placerat a magna in placerat. Donec facilisis tellus lorem, ut cursus metus aliquet vitae. Proin auctor, purus.',
+            description: 'Your journeys take you through murky waters and misty lands. How are you progressing? You may be a ruthless ruler of civilization with an endless supply of fresh blood at your feet and spawns to fulfill your darkest demands. Perhaps you kill all your past loved ones, lose all items of importance to you, and wither away as a sorry soul thirsting for your old life. Along either path, you will leave your mark on society from your time as a vampire, experiencing erratic encounters and weaving your immortal story.',
             backgroundImage: '/src/assets/images/story-branches-bg.png'
         }
     ];
@@ -70,18 +70,16 @@ const HomePage = () => {
                 <div className="max-w-4xl mx-auto text-center px-6">
                     <h2 className="font-trade-winds text-3xl md:text-4xl font-bold text-white mb-6">
                         <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-                            Your Immortal Journey Awaits
+                            Your Journey Awaits, Vampire
                         </span>
                     </h2>
                     <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
-                        Cats Cats Cats Cats Cats Cats Cats.
-                        Cats Cats Cats Cats.
+                        What kind of vampire are you destined to become?/Unleash your destiny.
                     </p>
                     <div className="flex flex-col gap-6 justify-center items-center">
-                        <NavLink to="/create" className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-300 min-w-[200px]">
-                            Begin Cats Cats
+                        <NavLink to="/create" className="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-300 min-w-[200px]">
+                            Create Your Vampire
                         </NavLink>
-                        
                     </div>
                 </div>
             </div>
