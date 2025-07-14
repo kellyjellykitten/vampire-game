@@ -62,7 +62,7 @@ const VampireNamePage = () => {
                 </span>
             </h1>
             <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
-                <p className="text-base md:text-lg mb-6">Name and first experience (&quot;origin experience&quot;) that is a broad summary of your vampire&apos;s life before they lost mortality -- when, where, who. Your experience should be one sentence in length and written in present tense (I am...).</p>
+                <p className="text-base md:text-lg mb-6">Enter a name for your vampire-to-be and an encapsulating summary of their life before they lost mortality -- who they were, what time period they lived in, and where they resided (&quot;origin experience&quot;). Your experience should be one sentence in length and written in first-person, present tense (I am...).</p>
             </div>
             
             <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 p-6 rounded-lg shadow-md">
@@ -102,10 +102,10 @@ const VampireNamePage = () => {
                 content={
                     <div>
                         <p className="mb-3">
-                            Here, you are describing your vampire&apos;s life when they were still a mortal. First, enter in a name for your character. Then, in one sentence, declare your name, where you are from, and the time period you are from. You can include your character&apos;s occupation if they have one. 
+                            Describe your vampire&apos;s life from when they were still a mortal. First, enter in a name for your character. Then, in one sentence, describe where you are from and from what time period. You can include your character&apos;s occupation if they have one, or any other defining details if you wish. 
                         </p>
                         <p className="mb-3">
-                            For example: <span className="text-red-300 italic">I am Silvor, a Slavic man living on the edge of the mountains in 16th century Poland.</span> - or - <span className="text-red-300 italic">I am Spongebob, a fry-cooking sponge from modern-day Bikini Bottom</span>
+                            For example: <span className="text-red-300 italic">I am Silvor, a Slavic man living on the edge of the mountains in 16th century Poland.</span> - or - <span className="text-red-300 italic">I am Spongebob, a fry-cooking sponge from modern-day Bikini Bottom.</span>
                         </p>
                         <p>
                             Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.

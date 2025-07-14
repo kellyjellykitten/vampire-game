@@ -65,7 +65,7 @@ const VampireConversionPage = () => {
                 </span>
             </h1>
             <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
-                <p className="text-base md:text-lg mb-6">Create the immortal that turned your vampire-to-be into a vampire, the mark it left, and a sentence encapsulating the experience.</p>
+                <p className="text-base md:text-lg mb-6">Create the immortal that turned your vampire-to-be into a vampire, the mark it left, and a sentence describing the experience.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">

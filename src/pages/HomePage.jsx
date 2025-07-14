@@ -74,7 +74,7 @@ const HomePage = () => {
                         </span>
                     </h2>
                     <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
-                        What kind of vampire are you destined to become?/Unleash your destiny.
+                        What kind of vampire are you destined to become?
                     </p>
                     <div className="flex flex-col gap-6 justify-center items-center">
                         <NavLink to="/create" className="bg-red-700 hover:bg-red-800 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-300 min-w-[200px]">

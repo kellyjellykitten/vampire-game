@@ -3,14 +3,14 @@ import { FaRegCopyright } from "react-icons/fa";
 
 const HelpPage = () => {
     const sections = [
-        { id: 'rules', title: 'Rules' },
+        { id: 'rules', title: 'General rules' },
         { id: 'origin', title: 'Origin' },
         { id: 'side-characters', title: 'Side characters' },
         { id: 'skills', title: 'Skills' },
         { id: 'resources', title: 'Resources' },
         { id: 'conversion', title: 'Conversion' },
-        { id: 'memories', title: 'Memories' },
         { id: 'completed-vampires', title: 'Completed vampires' },
+        { id: 'prompts', title: 'Answering prompts' },
         { id: 'credits', title: 'Credits' }
     ];
 
@@ -32,7 +32,7 @@ const HelpPage = () => {
                         </span>
                     </h1>
                     <p className="text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
-                        This page is designed to help you along the vampire creation process. While each page during vampire creation will have a help modal, below are some general instructions and rules, along with examples for each aspect of the creation process for inspiration. Examples of completed vampire characters are included at the bottom of the page.
+                        This page is designed to help you along the vampire creation process and gameplay. While each page during vampire creation will have instructions, below are some general guidelines and rules, along with examples for each aspect of the creation process for inspiration. Examples of completed vampire characters are included at the bottom of the page.
                     </p>
                 </div>
                 {/* Jump To nav box */}

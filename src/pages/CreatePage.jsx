@@ -17,15 +17,14 @@ const CreatePage = () => {
                 </span>
             </h1>
             <div className="max-w-xl mx-auto bg-gray-700 p-6 rounded-lg">
-                <p className="mt-2">On the next pages, you will create your vampire-to-be. There are six steps in the character creation:</p>
+                <p className="mt-2">On the next pages, you will create your vampire-to-be. There are five steps in the character creation:</p>
                 <div className="max-w-sm mx-auto">
                     <ul className="list-decimal space-y-2 mt-4 ml-4 mr-4">
-                        <li><span className="text-red-300">Origin:</span> The name of your mortal, where they&apos;re from, and who they are</li>
+                        <li><span className="text-red-300">Origin:</span> The name of your character, where they&apos;re from, and who they are</li>
                         <li><span className="text-red-300">Side Characters:</span> Three mortals with whom your character has some relationship with</li>
-                        <li><span className="text-red-300">Skills:</span> Three skills your mortal excels in</li>
+                        <li><span className="text-red-300">Skills:</span> Three skills your character excels in</li>
                         <li><span className="text-red-300">Resources:</span> Three items belonging to your character</li>
-                        <li><span className="text-red-300">Memories:</span> You will come up with three memories from your time as a mortal</li>
-                        <li><span className="text-red-300">Conversion:</span> The immortal that turned you into a vampire, how it happened, and what mark they left on you</li>
+                        <li><span className="text-red-300">Conversion:</span> The immortal that turned your character into a vampire, how it happened, and what mark they left</li>
                     </ul>
                 </div>
                 <p className="mt-4">Each page will have a &quot;?&quot; icon in the top right corner that opens up a help window in case you need assistance during any of the steps.</p>

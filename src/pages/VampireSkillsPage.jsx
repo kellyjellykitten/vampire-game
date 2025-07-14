@@ -75,7 +75,7 @@ const VampireSkillsPage = () => {
             content={
                     <div>
                         <p className="mb-3">
-                            Here, you are describing your vampire&apos;s life when they were still a mortal. First, enter in a name for your character. Then, in one sentence, declare your name, where you are from, and the time period you are from. You can include your character&apos;s occupation if they have one. 
+                            Skills  
                         </p>
                         <p className="mb-3">
                             For example: <span className="text-red-300 italic">Persuasion</span> - or - <span className="text-red-300 italic">Cooking Krabby Patties</span>

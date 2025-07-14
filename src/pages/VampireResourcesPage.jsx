@@ -45,7 +45,7 @@ const VampireResourcesPage = () => {
                 </span>
             </h1>
             <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
-                <p className="text-base md:text-lg mb-6">Create three resources for your vampire-to-be. Resources are items that your character owns in some way, or has access to. Resources can be lost later, and new ones found!</p>
+                <p className="text-base md:text-lg mb-6">Create three resources for your vampire-to-be to start out with. Resources are items that your character owns or has access to. They can range from small trinkets like a pocketwatch, to large properties like a fleet of navy ships.</p>
             </div>
             
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">
@@ -75,10 +75,10 @@ const VampireResourcesPage = () => {
             content={
                 <div>
                     <p className="mb-3">
-                        Resources can be almost anything and of any quantity or scale.
+                        Resources can be almost anything and of any quantity or scale. They can be items kept on your person (like a wedding ring) or stationary items such as a house or large statue. During gameplay, your vampire will lose resources and gain new ones, depending on what the prompt dictates. 
                     </p>
                     <p className="mb-3">
-                        For example: <span className="text-red-300 italic">A fleet of ships</span> - or - <span className="text-red-300 italic">a spatula</span>.
+                        For example: <span className="text-red-300 italic">A herd of cattle</span> - or - <span className="text-red-300 italic">A spatula</span>.
                     </p>
                     <p>
                         Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.
