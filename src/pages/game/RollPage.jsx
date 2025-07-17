@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import CharacterSheetSidebar from "../../components/CharacterSheetSidebar";
-import SidebarToggleButton from "../../components/SidebarToggleButton";
 
 const RollPage = () => {
     const navigate = useNavigate();
@@ -10,14 +8,6 @@ const RollPage = () => {
     const [promptNumber, setPromptNumber] = useState(null);
     const [isRolling, setIsRolling] = useState(false);
     const [currentPromptNumber, setCurrentPromptNumber] = useState(null);
-
-    // Character sheet sidebar state
-    const [showSidebar, setShowSidebar] = useState(false);
-
-    // Toggle sidebar visibility
-    const toggleSidebar = () => {
-        setShowSidebar(!showSidebar);
-    };
 
     // Load stored prompt # from session storage on component mount
     useEffect(() => {
@@ -82,12 +72,6 @@ const RollPage = () => {
                         Determine Prompt Number
                     </span>
                 </h1>
-
-                {/* Sidebar toggle button */}
-                <SidebarToggleButton isOpen={showSidebar} toggleSidebar={toggleSidebar} />
-
-                {/* Character sheet sidebar */}
-                <CharacterSheetSidebar isOpen={showSidebar} onClose={() => setShowSidebar(false)} />
 
                 <div className="bg-gray-800 rounded-lg p-6 mb-6">
                     <h2 className="text-2xl font-semibold mb-4">Roll the Dice</h2>

@@ -51,10 +51,10 @@ const VampireSummaryPage = () => {
                     <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Origin</h3>
                     {vampire.origin.map((origin, index) => (
                         <div key={index} className="mb-4">
-                            <p className="text-sm md:text-base">
+                            <p className="text-base md:text-lg">
                                 <strong>Name:</strong> {origin.name || 'No name provided'}
                             </p>
-                            <p className="text-sm md:text-base">
+                            <p className="text-base md:text-lg">
                                 <strong>Origin Experience:</strong> {origin.originExperience || 'Not specified'}
                             </p>
                         </div>
@@ -64,9 +64,9 @@ const VampireSummaryPage = () => {
                 {/* Side Characters Section */}
                 <section className="mb-6">
                     <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Side Characters</h3>
-                    <ul className="list-disc pl-5 text-sm md:text-base">
+                    <ul className="list-disc pl-5">
                         {vampire.sideCharacters.map((character, index) => (
-                            <li key={index} className="text-lg">
+                            <li key={index} className="text-base md:text-lg">
                                 {character || `Side Character ${index + 1}: Not specified`}
                             </li>
                         ))}
@@ -78,7 +78,7 @@ const VampireSummaryPage = () => {
                     <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Skills</h3>
                     <ul className="list-disc pl-5">
                         {vampire.skills.map((skill, index) => (
-                            <li key={index} className="text-lg">
+                            <li key={index} className="text-base md:text-lg">
                                 {skill || `Skill ${index + 1}: Not specified`}
                             </li>
                         ))}
@@ -87,10 +87,10 @@ const VampireSummaryPage = () => {
 
                 {/* Resources Section */}
                 <section className="mb-6">
-                    <h3 className="text-2xl font-semibold mb-4 border-b pb-2">Resources</h3>
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Resources</h3>
                     <ul className="list-disc pl-5">
                         {vampire.resources.map((resource, index) => (
-                            <li key={index} className="text-lg">
+                            <li key={index} className="text-base md:text-lg">
                                 {resource || `Resource ${index + 1}: Not specified`}
                             </li>
                         ))}
@@ -99,10 +99,10 @@ const VampireSummaryPage = () => {
 
                 {/* Memories Section */}
                 <section className="mb-6">
-                    <h3 className="text-2xl font-semibold mb-4 border-b pb-2">Memories</h3>
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Memories</h3>
                     <ul className="list-disc pl-5">
                         {vampire.memories.map((memory, index) => (
-                            <li key={index} className="text-lg">
+                            <li key={index} className="text-base md:text-lg">
                                 {memory || `Memory ${index + 1}: Not specified`}
                             </li>
                         ))}
@@ -111,27 +111,27 @@ const VampireSummaryPage = () => {
 
                 {/* Conversion Section */}
                 <section className="mb-6">
-                    <h3 className="text-2xl font-semibold mb-4 border-b pb-2">Conversion</h3>
+                    <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Conversion</h3>
                     {vampire.conversion.map((conversion, index) => (
                         <div key={index}>
-                            <p className="text-lg mb-2">
+                            <p className="text-base md:text-lg">
                                 <strong>Immortal:</strong> {conversion.immortal || 'Not specified'}
                             </p>
-                            <p className="text-lg mb-2">
+                            <p className="text-base md:text-lg">
                                 <strong>Mark:</strong> {conversion.mark || 'Not specified'}
                             </p>
-                            <p className="text-lg">
+                            <p className="text-base md:text-lg">
                                 <strong>Conversion Experience:</strong> {conversion.conversionExperience || 'Not specified'}
                             </p>
                         </div>
                     ))}
                 </section>
 
-                <div className="flex justify-center mt-8">
+                <div className="flex flex-col mt-8 md:justify-between md:flex-row">
                     <BackButton onClick={handleBack} />
                     <button
                         onClick={exportVampire}
-                        className="bg-emerald-700 hover:bg-emerald-800 text-white font-medium py-4 px-6 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+                        className="bg-emerald-700 hover:bg-emerald-800 text-white font-medium py-4 px-6 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl mb-2 mt-2 md:mb-0 md:mt-0"
                     >
                         Export Vampire
                     </button>

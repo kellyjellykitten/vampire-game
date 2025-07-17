@@ -8,9 +8,8 @@ import {
     setSideCharacters
 } from '../../vampireSlice';
 import { getPromptById } from './PromptList';
-import CharacterSheetSidebar from '../../components/CharacterSheetSidebar';
-import SidebarToggleButton from '../../components/SidebarToggleButton';
 import MultiSelectDropdown from '../../components/MultiSelectDropdown';
+import NextButton from '../../components/NextButton';
 
 const PromptPage = () => {
     const navigate = useNavigate();
@@ -23,8 +22,7 @@ const PromptPage = () => {
     const [promptNumber, setPromptNumber] = useState(1);
     const [prompt, setPrompt] = useState(null);
 
-    // Character sheet sidebar state
-    const [showSidebar, setShowSidebar] = useState(false);
+
 
     // Local state for form inputs
     const [newMemory, setNewMemory] = useState('');
@@ -43,11 +41,6 @@ const PromptPage = () => {
     const [sideCharacterLoseCount, setSideCharacterLoseCount] = useState(1);
 
     const [showSummary, setShowSummary] = useState(false);
-
-    // Toggle sidebar visibility
-    const toggleSidebar = () => {
-        setShowSidebar(!showSidebar);
-    };
 
     const [showCharacterSheet, setShowCharacterSheet] = useState(false);
 
@@ -182,16 +175,6 @@ const PromptPage = () => {
     const toggleCharacterSheet = () => {
             setShowCharacterSheet(!showCharacterSheet);
     }
-    const handleReset = () => {
-        setShowSummary(false);
-        setNewMemory('');
-        setNewSkill('');
-        setNewResource('');
-        setNewSideCharacter('');
-        setResourcesToLose([]);
-        setSkillsToLose([]);
-        setSideCharactersToLose([]);
-    };
 
     const handleBack = () => {
         // Revert to previous prompt #
@@ -221,12 +204,6 @@ const PromptPage = () => {
                 <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center"> 
                     <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">Prompt #{promptNumber}</span>
                 </h1>
-
-                {/* Sidebar toggle button */}
-                <SidebarToggleButton isOpen={showSidebar} toggleSidebar={toggleSidebar} />
-
-                {/* Character sheet sidebar */}
-                <CharacterSheetSidebar isOpen={showSidebar} onClose={() => setShowSidebar(false)} />
 
                 {!showSummary ? (
                     <div className="bg-gray-800 rounded-lg p-6 mb-6">
@@ -348,6 +325,14 @@ const PromptPage = () => {
                                     Submit
                                 </button>
                             </div>
+                            <div className="flex justify-center mt-2">
+                <button
+                    onClick={toggleCharacterSheet}
+                    className="px-4 py-2 text-white bg-gray-800 hover:bg-gray-900 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500"
+                >
+                    {showCharacterSheet ? "Hide Character Sheet" : "Show Character Sheet"}
+                </button>
+            </div>
                         </form>
                     </div>
                 ) : (
@@ -428,38 +413,28 @@ const PromptPage = () => {
                                     </li>
                                 ))}
                             </ul>
-                        </section>
-
-                        <div className="flex justify-between mt-8">
-                            <button
-                                onClick={handleReset}
-                                className="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors"
-                            >
-                                Make Changes
-                            </button>
-                            <button
-                                onClick={handleContinue}
-                                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
-                            >
-                                Continue
-                            </button>
+                        </section>      
+                        <div className="flex justify-center mt-8">
+                            <NextButton text="Continue" onClick={handleContinue} />
                         </div>
+                        
                     </div>
                 )}
+                
                 {/* Character sheet */}
                 {showCharacterSheet && (
                 <div className="bg-gray-800 rounded-lg p-6 animate-fadeIn">
-                    <h2 className="text-3xl font-bold text-center mb-8">Character Sheet</h2>
+                    <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center">Character Sheet</h2>
             
                     {/* Origin Section */}
                     <section className="mb-6">
-                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Origin</h2>
+                        <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Origin</h2>
                         {vampire.origin.map((origin, index) => (
                             <div key={index}>
-                                <p className="text-lg mb-2">
+                                <p className="text-base md:text-lg">
                                     <strong>Name:</strong> {origin.name || 'No name provided'}
                                 </p>
-                                <p className="text-lg">
+                                <p className="text-base md:text-lg">
                                     <strong>Origin Experience:</strong> {origin.originExperience || 'Not specified'}
                                 </p>
                             </div>
@@ -468,10 +443,10 @@ const PromptPage = () => {
 
                     {/* Side Characters Section */}
                     <section className="mb-6">
-                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Side Characters</h2>
+                        <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Side Characters</h2>
                         <ul className="list-disc pl-5">
                             {vampire.sideCharacters.map((character, index) => (
-                                <li key={index} className="text-lg">
+                                <li key={index} className="text-base md:text-lg">
                                     {character || `Side Character ${index + 1}: Not specified`}
                                 </li>
                             ))}
@@ -480,10 +455,10 @@ const PromptPage = () => {
 
                     {/* Skills Section */}
                     <section className="mb-6">
-                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Skills</h2>
+                        <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Skills</h2>
                         <ul className="list-disc pl-5">
                             {vampire.skills.map((skill, index) => (
-                                <li key={index} className="text-lg">
+                                <li key={index} className="text-base md:text-lg">
                                     {skill || `Skill ${index + 1}: Not specified`}
                                 </li>
                             ))}
@@ -492,10 +467,10 @@ const PromptPage = () => {
 
                     {/* Resources Section */}
                     <section className="mb-6">
-                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Resources</h2>
+                        <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Resources</h2>
                         <ul className="list-disc pl-5">
                             {vampire.resources.map((resource, index) => (
-                                <li key={index} className="text-lg">
+                                <li key={index} className="text-base md:text-lg">
                                     {resource || `Resource ${index + 1}: Not specified`}
                                 </li>
                             ))}
@@ -504,10 +479,10 @@ const PromptPage = () => {
 
                     {/* Memories Section */}
                     <section className="mb-6">
-                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Memories</h2>
+                        <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Memories</h2>
                         <ul className="list-disc pl-5">
                             {vampire.memories.map((mem, index) => (
-                                <li key={index} className="text-lg">
+                                <li key={index} className="text-base md:text-lg">
                                     {mem || `Memory ${index + 1}: Not specified`}
                                 </li>
                             ))}
@@ -516,16 +491,16 @@ const PromptPage = () => {
 
                     {/* Conversion Section */}
                     <section className="mb-6">
-                        <h2 className="text-2xl font-semibold mb-4 border-b border-gray-600 pb-2">Conversion</h2>
+                        <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Conversion</h2>
                         {vampire.conversion.map((conversion, index) => (
                             <div key={index}>
-                                <p className="text-lg mb-2">
+                                <p className="text-base md:text-lg">
                                     <strong>Immortal:</strong> {conversion.immortal || 'Not specified'}
                                 </p>
-                                <p className="text-lg mb-2">
+                                <p className="text-base md:text-lg">
                                     <strong>Mark:</strong> {conversion.mark || 'Not specified'}
                                 </p>
-                                <p className="text-lg">
+                                <p className="text-base md:text-lg">
                                 <strong>Conversion Experience:</strong> {conversion.conversionExperience || 'Not specified'}
                                 </p>
                             </div>
@@ -534,14 +509,7 @@ const PromptPage = () => {
                 </div>
             )}
             </div>
-            <div className="flex justify-center mt-2">
-                <button
-                    onClick={toggleCharacterSheet}
-                    className="px-4 py-2 text-white bg-gray-800 hover:bg-gray-900 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500"
-                >
-                    {showCharacterSheet ? "Hide Character Sheet" : "Show Character Sheet"}
-                </button>
-            </div>
+            
         </div>
     )
 };
