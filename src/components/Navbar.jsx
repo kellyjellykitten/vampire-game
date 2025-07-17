@@ -53,8 +53,8 @@ const Navbar = () => {
                         ))}
                     </div>
 
-                    {/* Desktop Login Button */}
-                    <button className="hidden md:block bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-red-500/25">Log In</button>
+                    {/* Empy div to maintain 3-column layout for possible log in btn */}
+                    <div className="hidden md:block w-8"></div>
 
                     {/* Mobile Menu Button */}
                     <button
@@ -73,12 +73,6 @@ const Navbar = () => {
                         {navLinks.map((link) => (
                             <NavLink key={link.to} to={link.to} className={getMobileLinkClasses} onClick={() => setIsMobileMenuOpen(false)}>{link.label}</NavLink>
                         ))}
-
-                        {/* Mobile Login Button */}
-                        <button
-                            className=""
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >Log In</button>
                     </div>
                 </div>
             </div>

@@ -63,7 +63,7 @@ const HelpPage = () => {
                             </h2>
                         </div>
                         {/* Section content */}
-                        <div className="text-left ml-12">
+                        <div className="text-left">
                             {section.id === 'rules' && (
                                 <div className="space-y-6">
                                     <p className="text-gray-200 leading-relaxed">

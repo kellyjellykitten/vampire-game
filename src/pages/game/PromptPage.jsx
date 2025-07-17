@@ -67,6 +67,9 @@ const PromptPage = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // Hide character sheet when submitting
+        setShowCharacterSheet(false);
+
         // Add new memory to memories array
         const emptyMemoryIndex = vampire.memories.findIndex(mem => !mem);
         if (emptyMemoryIndex !== -1) {
@@ -201,7 +204,7 @@ const PromptPage = () => {
     return (
         <div className="bg-gradient-to-b from-black to-gray-900 text-white p-4 min-h-screen">
             <div className="max-w-4xl mx-auto">
-                <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center"> 
+                <h1 className="font-trade-winds text-4xl font-bold mb-8 mt-16 text-center"> 
                     <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">Prompt #{promptNumber}</span>
                 </h1>
 
@@ -310,39 +313,40 @@ const PromptPage = () => {
                                 )}
                             </div>
 
-                            <div className="flex justify-between mt-8">
+                            <div className="flex flex-col sm:flex-row gap-4 sm:justify-between mt-8">
                                 <button
                                     type="button"
                                     onClick={handleBack}
-                                    className="px-7 py-3 text-white bg-gray-800 hover:bg-gray-900 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500"
+                                    className="w-full sm:w-auto px-6 py-4 text-white bg-gray-800 hover:bg-gray-900 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500 font-medium"
                                 >
                                     Back to Dice Roll
                                 </button>
                                 <button
                                     type="submit"
-                                    className="bg-purple-800 hover:bg-purple-900 text-white px-7 py-3 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl"
+                                    className="w-full sm:w-auto bg-purple-800 hover:bg-purple-900 text-white px-6 py-4 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl"
                                 >
                                     Submit
                                 </button>
                             </div>
-                            <div className="flex justify-center mt-2">
-                <button
-                    onClick={toggleCharacterSheet}
-                    className="px-4 py-2 text-white bg-gray-800 hover:bg-gray-900 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500"
-                >
-                    {showCharacterSheet ? "Hide Character Sheet" : "Show Character Sheet"}
-                </button>
-            </div>
                         </form>
+                        <div className="flex justify-center mt-4">
+                            <button
+                                type="button"
+                                onClick={toggleCharacterSheet}
+                                className="px-6 py-3 text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl border border-emerald-600 hover:border-emerald-500"
+                            >
+                                {showCharacterSheet ? "Hide Character Sheet" : "Show Character Sheet"}
+                            </button>
+                        </div>
                     </div>
                 ) : (
                     // Show character summary after submitting
                     <div className="bg-gray-800 rounded-lg p-6 mb-6">
-                        <h2 className="text-2xl font-semibold mb-6 text-center">Updated Character Sheet</h2>
+                        <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center">Updated Character Sheet</h2>
 
                         {/* Origin Section */}
                         <section className="mb-6">
-                            <h3 className="text-xl font-semibold mb-2 border-b pb-2">Origin</h3>
+                            <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Origin</h3>
                             {vampire.origin.map((origin, index) => (
                                 <div key={index} className="mb-4">
                                     <p><strong>Name:</strong> {origin.name || 'No name provided'}</p>
@@ -353,7 +357,7 @@ const PromptPage = () => {
 
                         {/* Side Characters Section */}
                         <section className="mb-6">
-                            <h3 className="text-xl font-semibold mb-2 border-b pb-2">Side Characters</h3>
+                            <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Side Characters</h3>
                             <ul className="list-disc pl-5">
                                 {vampire.sideCharacters.map((character, index) => (
                                     <li key={index} className={`
@@ -370,7 +374,7 @@ const PromptPage = () => {
 
                         {/* Skills Section */}
                         <section className="mb-6">
-                            <h3 className="text-xl font-semibold mb-2 border-b pb-2">Skills</h3>
+                            <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Skills</h3>
                             <ul className="list-disc pl-5">
                                 {vampire.skills.map((skill, index) => (
                                     <li key={index} className={`
@@ -387,7 +391,7 @@ const PromptPage = () => {
 
                         {/* Resources Section */}
                         <section className="mb-6">
-                            <h3 className="text-xl font-semibold mb-2 border-b pb-2">Resources</h3>
+                            <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Resources</h3>
                             <ul className="list-disc pl-5">
                                 {vampire.resources.map((resource, index) => (
                                     <li key={index} className={`
@@ -404,7 +408,7 @@ const PromptPage = () => {
 
                         {/* Memories Section */}
                         <section className="mb-6">
-                            <h3 className="text-xl font-semibold mb-2 border-b pb-2">Memories</h3>
+                            <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Memories</h3>
                             <ul className="list-disc pl-5">
                                 {vampire.memories.map((mem, index) => (
                                     <li key={index} className={`${mem === newMemory ? 'text-green-400' : ''}`}>
@@ -421,8 +425,8 @@ const PromptPage = () => {
                     </div>
                 )}
                 
-                {/* Character sheet */}
-                {showCharacterSheet && (
+                {/* Character sheet; only show during prompt, not after submission */}
+                {showCharacterSheet && !showSummary && (
                 <div className="bg-gray-800 rounded-lg p-6 animate-fadeIn">
                     <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center">Character Sheet</h2>
             

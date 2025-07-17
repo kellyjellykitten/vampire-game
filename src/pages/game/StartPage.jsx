@@ -57,7 +57,7 @@ const StartPage = () => {
             <ToastContainer />
 
             <div className="max-w-4xl mx-auto">
-                <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+                <h1 className="font-trade-winds text-4xl font-bold mb-8 mt-16 text-center">
                     <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                         Begin Your Adventure
                     </span>
@@ -73,7 +73,7 @@ const StartPage = () => {
                         <p className="pt-6">On the next page, you will roll dice to determine your first prompt number.</p>
                     </div>
                     {/* Character import section */}
-                    <div className="mb-6 flex items-center space-x-4">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:justify-between mt-8">
                         <input
                             type="file"
                             accept=".json"
@@ -83,14 +83,14 @@ const StartPage = () => {
                         />
                         <label
                             htmlFor="import-vampire"
-                            className="px-4 py-2 bg-emerald-700 text-white rounded-lg hover:bg-emerald-800 transition-colors duration-300 cursor-pointer"
+                            className="w-full sm:w-auto px-6 py-4 bg-emerald-700 hover:bg-emerald-800 text-white text-center rounded-lg  transition-colors duration-300 shadow-lg hover:shadow-xl cursor-pointer"
                         >
                         Import Character
                         </label>
             
                         <button
                             onClick={toggleCharacterSheet}
-                            className="px-4 py-2 text-white bg-gray-800 hover:bg-gray-900 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500"
+                            className="w-full sm:w-auto px-6 py-3 text-white bg-gray-800 hover:bg-gray-900 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl border border-gray-600 hover:border-gray-500"
                         >
                         {showCharacterSheet ? "Hide Character Sheet" : "Show Character Sheet"}
                         </button>
