@@ -67,36 +67,49 @@ const SideCharactersPage = () => {
             {/* map loops over each sideCharacter & creates a section with inputs for character and memory */}
             {localSideCharacters.map((sideCharacter, index) => (
                 <div key={index} className="mb-8">
-                    <div className="mb-4">
-                        <label htmlFor={`character-${index}`} className="block text-lg font-medium mb-2">Side Character {index + 1}</label>
-                        <textarea
-                            id={`character-${index}`}
-                            name={`character-${index}`}
-                            value={sideCharacter}
-                            onChange={(e) => handleSideCharacterChange(index, e.target.value)}
-                            placeholder="Enter character name and description here"
-                            required
-                            rows="2"
-                            className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        />
+                    <div className="bg-gray-800 p-4 rounded-lg border border-gray-600 mb-6">
+                        <h3 className="text-xl font-semibold mb-4 text-red-300">
+                            Side Character {index + 1}
+                        </h3>
+                        <div className="mb-4">
+                            <label htmlFor={`character-${index}`} className="block text-lg font-medium mb-2">Character Name & Description</label>
+                            <textarea
+                                id={`character-${index}`}
+                                name={`character-${index}`}
+                                value={sideCharacter}
+                                onChange={(e) => handleSideCharacterChange(index, e.target.value)}
+                                placeholder="Enter character name and description here"
+                                required
+                                rows="2"
+                                className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            />
+                        </div>
+                        
+                        <div className="mb-2">
+                            <label htmlFor={`memory-${index}`} className="block text-lg font-medium mb-2">
+                                Memory with Character {index + 1}
+                            </label>
+                            <textarea
+                                id={`memory-${index}`}
+                                name={`memory-${index}`}
+                                value={localCharMemories[index]}
+                                onChange={(e) => handleCharMemoriesChange(index, e.target.value)}
+                                placeholder="Describe a memory you have with this character"
+                                required
+                                rows="3"
+                                className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                            />
+                        </div>
                     </div>
-                    <div className="mb-4">
-                        <label htmlFor={`memory-${index}`} className="block text-lg font-medium mb-2">
-                            Memory with {`Character ${index + 1}`}
-                        </label>
-                        <textarea
-                            id={`memory-${index}`}
-                            name={`memory-${index}`}
-                            value={localCharMemories[index]}
-                            onChange={(e) => handleCharMemoriesChange(index, e.target.value)}
-                            placeholder="Describe a memory you have with this character"
-                            required
-                            rows="3"
-                            className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                        />
-                    </div>
+                    {/* Divider line b/w characters except after last one */}
+                    {index < localSideCharacters.length - 1 && (
+                        <div className="flex items-center justify-center mb-8">
+                            <div className="flex-grow border-t border-gray-500"></div>
+                            <div className="px-4 text-gray-400 text-sm">*</div>
+                            <div className="flex-grow border-t border-gray-500"></div>
+                        </div>
+                    )}
                 </div>
-
             ))}
             <div className="flex justify-around">
                 <BackButton onClick={handleBack} />

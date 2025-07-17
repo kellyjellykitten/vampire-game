@@ -10,7 +10,6 @@ const HelpPage = () => {
         { id: 'resources', title: 'Resources' },
         { id: 'conversion', title: 'Conversion' },
         { id: 'completed-vampires', title: 'Completed vampires' },
-        { id: 'prompts', title: 'Answering prompts' },
         { id: 'credits', title: 'Credits' }
     ];
 
