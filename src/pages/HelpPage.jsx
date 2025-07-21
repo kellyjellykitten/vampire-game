@@ -1,7 +1,10 @@
 import { MdOpenInNew } from "react-icons/md";
 import { FaRegCopyright } from "react-icons/fa";
+import { useState } from "react";
 
 const HelpPage = () => {
+    const [openAccordionItem, setOpenAccordionItem] = useState(null);
+
     const sections = [
         { id: 'rules', title: 'General rules' },
         { id: 'origin', title: 'Origin' },
@@ -19,6 +22,37 @@ const HelpPage = () => {
             element.scrollIntoView({ behavior: 'smooth' });
         }
     }
+
+    const toggleAccordion = (itemId) => {
+        setOpenAccordionItem(openAccordionItem === itemId ? null : itemId);
+    }
+
+    // eslint-disable-next-line react/prop-types
+    const AccordionItem = ({ id, title, children }) => {
+        const isOpen = openAccordionItem === id;
+
+        return (
+            <div className="border border-stone-400 rounded-lg overflow-hidden mb-4">
+                <button
+                    onClick={() => toggleAccordion(id)}
+                    className="w-full px-6 py-4 bg-zinc-800 hover:bg-zinc-700 transition-colors duration-200 text-left flex justify-between items-center"
+                    aria-expanded={isOpen}
+                >
+                    <span className="text-lg font-medium text-gray-200">{title}</span>
+                    <span className={`text-red-400 text-xl transform transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
+                        ▼
+                    </span>
+                </button>
+                {isOpen && (
+                    <div className="px-6 py-4 bg-zinc-900 border-t border-stone-400">
+                        <div className="leading-relaxed">
+                            {children}
+                        </div>
+                    </div>
+                )}
+            </div>
+        );
+    };
 
     return (
         <div className="bg-gradient-to-b from-black to-gray-900 text-white min-h-screen pb-12">
@@ -68,26 +102,24 @@ const HelpPage = () => {
                                     <p className="text-gray-200 leading-relaxed">
                                         
                                             Content for {section.title} will be added here. will be added here. will be added here. will be added here.
-                                        
-                                        
                                     </p>
                                 </div>
                             )}
                             {section.id === 'origin' && (
                                 <div className="max-w-5xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
-                                    <p className="mb-2 leading-relaxed">
+                                    <p className="mb-4 leading-relaxed">
                                         Your origin is the story of your life as a mortal. Who were you? When and where were you born? What did you used to do? 
                                     </p>
-                                    <p className="mb-2 leading-relaxed">
+                                    <p className="mb-4 leading-relaxed">
                                         Start by imagining a person in the distant past. You can draw upon real history, fantasize your own, or weave the two together. This person will become your vampire. 
                                     </p>
                                     <p className="mb-2 leading-relaxed">
-                                        In character creation, you will create your &quot;origin experience&quot; -- a sentence encapsulating your mortal history. State your name, then briefly describe your background. Examples include:
+                                        In character creation, you will create your &quot;origin experience&quot; -- a sentence encapsulating your mortal history. State your name, then describe your background. Feel free to include as many details as you like. Examples include:
                                     </p>
-                                    <div className="ml-5">
+                                    <div className="ml-12 mt-4">
                                         <ul className="list-disc">
-                                            <li className="italic">I am Ava, a quilt-maker living in the hills of the Czech Republic in the 19th century.</li>
-                                            <li className="italic">I am Frodo, a hobbit hailing from Bag&apos;s End in the Shire year of 1400.</li>
+                                            <li className="italic pb-2">I am Ava, a Slavic woman living on the edge of the wild Sudeten Mountains in the 1800s</li>
+                                            <li className="italic">I am Pierre, son of Garnier, born near the Ubaye Valley in the 13th Century Kingdom of France; I am a poor knight swindled out of my inhertiance</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -128,10 +160,115 @@ const HelpPage = () => {
                                 </div>
                             )}
                             {section.id === 'completed-vampires' && (
-                                <div className="space-y-6">
-                                    <p className="text-gray-200 leading-relaxed">
-                                        Content for {section.title} will be added here.
-                                    </p>
+                                <div className="max-w-6xl">
+                                    <AccordionItem id="frodo" title="Frodo Baggins">
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Origin</h2>
+                                            <p>
+                                                I am Frodo Baggins, a hobbit from Bag End in the Shire-reckoning year 1400.
+                                            </p>
+                                        </div>
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Side Characters</h2>
+                                            <ul className="list-disc pl-5">
+                                                <li>Samewise Gamgee...</li>
+                                                <li>Gandalf...</li>
+                                                <li>Bilbo Baggins...</li>
+                                            </ul>
+                                        </div>
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Skills</h2>
+                                            <ul className="list-disc pl-5">
+                                                <li>Samewise Gamgee...</li>
+                                                <li>Gandalf...</li>
+                                                <li>Bilbo Baggins...</li>
+                                            </ul>
+                                        </div>
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Resources</h2>
+                                            <ul className="list-disc pl-5">
+                                                <li>Samewise Gamgee...</li>
+                                                <li>Gandalf...</li>
+                                                <li>Bilbo Baggins...</li>
+                                            </ul>
+                                        </div>
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Memories</h2>
+                                            <ul className="list-disc pl-5">
+                                                <li>Samewise Gamgee...</li>
+                                                <li>Gandalf...</li>
+                                                <li>Bilbo Baggins...</li>
+                                                <li>Bilbo Baggins...</li>
+                                                <li>Bilbo Baggins...</li>
+                                            </ul>
+                                        </div>
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Conversion</h2>
+                                            <p>
+                                                <strong>Immortal:</strong> Gollum
+                                            </p>
+                                            <p>
+                                                <strong>Conversion Experience:</strong> Gollum...
+                                            </p>
+                                            <p>
+                                                <strong>Mark:</strong> The Eye of Sauron burned into my flesh 
+                                            </p>
+                                        </div>
+                                    </AccordionItem>
+                                    <AccordionItem id="spongebob" title="Spongebob Squarepants">
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Origin</h2>
+                                            <p>
+                                                I am Spongebob Squarepants, a fry-cooking sponge from 20th century Bikini Bottom.
+                                            </p>
+                                        </div>
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Side Characters</h2>
+                                            <ul className="list-disc pl-5">
+                                                <li>Patrick, a pink starfish and my best friend, with whom I get into all sorts of shenanigans</li>
+                                                <li>Squidward, my neighbor, who enjoys playing clarinet and often frowns at my antics</li>
+                                                <li>Sandy, a squirrel from Texas that practices karate with me</li>
+                                            </ul>
+                                        </div>
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Skills</h2>
+                                            <ul className="list-disc pl-5">
+                                                <li>Making Krabby Patties</li>
+                                                <li>Jellyfishing</li>
+                                                <li>Blowing bubbles</li>
+                                            </ul>
+                                        </div>
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Resources</h2>
+                                            <ul className="list-disc pl-5">
+                                                <li>Spatula</li>
+                                                <li>Jellyfishing net</li>
+                                                <li>The Krusty Krab</li>
+                                            </ul>
+                                        </div>
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Memories</h2>
+                                            <ul className="list-disc pl-5">
+                                                <li>I am Spongebob Squarepants, a fry-cooking sponge from 20th century Bikini Bottom.</li>
+                                                <li>Patrick and I are tasked with painting the inside of Mr. Krabs&apos;s house, but the walls are crowded with frames; panic erupts as paint drips onto his precious first dollar, only for us to learn it was a prank.</li>
+                                                <li>Squidward asks for help blowing bubbles, so I show him the technique; he ends up blowing a bubble so large, it absorbs his home and floats away</li>
+                                                <li>I visit Sandy in her dome for the first time; the lack of water almost killed me as I began to shrivel and crackle in dryness</li>
+                                                <li>Plankton...</li>
+                                            </ul>
+                                        </div>
+                                        <div className="mb-6">
+                                            <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Conversion</h2>
+                                            <p>
+                                                <strong>Immortal:</strong> Plankton
+                                            </p>
+                                            <p>
+                                                <strong>Conversion Experience:</strong> Plankton...
+                                            </p>
+                                            <p>
+                                                <strong>Mark:</strong> Plankton... 
+                                            </p>
+                                        </div>
+                                    </AccordionItem>
                                 </div>
                             )}
                             {section.id === 'credits' && (
