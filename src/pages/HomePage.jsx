@@ -70,7 +70,7 @@ const HomePage = () => {
                 <div className="max-w-4xl mx-auto text-center px-6">
                     <h2 className="font-trade-winds text-3xl md:text-4xl font-bold text-white mb-6">
                         <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
-                            Your Journey Awaits, Vampire
+                            Your Journey Awaits
                         </span>
                     </h2>
                     <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">

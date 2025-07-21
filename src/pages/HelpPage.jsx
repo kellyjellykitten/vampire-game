@@ -64,20 +64,31 @@ const HelpPage = () => {
                         {/* Section content */}
                         <div className="text-left">
                             {section.id === 'rules' && (
-                                <div className="space-y-6">
+                                <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
                                     <p className="text-gray-200 leading-relaxed">
-                                        Content for {section.title} will be added here.
+                                        
+                                            Content for {section.title} will be added here. will be added here. will be added here. will be added here.
+                                        
+                                        
                                     </p>
                                 </div>
                             )}
                             {section.id === 'origin' && (
-                                <div className="space-y-6">
-                                    <p className="text-gray-200 leading-relaxed">
-                                        Your origin consists of who you are and from whence you came. Thank about the time era, the part of the world (even imaginary), and the occupation or doing-so&apos;s of your vampire-to-be. Examples include: 
+                                <div className="max-w-5xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
+                                    <p className="mb-2 leading-relaxed">
+                                        Your origin is the story of your life as a mortal. Who were you? When and where were you born? What did you used to do? 
                                     </p>
-                                    <div className="space-y-2 ml-4">
-                                        <p className="text-gray-300">- I am Ava, a quilt-maker living in the hills of the Czech Republic in the 19th century.</p>
-                                        <p className="text-gray-300">- I am Frodo, a hobbit hailing from Bag&apos;s End in the Shire year of 1400.</p>
+                                    <p className="mb-2 leading-relaxed">
+                                        Start by imagining a person in the distant past. You can draw upon real history, fantasize your own, or weave the two together. This person will become your vampire. 
+                                    </p>
+                                    <p className="mb-2 leading-relaxed">
+                                        In character creation, you will create your &quot;origin experience&quot; -- a sentence encapsulating your mortal history. State your name, then briefly describe your background. Examples include:
+                                    </p>
+                                    <div className="ml-5">
+                                        <ul className="list-disc">
+                                            <li className="italic">I am Ava, a quilt-maker living in the hills of the Czech Republic in the 19th century.</li>
+                                            <li className="italic">I am Frodo, a hobbit hailing from Bag&apos;s End in the Shire year of 1400.</li>
+                                        </ul>
                                     </div>
                                 </div>
                             )}
