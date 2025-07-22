@@ -2,7 +2,6 @@
 
 ## Styling
 - Graphics (blood line underline on headings?)
-- Should h1 fonts remain 4xl for mobile too?
 
 ## Content
 - Instructions text on every creation page

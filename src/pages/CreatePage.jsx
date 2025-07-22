@@ -21,9 +21,9 @@ const CreatePage = () => {
                 <div className="max-w-sm mx-auto">
                     <ul className="list-decimal space-y-2 mt-4 ml-4 mr-4">
                         <li><span className="text-red-300">Origin:</span> The name of your character, where they&apos;re from, and who they are</li>
-                        <li><span className="text-red-300">Side Characters:</span> Three mortals with whom your character has some relationship with</li>
+                        <li><span className="text-red-300">Side Characters:</span> Three mortals with whom your character has some relationship with, and a memory you have with each of them</li>
                         <li><span className="text-red-300">Skills:</span> Three skills your character excels in</li>
-                        <li><span className="text-red-300">Resources:</span> Three items belonging to your character</li>
+                        <li><span className="text-red-300">Resources:</span> Three items, assets, or structures that are of use to your character</li>
                         <li><span className="text-red-300">Conversion:</span> The immortal that turned your character into a vampire, how it happened, and what mark they left</li>
                     </ul>
                 </div>

@@ -100,7 +100,6 @@ const HelpPage = () => {
                             {section.id === 'rules' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
                                     <p className="text-gray-200 leading-relaxed">
-                                        
                                             Content for {section.title} will be added here. will be added here. will be added here. will be added here.
                                     </p>
                                 </div>
@@ -171,9 +170,9 @@ const HelpPage = () => {
                                         <div className="mb-6">
                                             <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Side Characters</h2>
                                             <ul className="list-disc pl-5">
-                                                <li>Samewise Gamgee...</li>
-                                                <li>Gandalf...</li>
-                                                <li>Bilbo Baggins...</li>
+                                                <li>Samewise Gamgee, my most loyal companion, who has vowed to always look after me</li>
+                                                <li>Gandalf, trusted friend and grand wizard, who passes to me wisdom and knowledge</li>
+                                                <li>Gollum, a once-hobbit creature consumed by his shackling thirst for his precious: my ring</li>
                                             </ul>
                                         </div>
                                         <div className="mb-6">
@@ -187,28 +186,28 @@ const HelpPage = () => {
                                         <div className="mb-6">
                                             <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Resources</h2>
                                             <ul className="list-disc pl-5">
-                                                <li>Samewise Gamgee...</li>
-                                                <li>Gandalf...</li>
-                                                <li>Bilbo Baggins...</li>
+                                                <li>Sting</li>
+                                                <li>The One Ring</li>
+                                                <li>Lembas bread</li>
                                             </ul>
                                         </div>
                                         <div className="mb-6">
                                             <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Memories</h2>
                                             <ul className="list-disc pl-5">
-                                                <li>Samewise Gamgee...</li>
+                                                <li>I am Frodo Baggins, a hobbit from Bag End in the Shire-reckoning year 1400.</li>
+                                                <li>Sam...</li>
                                                 <li>Gandalf...</li>
-                                                <li>Bilbo Baggins...</li>
-                                                <li>Bilbo Baggins...</li>
-                                                <li>Bilbo Baggins...</li>
+                                                <li>Gollum...</li>
+                                                <li>Sauron...</li>
                                             </ul>
                                         </div>
                                         <div className="mb-6">
                                             <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Conversion</h2>
                                             <p>
-                                                <strong>Immortal:</strong> Gollum
+                                                <strong>Immortal:</strong> Sauron
                                             </p>
                                             <p>
-                                                <strong>Conversion Experience:</strong> Gollum...
+                                                <strong>Conversion Experience:</strong> Sauron...
                                             </p>
                                             <p>
                                                 <strong>Mark:</strong> The Eye of Sauron burned into my flesh 
