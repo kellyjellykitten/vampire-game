@@ -14,7 +14,7 @@ const VampireNamePage = () => {
 
     // Get current origin state from redux (if any)
     const currentOrigin = useSelector(state =>
-        state.vampire?.origin?.[0] || {
+        state.vampire.vampire?.origin?.[0] || {
             name: "",
             originExperience: ""
         }

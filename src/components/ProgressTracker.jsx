@@ -19,7 +19,7 @@ const ProgressTracker = ({ currentStep }) => {
 
     {/* React.Fragment used to group multiple elements (step circle w/ label & connector line) to avoid extra <div> wrap. Map returns a single element but we render 2 things. */}
     return (
-        <div className="w-full max-w-4xl mx-auto mb-8 px-4">
+        <div className="w-full max-w-4xl mx-auto my-8 px-4">
             <div className="flex items-center justify-between">
                 {steps.map((step, index) => (
                     <React.Fragment key={step.id}>

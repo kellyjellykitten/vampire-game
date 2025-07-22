@@ -5,7 +5,7 @@ import { ChevronDown } from 'lucide-react';
 // eslint-disable-next-line react/prop-types
 const CharacterInfoPanel = ({ currentStep }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const vampire = useSelector(state => state.vampire);
+    const vampire = useSelector(state => state.vampire.vampire);
 
     const togglePanel = () => {
         setIsOpen(!isOpen);
@@ -103,13 +103,13 @@ const CharacterInfoPanel = ({ currentStep }) => {
     const visibleSections = getVisibleSections();
 
     // Don't show panel if there's no info or if on summary page
-    if (visibleSections.length == 0 || currentStep == 'summary') return null;
+    if (visibleSections.length === 0 || currentStep === 'summary') return null;
 
     return (
-        <div className="fixed top-20 right-4 z-10">
+        <div className="absolute top-6 md:top-20 left-1/2 transform -translate-x-1/2 md:left-auto md:right-48 md:transform-none z-20">
             <button
                 onClick={togglePanel}
-                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg transition-colors duration-200 flex items-center gap-2"
+                className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap"
             >
                 <span className="text-sm font-medium">Your Character So Far</span>
                 <ChevronDown
@@ -118,11 +118,13 @@ const CharacterInfoPanel = ({ currentStep }) => {
             </button>
 
             {isOpen && (
-                <div className="mt-2 bg-gray-800 border border-gray-600 rounded-lg shadow-xl p-4 min-w-80 max-w-96 max-h-96 overflow-y-auto">
-                    <div className="space y-4">
-                        {visibleSections}
+                <div className="absolute top-full mt-2 left-1/2 transform -translate-x-1/2 md:left-auto md:right-0 md:transform-none bg-gray-800 border border-gray-600 rounded-lg shadow-xl p-4 w-80 max-w-[calc(100vw-2rem)] max-h-96 overflow-y-auto">
+                    <div className="space-y-4">
+                        {visibleSections.map((section, index) => (
+                            <div key={index}>{section}</div>
+                        ))}
                     </div>
-                    {visibleSections.length == 0 && (
+                    {visibleSections.length === 0 && (
                         <p className="text-gray-400 text-sm text-center">No character information yet.</p>
                     )}
                 </div>

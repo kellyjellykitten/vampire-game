@@ -60,7 +60,7 @@ const SideCharactersPage = () => {
                 <ProgressTracker currentStep="characters" />
             </div>
             <CharacterInfoPanel currentStep="characters" />
-            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-8 text-center">
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-4 md:mt-10 text-center">
                 <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                     Side Characters
                 </span>

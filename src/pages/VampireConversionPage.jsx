@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
 import HelpModal from '../components/HelpModal';
+import ProgressTracker from '../components/ProgressTracker';
+import CharacterInfoPanel from '../components/CharacterInfoPanel';
 
 const VampireConversionPage = () => {
     const navigate = useNavigate();
@@ -12,7 +14,7 @@ const VampireConversionPage = () => {
 
     // Get current conversion state from redux (if any)
     const currentConversion = useSelector(state =>
-        state.vampire?.conversion?.[0] || {
+        state.vampire.vampire?.conversion?.[0] || {
             immortal: "",
             mark: "",
             conversionExperience: ""
@@ -59,7 +61,11 @@ const VampireConversionPage = () => {
 
     return (
         <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-b from-black to-slate-900 text-white p-4">
-            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+            <div className="mt-8">
+                <ProgressTracker currentStep="conversion" />
+            </div>
+            <CharacterInfoPanel currentStep="conversion" />
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-4 md:mt-10 text-center">
                 <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                     Conversion
                 </span>
