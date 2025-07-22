@@ -5,6 +5,8 @@ import { setSideCharacters, setMemoryExperience } from '../vampireSlice';
 import HelpModal from '../components/HelpModal';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
+import ProgressTracker from '../components/ProgressTracker';
+import CharacterInfoPanel from '../components/CharacterInfoPanel';
 
 const SideCharactersPage = () => {
     const dispatch = useDispatch();
@@ -54,7 +56,11 @@ const SideCharactersPage = () => {
 
     return (
         <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-b from-black to-slate-900 text-white p-4">
-            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+            <div className="mt-8">
+                <ProgressTracker currentStep="characters" />
+            </div>
+            <CharacterInfoPanel currentStep="characters" />
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-8 text-center">
                 <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                     Side Characters
                 </span>

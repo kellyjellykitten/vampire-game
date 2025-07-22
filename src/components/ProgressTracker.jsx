@@ -1,10 +1,11 @@
 import React from 'react';
 import { Check } from 'lucide-react';
 
+// eslint-disable-next-line react/prop-types
 const ProgressTracker = ({ currentStep }) => {
     const steps = [
         { id: 'origin', label: 'Origin', path: '/create/name' },
-        { id: 'chracters', label:'Side Characters', path: '/create/characters' },
+        { id: 'characters', label:'Side Characters', path: '/create/characters' },
         { id: 'skills', label: 'Skills', path: '/create/skills' },
         { id: 'resources', label: 'Resources', path: '/create/resources' },
         { id: 'conversion', label: 'Conversion', path: '/create/conversion' }
@@ -16,6 +17,7 @@ const ProgressTracker = ({ currentStep }) => {
 
     const currentIndex = getCurrentStepIndex();
 
+    {/* React.Fragment used to group multiple elements (step circle w/ label & connector line) to avoid extra <div> wrap. Map returns a single element but we render 2 things. */}
     return (
         <div className="w-full max-w-4xl mx-auto mb-8 px-4">
             <div className="flex items-center justify-between">

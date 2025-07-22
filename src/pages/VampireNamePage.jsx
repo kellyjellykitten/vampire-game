@@ -5,6 +5,8 @@ import { setOrigin, setMemoryExperience } from '../vampireSlice';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
 import HelpModal from '../components/HelpModal';
+import ProgressTracker from '../components/ProgressTracker';
+import CharacterInfoPanel from '../components/CharacterInfoPanel';
 
 const VampireNamePage = () => {
     const navigate = useNavigate();
@@ -56,7 +58,11 @@ const VampireNamePage = () => {
 
     return (
         <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-b from-black to-slate-900 text-white p-4">
-            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-16 text-center">
+            <div className="mt-8">
+                <ProgressTracker currentStep="origin" />
+            </div>
+            <CharacterInfoPanel currentStep="origin" />
+            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-8 text-center">
                 <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                     Vampire Origin
                 </span>
