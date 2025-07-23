@@ -105,7 +105,7 @@ const HelpPage = () => {
                                 </div>
                             )}
                             {section.id === 'origin' && (
-                                <div className="max-w-5xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
+                                <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
                                     <p className="mb-4 leading-relaxed">
                                         Your origin is the story of your life as a mortal. Who were you? When and where were you born? What did you used to do? 
                                     </p>
@@ -124,36 +124,36 @@ const HelpPage = () => {
                                 </div>
                             )}
                             {section.id === 'side-characters' && (
-                                <div className="space-y-6">
-                                    <p className="text-gray-200 leading-relaxed">
+                                <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
+                                    <p className="mb-4 leading-relaxed">
                                         Content for {section.title} will be added here.
                                     </p>
                                 </div>
                             )}
                             {section.id === 'skills' && (
-                                <div className="space-y-6">
-                                    <p className="text-gray-200 leading-relaxed">
+                                <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
+                                    <p className="mb-4 leading-relaxed">
                                         Content for {section.title} will be added here.
                                     </p>
                                 </div>
                             )}
                             {section.id === 'resources' && (
-                                <div className="space-y-6">
-                                    <p className="text-gray-200 leading-relaxed">
+                                <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
+                                    <p className="mb-4 leading-relaxed">
                                         Content for {section.title} will be added here.
                                     </p>
                                 </div>
                             )}
                             {section.id === 'conversion' && (
-                                <div className="space-y-6">
-                                    <p className="text-gray-200 leading-relaxed">
+                                <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
+                                    <p className="mb-4 leading-relaxed">
                                         Content for {section.title} will be added here.
                                     </p>
                                 </div>
                             )}
                             {section.id === 'memories' && (
-                                <div className="space-y-6">
-                                    <p className="text-gray-200 leading-relaxed">
+                                <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
+                                    <p className="mb-4 leading-relaxed">
                                         Content for {section.title} will be added here.
                                     </p>
                                 </div>
@@ -178,9 +178,9 @@ const HelpPage = () => {
                                         <div className="mb-6">
                                             <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Skills</h2>
                                             <ul className="list-disc pl-5">
-                                                <li>Samewise Gamgee...</li>
-                                                <li>Gandalf...</li>
-                                                <li>Bilbo Baggins...</li>
+                                                <li>Stealth</li>
+                                                <li>Bravery</li>
+                                                <li>Survival</li>
                                             </ul>
                                         </div>
                                         <div className="mb-6">
@@ -195,10 +195,10 @@ const HelpPage = () => {
                                             <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Memories</h2>
                                             <ul className="list-disc pl-5">
                                                 <li>I am Frodo Baggins, a hobbit from Bag End in the Shire-reckoning year 1400.</li>
-                                                <li>Sam...</li>
-                                                <li>Gandalf...</li>
-                                                <li>Gollum...</li>
-                                                <li>Sauron...</li>
+                                                <li>Sam journeys with me to Mordor and slays the spider Shelob, saving me.</li>
+                                                <li>Gandalf visits the Shire and teaches me how to blow smoke rings.</li>
+                                                <li>Gollum tries to steal my ring at Mount Doom by jumping on me and violently attacking.</li>
+                                                <li>Slipping the ring onto my finger, I enter the spirit world where the blaze of Sauron&apos;s eye drains me of my blood, turning me into a vampire.</li>
                                             </ul>
                                         </div>
                                         <div className="mb-6">
@@ -207,7 +207,7 @@ const HelpPage = () => {
                                                 <strong>Immortal:</strong> Sauron
                                             </p>
                                             <p>
-                                                <strong>Conversion Experience:</strong> Sauron...
+                                                <strong>Conversion Experience:</strong> Slipping the ring onto my finger, I enter the spirit world where the blaze of Sauron&apos;s eye drains me of my blood, turning me into a vampire.
                                             </p>
                                             <p>
                                                 <strong>Mark:</strong> The Eye of Sauron burned into my flesh 
@@ -250,9 +250,9 @@ const HelpPage = () => {
                                             <ul className="list-disc pl-5">
                                                 <li>I am Spongebob Squarepants, a fry-cooking sponge from 20th century Bikini Bottom.</li>
                                                 <li>Patrick and I are tasked with painting the inside of Mr. Krabs&apos;s house, but the walls are crowded with frames; panic erupts as paint drips onto his precious first dollar, only for us to learn it was a prank.</li>
-                                                <li>Squidward asks for help blowing bubbles, so I show him the technique; he ends up blowing a bubble so large, it absorbs his home and floats away</li>
-                                                <li>I visit Sandy in her dome for the first time; the lack of water almost killed me as I began to shrivel and crackle in dryness</li>
-                                                <li>Plankton...</li>
+                                                <li>Squidward asks for help blowing bubbles, so I show him the technique; he ends up blowing a bubble so large, it absorbs his home and floats away.</li>
+                                                <li>I visit Sandy in her dome for the first time; the lack of water almost killed me as I began to shrivel and crackle in dryness.</li>
+                                                <li>Plankton, revealing himself in his demon form, enters my brain using a brain-control device that turns me into a vampire, in the hopes of stealing the Krabby Patty secret formula.</li>
                                             </ul>
                                         </div>
                                         <div className="mb-6">
@@ -261,18 +261,18 @@ const HelpPage = () => {
                                                 <strong>Immortal:</strong> Plankton
                                             </p>
                                             <p>
-                                                <strong>Conversion Experience:</strong> Plankton...
+                                                <strong>Conversion Experience:</strong> Plankton, revealing himself in his demon form, enters my brain using a brain-control device that turns me into a vampire, in the hopes of stealing the Krabby Patty secret formula. 
                                             </p>
                                             <p>
-                                                <strong>Mark:</strong> Plankton... 
+                                                <strong>Mark:</strong> The brain-control device remains stuck in my brain and causes me to sneeze bubbles. 
                                             </p>
                                         </div>
                                     </AccordionItem>
                                 </div>
                             )}
                             {section.id === 'credits' && (
-                                <div className="space-y-6">
-                                    <p className="text-gray-200 leading-relaxed">
+                                <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
+                                    <p className="mb-4 leading-relaxed">
                                         This game is inspired by the solo role-playing journaling game Thousand Year Old Vampire by Tim Hutchings. You can find more information about Thousand Year Old Vampire <a className="underline text-red-300 hover:text-red-400" href="https://thousandyearoldvampire.com/" target="_blank">here</a> (https://thousandyearoldvampire.com/).
                                     </p>
                                     <p className="text-gray-200">

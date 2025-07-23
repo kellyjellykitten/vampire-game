@@ -2,6 +2,7 @@
 
 ## Styling
 - Graphics (blood underline on headings?)
+- Need fix: "side characters" stage on progress tracker bumps up on mobile view (since the words are pushed to 2 lines)
 
 ## Content
 - Instructions text on every creation page
@@ -15,4 +16,5 @@
 
 ## Considerations
 - export button on character sheet on prompt pgs (after submitting) to "save" current character state
+- pages to scroll back to top when navigating onto
 
