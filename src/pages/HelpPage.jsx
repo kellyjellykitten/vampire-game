@@ -181,7 +181,7 @@ const HelpPage = () => {
                                     <p>Examples:</p>
                                     <div className="ml-12 mt-2">
                                         <ul className="list-disc">
-                                            <li className="pb-2">A Diamond tiara</li>
+                                            <li className="pb-2">A diamond tiara</li>
                                             <li className="pb-2">A lucky penny</li>
                                             <li className="pb-2">A Roman legion</li>
                                             <li className="pb-2">A box of candles</li>
@@ -240,7 +240,7 @@ const HelpPage = () => {
                                         <div className="mb-6">
                                             <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Side Characters</h2>
                                             <ul className="list-disc pl-5">
-                                                <li>Samewise Gamgee, my most loyal companion, who has vowed to always look after me</li>
+                                                <li>Samwise Gamgee, my most loyal companion, who has vowed to always look after me</li>
                                                 <li>Gandalf, trusted friend and grand wizard, who passes to me wisdom and knowledge</li>
                                                 <li>Gollum, a once-hobbit creature consumed by his shackling thirst for his precious: my ring</li>
                                             </ul>
