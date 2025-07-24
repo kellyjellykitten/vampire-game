@@ -76,7 +76,7 @@ const RollPage = () => {
                 <div className="bg-gray-800 rounded-lg p-6 mb-6">
                     <h2 className="text-2xl font-semibold mb-4">Roll the Dice</h2>
                     <div className="bg-gray-700 rounded p-4 mb-4">
-                        <p>Click on d6 to roll the dice. Your first prompt number is determined by the result of the d6. From then on, your d6 result will be added to your current prompt number to determine your next prompt. Once the dice has been rolled, your prompt number will appear on screen, along with a button to be taken to the prompt.</p>
+                        <p>Your first prompt number is determined by the result of the d6. From then on, your d6 result will be added to your current prompt number to determine your next prompt. Once the dice has been rolled, your prompt number will appear on screen, along with a button to be taken to the prompt.</p>
                     </div>
                     {currentPromptNumber ? (
                         <div className="mt-8 p-6 bg-gray-700 rounded-lg text-center">

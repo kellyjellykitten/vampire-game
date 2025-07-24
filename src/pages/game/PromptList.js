@@ -53,7 +53,7 @@ export const gamePrompts = [
     },
     {
         id: 7,
-        text: "When taking refuge in a modest study you encounter a book which feels familiar to you. It glows, almost beckoning you. Create a Resource which is this book. What does it look like? When you flip to a random page, what do you find?",
+        text: "When taking refuge in a modest study, you encounter a book which feels familiar to you. It glows, almost beckoning you. Create a Resource which is this book. What does it look like? When you flip to a random page, what do you find?",
         instructions: {
             addResource: true,
             addExperience: true,
@@ -88,7 +88,7 @@ export const gamePrompts = [
     },
     {
         id: 11,
-        text: "Some mortals have banded together to hunt you, well-armed and wise to your tricks. How do you defeat or evade them? Create a mortal hunter related to one of your Skills.",
+        text: "Some mortals have banded together to hunt you, well-armed and wise to your tricks. How do you defeat or evade them? Create a mortal hunter Side Character related to one of your Skills.",
         instructions: {
             addSideCharacter: true,
             addExperience: true,

@@ -106,7 +106,7 @@ const CharacterInfoPanel = ({ currentStep }) => {
     if (visibleSections.length === 0 || currentStep === 'summary') return null;
 
     return (
-        <div className="absolute top-6 md:top-20 left-1/2 transform -translate-x-1/2 md:left-auto md:right-48 md:transform-none z-20">
+        <div className="absolute top-6 xl:top-20 left-1/2 transform -translate-x-1/2 xl:left-auto xl:right-48 xl:transform-none z-20">
             <button
                 onClick={togglePanel}
                 className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg shadow-lg transition-colors duration-200 flex items-center gap-2 whitespace-nowrap"

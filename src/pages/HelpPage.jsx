@@ -65,7 +65,7 @@ const HelpPage = () => {
                         </span>
                     </h1>
                     <p className="md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
-                        This page is designed to help you along the vampire creation process and gameplay. While each page during vampire creation will have instructions, below are some general guidelines and rules, along with examples for each aspect of the creation process for inspiration. Examples of completed vampire characters are included at the bottom of the page.
+                        This page is designed to help you along the vampire creation process and game play. While each page during vampire creation will have instructions, below are some general guidelines and rules, along with examples for each aspect of the creation process for some inspiration. Examples of completed vampire characters are included at the bottom of the page.
                     </p>
                 </div>
                 {/* Jump To nav box */}
@@ -103,8 +103,8 @@ const HelpPage = () => {
                                     <p className="mb-8">Your vampire is represented by five different traits: characters, skills, resources, memories, and a mark. Almost every time you receive a Prompt, one of your traits will be modified. The Prompt may cause you to create, lose, and/or alter one or more traits.</p>
                                     <h3 className="underline mb-2">Answering Prompts</h3>
                                     <p className="mb-4">Your vampire&apos;s journey progresses semi-randomly through Prompts. Answer Prompts to learn about your vampire&apos;s wants and needs, to learn what challenges they face, and to chart their aging decline.</p>
-                                    <p className="mb-4">Prompts are sparks for creativity and connection. Any amount of time can pass between Prompts, but consider the first five or six to be the first busy years after your character becomes a vampire.</p>
-                                    <p className="mb-4">Your answer to a Prompt is called a Memory. Memories are important moments that have shaped your vampire. A Memory might describe a few secondes of impactful events, or it might cover two hundred years of lurking in an old castle. Each Memory you create is added to your vampire&apos;s Memory section.</p>
+                                    <p className="mb-4">Prompts are sparks for creativity and connection. Any amount of time can pass between Prompts, but consider the first four or five to be the first busy years after your character becomes a vampire.</p>
+                                    <p className="mb-4">Your answer to a Prompt is called a Memory. Memories are important moments that have shaped your vampire. A Memory might describe a few seconds of impactful events, or it might cover two hundred years of lurking in an old castle. Each Memory you create is added to your vampire&apos;s Memory section.</p>
                                     <p className="mb-4">You will roll a d6 to determine your prompt number. Each subsequent dice roll is added to the previous result to move forward. For example, if you just answered Prompt 11 and then roll a 4, you move up to Prompt 15.</p>
                                     <p>The game ends when a Prompt tells you that the game has ended.</p>
                                 </div>
@@ -124,7 +124,7 @@ const HelpPage = () => {
                                     <div className="ml-12 mt-2">
                                         <ul className="list-disc">
                                             <li className="pb-2">I am Ava, a Slavic woman living on the edge of the wild Sudeten Mountains in the 1800s</li>
-                                            <li>I am Pierre, son of Garnier, born near the Ubaye Valley in the 13th Century Kingdom of France; I am a poor knight swindled out of my inhertiance</li>
+                                            <li>I am Pierre, son of Garnier, born near the Ubaye Valley in the 13th Century Kingdom of France; I am a poor knight swindled out of my inheritance</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -135,7 +135,7 @@ const HelpPage = () => {
                                         Side Characters are the people with whom your vampire has a relationship. They may be relatives, friends, lovers, enemies, debtors, or anything else appropriate for the time and place you have chosen. Each Character should be described in a sentence fragment. 
                                     </p>
                                     <p className="mb-4">When creating each of your Side Characters, you will also create a Memory you share with them. This Memory can be of any event that occurred between you and the Character that you feel important or essential to your vampire&apos;s core. </p>
-                                    <p className="mb-4">If it makes sense to include a Character when resolving a Prompt, do so even if the Prompt doesn&apos;t tell you to include a Character. Your side characters are mortals, but a Prompt may instruct you to create an immortal Character. Immortals are undying supernatural beings. They may be other vampires, angels or demons, ghosts, animated corpses, or whatever you may conjure.</p>
+                                    <p className="mb-4">If it makes sense to include a Character when resolving a Prompt, do so even if the Prompt doesn&apos;t tell you to include a Character. Your Side Characters are mortals, but a Prompt may instruct you to create an immortal Character. Immortals are undying supernatural beings. They may be other vampires, angels or demons, ghosts, animated corpses, or whatever you may conjure.</p>
                                     <p>Examples:</p>
                                     <div className="ml-12 mt-2">
                                         <ul className="list-disc">
@@ -181,7 +181,7 @@ const HelpPage = () => {
                                     <p>Examples:</p>
                                     <div className="ml-12 mt-2">
                                         <ul className="list-disc">
-                                            <li className="pb-2">Diamon tiara</li>
+                                            <li className="pb-2">A Diamond tiara</li>
                                             <li className="pb-2">A lucky penny</li>
                                             <li className="pb-2">A Roman legion</li>
                                             <li className="pb-2">A box of candles</li>
@@ -197,7 +197,7 @@ const HelpPage = () => {
                                     <p className="mb-4">
                                         Conversion refers to the event in which your character turned into a vampire. It is comprised of three aspects: the Immortal, the Mark, and the Memory encapsulating the event. 
                                     </p>
-                                    <p className="mb-4">The Immortal is the creature that gifted (or cursed) your vampire with unlife. Give your Immortal name and briefly describe them, as you would any character. To restate, Immortals are undying supernatural beings. They may be other vampires, angels or demons, ghosts, animated corpses, or whatever you may conjure.</p>
+                                    <p className="mb-4">The Immortal is the creature that gifted (or cursed) your vampire with unlife. Give your Immortal a name and briefly describe them, as you would any character. To restate, Immortals are undying supernatural beings. They may be other vampires, angels or demons, ghosts, animated corpses, or whatever you may conjure.</p>
                                     <p className="mb-4">A Mark is a visible indication of your vampire&apos;s undying state, or any other thing that sets them apart from mortal people. A Mark is imparted by the Immortal and something your vampire carries for their entire existence. How your vampire received their Mark should be told through the Memory.</p>
                                     <p>Examples:</p>
                                     <div className="ml-12 mt-2">
@@ -216,7 +216,7 @@ const HelpPage = () => {
 
                                             <li className="pt-2"><em className="italic">Immortal: Diniel, a dark angel with alluring charisma</em> </li>
                                             <p><em className="italic">Mark:</em> A dark halo I cover with tall hats</p>
-                                            <p><em className="italic">Memory:</em> I am visited by the angel Diniel and fall for their charm; as they drink my blood, a halo forms above my head, black as sin.</p>
+                                            <p><em className="italic">Memory:</em> I am visited by the angel Diniel and fall for their charm; as they drink my blood, a black halo forms above my head.</p>
                                         </ul>
                                     </div>
                                 </div>
@@ -321,7 +321,7 @@ const HelpPage = () => {
                                                 <li>I am Spongebob Squarepants, a fry-cooking sponge from 20th century Bikini Bottom.</li>
                                                 <li>Patrick and I are tasked with painting the inside of Mr. Krabs&apos;s house, but the walls are crowded with frames; panic erupts as paint drips onto his precious first dollar, only for us to learn it was a prank.</li>
                                                 <li>Squidward asks for help blowing bubbles, so I show him the technique; he ends up blowing a bubble so large, it absorbs his home and floats away.</li>
-                                                <li>I visit Sandy in her dome for the first time; the lack of water almost killed me as I began to shrivel and crackle in dryness.</li>
+                                                <li>I visit Sandy in her dome for the first time; the lack of water almost kills me as I shrivel and crackle in dryness.</li>
                                                 <li>Plankton, revealing himself in his demon form, enters my brain using a brain-control device that turns me into a vampire, in the hopes of stealing the Krabby Patty secret formula.</li>
                                             </ul>
                                         </div>

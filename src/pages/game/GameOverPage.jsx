@@ -23,7 +23,7 @@ const GameOverPage = () => {
 
     return (
         <div className="bg-gradient-to-b from-black to-gray-900 text-white p-4 min-h-screen">
-            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mt-16 text-center">
+            <h1 className="font-trade-winds text-4xl font-bold mt-16 text-center">
                 <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                     Game Over
                 </span>
@@ -35,19 +35,19 @@ const GameOverPage = () => {
                 <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center">Final Character Sheet</h2>
                 {/* Origin Section */}
                     <section className="mb-6">
-                        <h3 className="text-lg md:text-xl font-semibold mb-2 border-b pb-1">Origin</h3>
+                        <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Origin</h3>
                         {vampire.origin.map((origin, index) => (
                             <div key={index} className="mb-4">
-                                <p className="text-sm md:text-base"><strong>Name:</strong> {origin.name || 'No name provided'}</p>
-                                <p className="text-sm md:text-base"><strong>Experience:</strong> {origin.originExperience || 'Not specified'}</p>
+                                <p><strong>Name:</strong> {origin.name || 'No name provided'}</p>
+                                <p><strong>Experience:</strong> {origin.originExperience || 'Not specified'}</p>
                             </div>
                         ))}
                     </section>
 
                     {/* Side Characters Section */}
                     <section className="mb-6">
-                        <h3 className="text-lg md:text-xl font-semibold mb-2 border-b pb-1">Side Characters</h3>
-                        <ul className="list-disc pl-5 text-sm md:text-base">
+                        <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Side Characters</h3>
+                        <ul className="list-disc pl-5">
                             {vampire.sideCharacters.map((character, index) => (
                                 character && <li key={index}>{character}</li>
                             ))}
@@ -57,8 +57,8 @@ const GameOverPage = () => {
 
                     {/* Skills Section */}
                     <section className="mb-6">
-                        <h3 className="text-lg md:text-xl font-semibold mb-2 border-b pb-1">Skills</h3>
-                        <ul className="list-disc pl-5 text-sm md:text-base">
+                        <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Skills</h3>
+                        <ul className="list-disc pl-5">
                             {vampire.skills.map((skill, index) => (
                                 skill && <li key={index}>{skill}</li>
                             ))}
@@ -68,8 +68,8 @@ const GameOverPage = () => {
 
                     {/* Resources Section */}
                     <section className="mb-6">
-                        <h3 className="text-lg md:text-xl font-semibold mb-2 border-b pb-1">Resources</h3>
-                        <ul className="list-disc pl-5 text-sm md:text-base">
+                        <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Resources</h3>
+                        <ul className="list-disc pl-5">
                             {vampire.resources.map((resource, index) => (
                                 resource && <li key={index}>{resource}</li>
                             ))}
@@ -79,8 +79,8 @@ const GameOverPage = () => {
 
                     {/* Memories Section */}
                     <section className="mb-6">
-                        <h3 className="text-lg md:text-xl font-semibold mb-2 border-b pb-1">Memories</h3>
-                        <ul className="list-disc pl-5 text-sm md:text-base">
+                        <h3 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Memories</h3>
+                        <ul className="list-disc pl-5">
                             {vampire.memories.map((mem, index) => (
                                 mem && <li key={index}>{mem}</li>
                             ))}
