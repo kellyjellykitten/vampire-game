@@ -53,7 +53,7 @@ export const gamePrompts = [
     },
     {
         id: 7,
-        text: "A mortal Character sends you a precious gift. How is it ill-suited for your immortal lifestyle? How do you react? Gain a Resource.",
+        text: "When taking refuge in a modest study you encounter a book which feels familiar to you. It glows, almost beckoning you. Create a Resource which is this book. What does it look like? When you flip to a random page, what do you find?",
         instructions: {
             addResource: true,
             addExperience: true,

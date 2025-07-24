@@ -1,5 +1,4 @@
 import { MdOpenInNew } from "react-icons/md";
-import { FaRegCopyright } from "react-icons/fa";
 import { useState } from "react";
 
 const HelpPage = () => {
@@ -87,9 +86,9 @@ const HelpPage = () => {
                 {sections.map((section) => (
                     <section key={section.id} id={section.id} className="mb-16">
                         {/* Header w/ preceding icon */}
-                        <div className="flex items-center gap-4 mb-8">
+                        <div className="flex items-center gap-4 mb-4">
                             <img src="/src/assets/images/logo.png" alt="Blood drop" className="w-8 h-8 flex-shrink-0"></img>
-                            <h2 className="font-trade-winds text-2xl md:text-3xl font-bold text-left">
+                            <h2 className="font-trade-winds text-3xl font-bold text-left">
                                 <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
                                     {section.title}
                                 </span>
@@ -99,61 +98,131 @@ const HelpPage = () => {
                         <div className="text-left">
                             {section.id === 'rules' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
-                                    <p className="text-gray-200 leading-relaxed">
-                                            Content for {section.title} will be added here. will be added here. will be added here. will be added here.
-                                    </p>
+                                    <h3 className="underline mb-2">Your Vampire</h3>
+                                    <p className="mb-8">Your vampire is represented by five different traits: characters, skills, resources, memories, and a mark. Almost every time you receive a Prompt, one of your traits will be modified. The Prompt may cause you to create, lose, and/or alter one or more traits.</p>
+                                    <h3 className="underline mb-2">Answering Prompts</h3>
+                                    <p className="mb-4">Your vampire&apos;s journey progresses semi-randomly through Prompts. Answer Prompts to learn about your vampire&apos;s wants and needs, to learn what challenges they face, and to chart their aging decline.</p>
+                                    <p className="mb-4">Prompts are sparks for creativity and connection. Any amount of time can pass between Prompts, but consider the first five or six to be the first busy years after your character becomes a vampire.</p>
+                                    <p className="mb-4">Your answer to a Prompt is called a Memory. Memories are important moments that have shaped your vampire. A Memory might describe a few secondes of impactful events, or it might cover two hundred years of lurking in an old castle. Each Memory you create is added to your vampire&apos;s Memory section.</p>
+                                    <p className="mb-4">You will roll a d6 to determine your prompt number. Each subsequent dice roll is added to the previous result to move forward. For example, if you just answered Prompt 11 and then roll a 4, you move up to Prompt 15.</p>
+                                    <p>The game ends when a Prompt tells you that the game has ended.</p>
                                 </div>
                             )}
                             {section.id === 'origin' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
-                                    <p className="mb-4 leading-relaxed">
+                                    <p className="mb-4">
                                         Your origin is the story of your life as a mortal. Who were you? When and where were you born? What did you used to do? 
                                     </p>
-                                    <p className="mb-4 leading-relaxed">
+                                    <p className="mb-4">
                                         Start by imagining a person in the distant past. You can draw upon real history, fantasize your own, or weave the two together. This person will become your vampire. 
                                     </p>
-                                    <p className="mb-2 leading-relaxed">
-                                        In character creation, you will create your &quot;origin experience&quot; -- a sentence encapsulating your mortal history. State your name, then describe your background. Feel free to include as many details as you like. Examples include:
+                                    <p className="mb-4">
+                                        In character creation, you will create your &quot;origin experience&quot; -- a sentence encapsulating your mortal history. State your name, then describe your background. Feel free to include as many details as you like.
                                     </p>
-                                    <div className="ml-12 mt-4">
+                                    <p>Examples:</p>
+                                    <div className="ml-12 mt-2">
                                         <ul className="list-disc">
-                                            <li className="italic pb-2">I am Ava, a Slavic woman living on the edge of the wild Sudeten Mountains in the 1800s</li>
-                                            <li className="italic">I am Pierre, son of Garnier, born near the Ubaye Valley in the 13th Century Kingdom of France; I am a poor knight swindled out of my inhertiance</li>
+                                            <li className="pb-2">I am Ava, a Slavic woman living on the edge of the wild Sudeten Mountains in the 1800s</li>
+                                            <li>I am Pierre, son of Garnier, born near the Ubaye Valley in the 13th Century Kingdom of France; I am a poor knight swindled out of my inhertiance</li>
                                         </ul>
                                     </div>
                                 </div>
                             )}
                             {section.id === 'side-characters' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
-                                    <p className="mb-4 leading-relaxed">
-                                        Content for {section.title} will be added here.
+                                    <p className="mb-4">
+                                        Side Characters are the people with whom your vampire has a relationship. They may be relatives, friends, lovers, enemies, debtors, or anything else appropriate for the time and place you have chosen. Each Character should be described in a sentence fragment. 
                                     </p>
+                                    <p className="mb-4">When creating each of your Side Characters, you will also create a Memory you share with them. This Memory can be of any event that occurred between you and the Character that you feel important or essential to your vampire&apos;s core. </p>
+                                    <p className="mb-4">If it makes sense to include a Character when resolving a Prompt, do so even if the Prompt doesn&apos;t tell you to include a Character. Your side characters are mortals, but a Prompt may instruct you to create an immortal Character. Immortals are undying supernatural beings. They may be other vampires, angels or demons, ghosts, animated corpses, or whatever you may conjure.</p>
+                                    <p>Examples:</p>
+                                    <div className="ml-12 mt-2">
+                                        <ul className="list-disc">
+                                            <li>Gundar, a Viking warrior, like a father to me</li>
+                                            <p className="ml-2"><em className="italic">Memory:</em> Gundar takes me on my first voyage aboard the longship Skuldelev; his hug calms me when we first leave sight of land.</p>
+                                            <li className="pt-2">Piotr, a shepherd boy who tends me flocks</li>
+                                            <p className="ml-2"><em className="italic">Memory:</em> Piotr was orphaned during a bandit raid; I hold his family&apos;s silver coin until he comes of age -- in the meantime he works with the sheep.</p>
+                                            <li className="pt-2">Hania, my neighbor, a friend and an enemy</li>
+                                            <p className="ml-2"><em className="italic">Memory:</em> Hania complains when I walk my sheep through the stream, but she never says no to the banana bread I gift her.</p>
+                                            <li className="pt-2">Callwyn, my younger brother who lives with me in a motorhome</li>
+                                            <p className="ml-2"><em className="italic">Memory:</em> Callwyn and I construct an enclosed room in the back of our motorhome; at night he does not see the Moon and during the day I do not see the Sun.</p>
+                                        </ul>
+                                    </div>
                                 </div>
                             )}
                             {section.id === 'skills' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
-                                    <p className="mb-4 leading-relaxed">
-                                        Content for {section.title} will be added here.
+                                    <p className="mb-4">
+                                        Skills describe the capabilities and characteristics of your vampire. They indicate what your vampire <strong>can do</strong> can do and what they <strong>might do</strong>.
                                     </p>
+                                    <p className="mb-4">When instructed to create a new Skill, you should relate it to the content of the Prompt.</p>
+                                    <p>Examples:</p>
+                                    <div className="ml-12 mt-2">
+                                        <ul className="list-disc">
+                                            <li className="pb-2">Swordplay</li>
+                                            <li className="pb-2">Relaxing Banter</li>
+                                            <li className="pb-2">Operate Heavy Machinery</li>
+                                            <li className="pb-2">Beermaking</li>
+                                            <li className="pb-2">Deception</li>
+                                            <li className="pb-2">Ballroom dancing</li>
+                                            <li>Herblore</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             )}
                             {section.id === 'resources' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
-                                    <p className="mb-4 leading-relaxed">
-                                        Content for {section.title} will be added here.
+                                    <p className="mb-4">
+                                        Resources are assets or structures that are useful to your vampire, or items they value. They can be items your vampire carries around with them, or posessions that cannot be physically hauled away with the vampire when they leave an area. Big or small, a Resource is a Resource.
                                     </p>
+                                    <p className="mb-4">When creating your vampire, the Resources you create should be Resources they obtained while still mortal.</p>
+                                    <p className="mb-4">When a Prompt instructs you to create Resources, be sure to create ones that are contextually appropriate -- even if this leads to Resources that aren&apos;t necessarily the most exciting or useful.</p>
+                                    <p>Examples:</p>
+                                    <div className="ml-12 mt-2">
+                                        <ul className="list-disc">
+                                            <li className="pb-2">Diamon tiara</li>
+                                            <li className="pb-2">A lucky penny</li>
+                                            <li className="pb-2">A Roman legion</li>
+                                            <li className="pb-2">A box of candles</li>
+                                            <li className="pb-2">the Kenilworth Castle</li>
+                                            <li className="pb-2">Ornate walking staff</li>
+                                            <li>Large kine of cows</li>
+                                        </ul>
+                                    </div>
                                 </div>
                             )}
                             {section.id === 'conversion' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
-                                    <p className="mb-4 leading-relaxed">
-                                        Content for {section.title} will be added here.
+                                    <p className="mb-4">
+                                        Conversion refers to the event in which your character turned into a vampie. It is comprised of three aspects: the Immortal, the Mark, and the Memory encapsulating the event. 
                                     </p>
+                                    <p className="mb-4">The Immortal is the creature that gifted (or cursed) your vampire with unlife. Give your Immortal name and briefly describe them, as you would any character. To restate, Immortals are undying supernatural beings. They may be other vampires, angels or demons, ghosts, animated corpses, or whatever you may conjure.</p>
+                                    <p className="mb-4">A Mark is a visible indication of your vampire&apos;s undying state, or any other thing that sets them apart from mortal people. A Mark is imparted by the Immortal and something your vampire carries for their entire existence. How your vampire received their Mark should be told through the Memory.</p>
+                                    <p>Examples:</p>
+                                    <div className="ml-12 mt-2">
+                                        <ul className="list-disc">
+                                            <li><em className="italic">Immortal:</em> Baron Hollmueller, an Austrian noble and vampire; he stole the deed to my land</li>
+                                            <p><em className="italic">Mark:</em> My neck is permanently broken</p>
+                                            <p><em className="italic">Memory:</em> I duel the Baron Hollmueller across the roof of the abbey; he nearly cuts my head from my shoulders but I do not die.</p>
+
+                                            <li className="pt-2"><em className="italic">Immortal:</em> Vyri, a stick-thin demon that lives in a cave</li>
+                                            <p><em className="italic">Mark:</em> Skin like ice; I am careful not to touch anyone</p>
+                                            <p><em className="italic">Memory:</em> Wandering through the hills, I hear someone crying for help; it is a trick by the demon Vyri, who drinks my blood then casts me into a mountain stream -- Hania and her husband pull me from the water hours later, thinking me dead.</p>
+
+                                            <li className="pt-2"><em className="italic">Immortal:</em> Qadir, an ancient vampire, stuck in bat-form for over one thousand years</li>
+                                            <p><em className="italic">Mark:</em> A pair of great bat wings -- I sawed them off but the stubs remain</p>
+                                            <p><em className="italic">Memory:</em> I am walking home after a night shift when the gigantic Qadir vampire-bat swoops down from the sky and sinks its talons into my back; I pass out, drained of blood, and wake up bat-wingged.</p>
+
+                                            <li className="pt-2"><em className="italic">Immortal: Diniel, a dark angel with alluring charisma</em> </li>
+                                            <p><em className="italic">Mark:</em> A dark halo I cover with tall hats</p>
+                                            <p><em className="italic">Memory:</em> I am visited by the angel Diniel and fall for their charm; as they drink my blood, a halo forms above my head, black as sin.</p>
+                                        </ul>
+                                    </div>
                                 </div>
                             )}
                             {section.id === 'memories' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
-                                    <p className="mb-4 leading-relaxed">
+                                    <p className="mb-4">
                                         Content for {section.title} will be added here.
                                     </p>
                                 </div>
@@ -272,11 +341,11 @@ const HelpPage = () => {
                             )}
                             {section.id === 'credits' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
-                                    <p className="mb-4 leading-relaxed">
-                                        This game is inspired by the solo role-playing journaling game Thousand Year Old Vampire by Tim Hutchings. You can find more information about Thousand Year Old Vampire <a className="underline text-red-300 hover:text-red-400" href="https://thousandyearoldvampire.com/" target="_blank">here</a> (https://thousandyearoldvampire.com/).
+                                    <p className="mb-4">
+                                        This game is inspired by the solo role-playing journaling game Thousand Year Old Vampire by Tim Hutchings. You can find more information about Thousand Year Old Vampire <a className="underline text-red-300 hover:text-red-400" href="https://thousandyearoldvampire.com/" target="_blank">here</a>.
                                     </p>
-                                    <p className="text-gray-200">
-                                        Website made by <a className="underline text-red-300 hover:text-red-400" href="https://kellylloyd.kiwi/" target="_blank" title="View my Portfolio">Kelly Lloyd</a> <FaRegCopyright className="inline text-gray-300 text-xl" /> 2025. GitHub <a href="https://github.com/kellyjellykitten" target="_blank" title="View my GitHub"><MdOpenInNew className="inline text-red-300 hover:text-red-400 text-2xl" /></a>
+                                    <p>
+                                        Website made by <a className="underline text-red-300 hover:text-red-400" href="https://kellylloyd.kiwi/" target="_blank" title="View my Portfolio">Kelly Lloyd</a> | GitHub <a href="https://github.com/kellyjellykitten/vampire-game/tree/rework-memories" target="_blank" title="View GitHub Repository"><MdOpenInNew className="inline text-red-300 hover:text-red-400 text-2xl" /></a>
                                     </p>
                                 </div>
                             )}

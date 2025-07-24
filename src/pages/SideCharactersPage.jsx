@@ -130,10 +130,10 @@ const SideCharactersPage = () => {
                         Your three side characters can be of any relation to you, so long as there is a connection to you in your mortal life. They could be a family member, a friend, or even a rival. Describe them in one sentence each.
                     </p>
                     <p className="mb-3">
-                        For example: <span className="text-red-300 italic">Greta, the owner of the general store from which I buy my fruits.</span> - or - <span className="text-red-300 italic">Patrick, my trusted best friend and starfish with whom I go jelly-fishing.</span>
+                        For example: <span className="text-red-300 italic">Greta, the owner of the general store from which I buy my fruits</span>
                     </p>
                     <p className="mb-3">
-                        Then, describe a specific memory you have with each character during your mortal life. For example: <span className="text-red-300 italic">Patrick and I attend a jelly-fishing contest, where I become a hero by capturing a queen jellyfish.</span>
+                        Then, describe a specific memory you have with each character during your mortal life. For example: <span className="text-red-300 italic">All day, Greta sits quietly at the checkout counter; on downtime, she carves birds onto a walking stick that she gifts to me.</span>
                     </p>
                     <p>
                         Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.

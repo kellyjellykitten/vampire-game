@@ -68,7 +68,7 @@ const VampireNamePage = () => {
                 </span>
             </h1>
             <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
-                <p className="text-base md:text-lg mb-6">Enter a name for your vampire-to-be and an encapsulating summary of their life before they lost mortality -- who they were, what time period they lived in, and where they resided (&quot;origin experience&quot;). Your experience should be one sentence in length and written in first-person, present tense (I am...).</p>
+                <p className="text-base md:text-lg mb-6">Enter a name for your vampire-to-be and an encapsulating summary of their life before they lost mortality -- who they were, what time period they lived in, and where they resided (&quot;origin experience&quot;). Your experience should be one sentence in length and written in first-person, present tense (I am...). Feel free to include as many details as you like.</p>
             </div>
             
             <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 p-6 rounded-lg shadow-md">
@@ -79,7 +79,7 @@ const VampireNamePage = () => {
                         id="name"
                         value={originDetails.name}
                         onChange={(e) => handleInputChange('name', e.target.value)}
-                        placeholder="Ex: Frodo"
+                        placeholder="Enter name here"
                         required
                         className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     />
@@ -91,7 +91,7 @@ const VampireNamePage = () => {
                         id="originExperience"
                         value={originDetails.originExperience}
                         onChange={(e) => handleInputChange('originExperience', e.target.value)}
-                        placeholder="Ex: I am Frodo, a hobbit hailing from Bag End in the Shire Reckoning year 1400"
+                        placeholder="Enter experience here"
                         required
                         rows="6"
                         className="w-full p-4 text-black border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
@@ -108,10 +108,10 @@ const VampireNamePage = () => {
                 content={
                     <div>
                         <p className="mb-3">
-                            Describe your vampire&apos;s life from when they were still a mortal. First, enter in a name for your character. Then, in one sentence, describe where you are from and from what time period. You can include your character&apos;s occupation if they have one, or any other defining details if you wish. 
+                            Describe your vampire&apos;s life from when they were still a mortal. First, enter in a name for your character. Then, describe from where they are from and from what time period, like a snapshot of their life. You can include any defining details you wish. 
                         </p>
                         <p className="mb-3">
-                            For example: <span className="text-red-300 italic">I am Silvor, a Slavic man living on the edge of the mountains in 16th century Poland.</span> - or - <span className="text-red-300 italic">I am Spongebob, a fry-cooking sponge from modern-day Bikini Bottom.</span>
+                            For example: <span className="text-red-300 italic">I am Silvor, a Slavic man living on the edge of the mountains in 16th century Poland.</span>
                         </p>
                         <p>
                             Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.
