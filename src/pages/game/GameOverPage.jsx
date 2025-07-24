@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import bloodline from '../../assets/images/bloodline.png'
 
 const GameOverPage = () => {
     const navigate = useNavigate();
@@ -28,7 +29,7 @@ const GameOverPage = () => {
                 </span>
             </h1>
             <div className="flex items-center justify-center">
-                <img src="/src/assets/images/bloodline.png" alt="Blood drop" className="h-36"></img>
+                <img src={bloodline} alt="Blood drop" className="h-36"></img>
             </div>
             <div className="max-w-xl mx-auto bg-gray-700 p-6 rounded-lg">
                 <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center">Final Character Sheet</h2>

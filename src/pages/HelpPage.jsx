@@ -1,5 +1,6 @@
 import { MdOpenInNew } from "react-icons/md";
 import { useState } from "react";
+import logo from '../assets/images/logo.png'
 
 const HelpPage = () => {
     const [openAccordionItem, setOpenAccordionItem] = useState(null);
@@ -87,7 +88,7 @@ const HelpPage = () => {
                     <section key={section.id} id={section.id} className="mb-16">
                         {/* Header w/ preceding icon */}
                         <div className="flex items-center gap-4 mb-4">
-                            <img src="/src/assets/images/logo.png" alt="Blood drop" className="w-8 h-8 flex-shrink-0"></img>
+                            <img src={logo} alt="Blood drop" className="w-8 h-8 flex-shrink-0"></img>
                             <h2 className="font-trade-winds text-3xl font-bold text-left">
                                 <span className="bg-gradient-to-r from-red-400 to-red-600 bg-clip-text text-transparent">
                                     {section.title}

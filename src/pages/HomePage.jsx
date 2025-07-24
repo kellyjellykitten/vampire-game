@@ -1,5 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import Hero from '../components/Hero';
+import characterCreationBg from '../assets/images/character-creation-bg.png'
+import survivalMechanicsBg from '../assets/images/survival-mechanics-bg.png';
+import storyBranchesBg from '../assets/images/story-branches-bg.png';
 
 const HomePage = () => {
     const gameSections = [
@@ -7,19 +10,19 @@ const HomePage = () => {
             id: 'chracter-creation',
             title: 'Craft Your Immortal Identity',
             description: 'You begin as a mortal, living a life you’ve created for yourself. You have possessions, be they valuable items or useful assets. You have skills that demonstrate your capabilities and characteristics. You have people around you that you’ve formed some sort of relationship with, whether friend or foe. And in an instance, everything changes as immortality claims you. By the imparting of another immortal, you are a vampire now – and you must survive as one.',
-            backgroundImage: '/src/assets/images/character-creation-bg.png'
+            backgroundImage: characterCreationBg
         },
         {
             id: 'survival-mechanics',
             title: 'Navigate the Mortal World',
             description: 'You see the world around you with devoid, pale eyes, and know you must hide your true nature. But how will you feed your ever-growing, tormenting hunger? How will you ensure your survival? Or do you aspire beyond, to the possibility of endless power and domination over all mortals? Events occur and each one brings its own challenges. You will meet new people and kill others once precious to you. Gather found items and discard old ones. Discover new skills and forget others. ',
-            backgroundImage: '/src/assets/images/survival-mechanics-bg.png'
+            backgroundImage: survivalMechanicsBg
         },
         {
             id: 'story-branches',
             title: 'Forge Your Dark Legacy',
             description: 'Your journeys take you through murky waters and misty lands. How are you progressing? You may be a ruthless ruler of civilization with an endless supply of fresh blood at your feet and spawns to fulfill your darkest demands. Perhaps you kill all your past loved ones, lose all items of importance to you, and wither away as a sorry soul thirsting for your old life. Along either path, you will leave your mark on society from your time as a vampire, experiencing erratic encounters and weaving your immortal story.',
-            backgroundImage: '/src/assets/images/story-branches-bg.png'
+            backgroundImage: storyBranchesBg
         }
     ];
 
