@@ -58,12 +58,12 @@ const HelpPage = () => {
             <div className="max-w-4xl mx-auto pt-12 pb-8 px-6">
                 {/* Heading */}
                 <div className="text-center mb-12">
-                    <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-6">
+                    <h1 className="font-trade-winds text-4xl font-bold mb-6">
                         <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                             Rules & Inspiration
                         </span>
                     </h1>
-                    <p className="text-base md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
+                    <p className="md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
                         This page is designed to help you along the vampire creation process and gameplay. While each page during vampire creation will have instructions, below are some general guidelines and rules, along with examples for each aspect of the creation process for inspiration. Examples of completed vampire characters are included at the bottom of the page.
                     </p>
                 </div>
@@ -111,7 +111,7 @@ const HelpPage = () => {
                             {section.id === 'origin' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
                                     <p className="mb-4">
-                                        Your origin is the story of your life as a mortal. Who were you? When and where were you born? What did you used to do? 
+                                        Your Origin is the story of your life as a mortal. Who were you? When and where were you born? What did you used to do? 
                                     </p>
                                     <p className="mb-4">
                                         Start by imagining a person in the distant past. You can draw upon real history, fantasize your own, or weave the two together. This person will become your vampire. 
@@ -140,7 +140,7 @@ const HelpPage = () => {
                                         <ul className="list-disc">
                                             <li>Gundar, a Viking warrior, like a father to me</li>
                                             <p className="ml-2"><em className="italic">Memory:</em> Gundar takes me on my first voyage aboard the longship Skuldelev; his hug calms me when we first leave sight of land.</p>
-                                            <li className="pt-2">Piotr, a shepherd boy who tends me flocks</li>
+                                            <li className="pt-2">Piotr, a shepherd boy who tends my flocks</li>
                                             <p className="ml-2"><em className="italic">Memory:</em> Piotr was orphaned during a bandit raid; I hold his family&apos;s silver coin until he comes of age -- in the meantime he works with the sheep.</p>
                                             <li className="pt-2">Hania, my neighbor, a friend and an enemy</li>
                                             <p className="ml-2"><em className="italic">Memory:</em> Hania complains when I walk my sheep through the stream, but she never says no to the banana bread I gift her.</p>
@@ -153,7 +153,7 @@ const HelpPage = () => {
                             {section.id === 'skills' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
                                     <p className="mb-4">
-                                        Skills describe the capabilities and characteristics of your vampire. They indicate what your vampire <strong>can do</strong> can do and what they <strong>might do</strong>.
+                                        Skills describe the capabilities and characteristics of your vampire. They indicate what your vampire <strong>can do</strong> and what they <strong>might do</strong>.
                                     </p>
                                     <p className="mb-4">When instructed to create a new Skill, you should relate it to the content of the Prompt.</p>
                                     <p>Examples:</p>
@@ -194,7 +194,7 @@ const HelpPage = () => {
                             {section.id === 'conversion' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
                                     <p className="mb-4">
-                                        Conversion refers to the event in which your character turned into a vampie. It is comprised of three aspects: the Immortal, the Mark, and the Memory encapsulating the event. 
+                                        Conversion refers to the event in which your character turned into a vampire. It is comprised of three aspects: the Immortal, the Mark, and the Memory encapsulating the event. 
                                     </p>
                                     <p className="mb-4">The Immortal is the creature that gifted (or cursed) your vampire with unlife. Give your Immortal name and briefly describe them, as you would any character. To restate, Immortals are undying supernatural beings. They may be other vampires, angels or demons, ghosts, animated corpses, or whatever you may conjure.</p>
                                     <p className="mb-4">A Mark is a visible indication of your vampire&apos;s undying state, or any other thing that sets them apart from mortal people. A Mark is imparted by the Immortal and something your vampire carries for their entire existence. How your vampire received their Mark should be told through the Memory.</p>
@@ -211,7 +211,7 @@ const HelpPage = () => {
 
                                             <li className="pt-2"><em className="italic">Immortal:</em> Qadir, an ancient vampire, stuck in bat-form for over one thousand years</li>
                                             <p><em className="italic">Mark:</em> A pair of great bat wings -- I sawed them off but the stubs remain</p>
-                                            <p><em className="italic">Memory:</em> I am walking home after a night shift when the gigantic Qadir vampire-bat swoops down from the sky and sinks its talons into my back; I pass out, drained of blood, and wake up bat-wingged.</p>
+                                            <p><em className="italic">Memory:</em> I am walking home after a night shift when the gigantic Qadir vampire-bat swoops down from the sky and sinks its talons into my back; I pass out, drained of blood, and wake up bat-winged.</p>
 
                                             <li className="pt-2"><em className="italic">Immortal: Diniel, a dark angel with alluring charisma</em> </li>
                                             <p><em className="italic">Mark:</em> A dark halo I cover with tall hats</p>

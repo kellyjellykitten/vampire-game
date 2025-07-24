@@ -12,7 +12,7 @@ const HomePage = () => {
         {
             id: 'survival-mechanics',
             title: 'Navigate the Mortal World',
-            description: 'You see the world around you with devoid, pale eyes, and know you must hide your true nature. But how will you feed your ever-growing tormenting hunger? How will you ensure your survival? Or aspire beyond, to the possibility of endless power and domination over all mortals? Events occur and each one brings its own challenges. You will meet new people and kill others once precious to you. Gather found items and discard old ones. Discover new skills and forget others. ',
+            description: 'You see the world around you with devoid, pale eyes, and know you must hide your true nature. But how will you feed your ever-growing, tormenting hunger? How will you ensure your survival? Or do you aspire beyond, to the possibility of endless power and domination over all mortals? Events occur and each one brings its own challenges. You will meet new people and kill others once precious to you. Gather found items and discard old ones. Discover new skills and forget others. ',
             backgroundImage: '/src/assets/images/survival-mechanics-bg.png'
         },
         {

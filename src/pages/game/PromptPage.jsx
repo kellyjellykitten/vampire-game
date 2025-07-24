@@ -435,10 +435,10 @@ const PromptPage = () => {
                         <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Origin</h2>
                         {vampire.origin.map((origin, index) => (
                             <div key={index}>
-                                <p className="text-base md:text-lg">
+                                <p className="md:text-lg">
                                     <strong>Name:</strong> {origin.name || 'No name provided'}
                                 </p>
-                                <p className="text-base md:text-lg">
+                                <p className="md:text-lg">
                                     <strong>Origin Experience:</strong> {origin.originExperience || 'Not specified'}
                                 </p>
                             </div>
@@ -450,7 +450,7 @@ const PromptPage = () => {
                         <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Side Characters</h2>
                         <ul className="list-disc pl-5">
                             {vampire.sideCharacters.map((character, index) => (
-                                <li key={index} className="text-base md:text-lg">
+                                <li key={index} className="md:text-lg">
                                     {character || `Side Character ${index + 1}: Not specified`}
                                 </li>
                             ))}
@@ -462,7 +462,7 @@ const PromptPage = () => {
                         <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Skills</h2>
                         <ul className="list-disc pl-5">
                             {vampire.skills.map((skill, index) => (
-                                <li key={index} className="text-base md:text-lg">
+                                <li key={index} className="md:text-lg">
                                     {skill || `Skill ${index + 1}: Not specified`}
                                 </li>
                             ))}
@@ -474,7 +474,7 @@ const PromptPage = () => {
                         <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Resources</h2>
                         <ul className="list-disc pl-5">
                             {vampire.resources.map((resource, index) => (
-                                <li key={index} className="text-base md:text-lg">
+                                <li key={index} className="md:text-lg">
                                     {resource || `Resource ${index + 1}: Not specified`}
                                 </li>
                             ))}
@@ -486,7 +486,7 @@ const PromptPage = () => {
                         <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Memories</h2>
                         <ul className="list-disc pl-5">
                             {vampire.memories.map((mem, index) => (
-                                <li key={index} className="text-base md:text-lg">
+                                <li key={index} className="md:text-lg">
                                     {mem || `Memory ${index + 1}: Not specified`}
                                 </li>
                             ))}
@@ -498,14 +498,14 @@ const PromptPage = () => {
                         <h2 className="text-lg md:text-xl font-semibold mb-2 border-b border-red-300 pb-1 text-red-300">Conversion</h2>
                         {vampire.conversion.map((conversion, index) => (
                             <div key={index}>
-                                <p className="text-base md:text-lg">
+                                <p className="md:text-lg">
                                     <strong>Immortal:</strong> {conversion.immortal || 'Not specified'}
                                 </p>
-                                <p className="text-base md:text-lg">
+                                <p className="md:text-lg">
                                     <strong>Mark:</strong> {conversion.mark || 'Not specified'}
                                 </p>
-                                <p className="text-base md:text-lg">
-                                <strong>Conversion Experience:</strong> {conversion.conversionExperience || 'Not specified'}
+                                <p className="md:text-lg">
+                                <strong>Conversion Memory:</strong> {conversion.conversionExperience || 'Not specified'}
                                 </p>
                             </div>
                         ))}

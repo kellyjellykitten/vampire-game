@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSkills } from '../vampireSlice';
-import HelpModal from '../components/HelpModal';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
 import ProgressTracker from '../components/ProgressTracker';
@@ -45,13 +44,15 @@ const VampireSkillsPage = () => {
                 <ProgressTracker currentStep="skills" />
             </div>
             <CharacterInfoPanel currentStep="skills" />
-            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-4 md:mt-10 text-center">
+            <h1 className="font-trade-winds text-4xl font-bold mb-8 mt-4 md:mt-10 text-center">
                 <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                     Skills
                 </span>
             </h1>
             <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
-                <p className="text-base md:text-lg mb-6">Create three skills fitting for your vampire-to-be. These skills can be anything from beer-making to swordfighting.</p>
+                <p className="md:text-lg mb-6">Create three Skills fitting for your vampire. Skills describe the capabilities and characteristics of your vampire. Your vampire will be able to learn new Skills (and lose others) as they progress through their journey.</p>
+                <p className="md:text-lg mb-6">Examples: <span className="text-red-300 italic">Sleight of hand, map-making</span></p>
+                <p className="md:text-lg mb-6">Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.</p>
             </div>
             
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">
@@ -76,22 +77,6 @@ const VampireSkillsPage = () => {
                 <NextButton onClick={handleSubmit} />
             </div>
         </form>
-        <HelpModal
-            title="Skills Help"
-            content={
-                    <div>
-                        <p className="mb-3">
-                            Skills  
-                        </p>
-                        <p className="mb-3">
-                            For example: <span className="text-red-300 italic">Persuasion</span> - or - <span className="text-red-300 italic">Cooking Krabby Patties</span>
-                        </p>
-                        <p>
-                            Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.
-                        </p>
-                    </div>
-            }
-        />
         </div>
     )
 }

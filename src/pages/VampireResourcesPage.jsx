@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setResources } from '../vampireSlice';
-import HelpModal from '../components/HelpModal';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
 import ProgressTracker from '../components/ProgressTracker';
@@ -45,13 +44,15 @@ const VampireResourcesPage = () => {
                 <ProgressTracker currentStep="resources" />
             </div>
             <CharacterInfoPanel currentStep="resources" />
-            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-4 md:mt-10 text-center">
+            <h1 className="font-trade-winds text-4xl font-bold mb-8 mt-4 md:mt-10 text-center">
                 <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                     Resources
                 </span>
             </h1>
             <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
-                <p className="text-base md:text-lg mb-6">Create three resources for your vampire-to-be to start out with. Resources are items that your character owns or has access to. They can range from small trinkets like a pocketwatch, to large properties like a fleet of navy ships.</p>
+                <p className="md:text-lg mb-6">Create three Resources for your vampire to start out with. Resources are assets or structures that are useful to your vampire, or items they value. They can be items kept on person (such as a wedding ring or a dagger) or stationary (such as a castle or a fleet of warships). During your vampire&apos;s journey, they may lose and/or gain Resources.</p>
+                <p className="md:text-lg mb-6">Examples: <span className="text-red-300 italic">A sack of silver coins, a business empire</span></p>
+                <p className="md:text-lg mb-6">Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.</p>
             </div>
             
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">
@@ -76,22 +77,6 @@ const VampireResourcesPage = () => {
                 <NextButton onClick={handleSubmit} />
             </div>
         </form>
-        <HelpModal
-            title="Resources Help"
-            content={
-                <div>
-                    <p className="mb-3">
-                        Resources can be almost anything and of any quantity or scale. They can be items kept on your person (like a wedding ring) or stationary items such as a house or large statue. During gameplay, your vampire will lose resources and gain new ones, depending on what the prompt dictates. 
-                    </p>
-                    <p className="mb-3">
-                        For example: <span className="text-red-300 italic">A herd of cattle</span> - or - <span className="text-red-300 italic">A spatula</span>.
-                    </p>
-                    <p>
-                        Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.
-                    </p>
-                </div>
-            }
-        />
         </div>
     )
 }

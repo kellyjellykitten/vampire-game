@@ -121,7 +121,7 @@ const VampireSummaryPage = () => {
                                 <strong>Mark:</strong> {conversion.mark || 'Not specified'}
                             </p>
                             <p className="text-base md:text-lg">
-                                <strong>Conversion Experience:</strong> {conversion.conversionExperience || 'Not specified'}
+                                <strong>Conversion Memory:</strong> {conversion.conversionExperience || 'Not specified'}
                             </p>
                         </div>
                     ))}

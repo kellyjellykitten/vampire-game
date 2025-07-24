@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSideCharacters, setMemoryExperience } from '../vampireSlice';
-import HelpModal from '../components/HelpModal';
 import NextButton from '../components/NextButton';
 import BackButton from '../components/BackButton';
 import ProgressTracker from '../components/ProgressTracker';
@@ -60,13 +59,15 @@ const SideCharactersPage = () => {
                 <ProgressTracker currentStep="characters" />
             </div>
             <CharacterInfoPanel currentStep="characters" />
-            <h1 className="font-trade-winds text-3xl md:text-4xl font-bold mb-8 mt-4 md:mt-10 text-center">
+            <h1 className="font-trade-winds text-4xl font-bold mb-8 mt-4 md:mt-10 text-center">
                 <span className="bg-gradient-to-r from-red-400 via-red-300 to-red-500 bg-clip-text text-transparent">
                     Side Characters
                 </span>
             </h1>
             <div className="max-w-2xl ml-4 mr-4 md:mx-auto">
-                <p className="text-base md:text-lg mb-6">Create three mortal characters that have some relationship to your vampire-to-be. Enter their name and a one-sentence description of the nature of their relationship to you (are they family? Friend? Foe? A simple acquaintance?). Then, describe a brief memory you have with that side character.</p>
+                <p className="md:text-lg mb-6">Create three mortal Characters that have some relationship with your vampire-to-be. Write each Character&apos;s name and description in a sentence fragment. Are they a friend? Foe? Family? Then, create a Memory your vampire-to-be has with that Character. This Memory can be of any experience or relation with that Character.</p>
+                <p className="md:text-lg mb-6">Example: <span className="text-red-300 italic">Rosa, my elderly mother, who lives in my homestead</span>  | <span className="text-red-300 italic">All day, Rosa sits quietly by the beer vat; she says it sings sweet songs to her, and she carves what she hears onto a walking staff.</span></p>
+                <p className="md:text-lg mb-6">Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.</p>
             </div>
 
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-gray-700 text-white p-6 rounded-lg shadow-md">
@@ -122,25 +123,6 @@ const SideCharactersPage = () => {
                 <NextButton onClick={handleSubmit} />
             </div>
         </form>
-        <HelpModal
-            title="Side Character Help"
-            content={
-                <div>
-                    <p className="mb-3">
-                        Your three side characters can be of any relation to you, so long as there is a connection to you in your mortal life. They could be a family member, a friend, or even a rival. Describe them in one sentence each.
-                    </p>
-                    <p className="mb-3">
-                        For example: <span className="text-red-300 italic">Greta, the owner of the general store from which I buy my fruits</span>
-                    </p>
-                    <p className="mb-3">
-                        Then, describe a specific memory you have with each character during your mortal life. For example: <span className="text-red-300 italic">All day, Greta sits quietly at the checkout counter; on downtime, she carves birds onto a walking stick that she gifts to me.</span>
-                    </p>
-                    <p>
-                        Visit the <a href="/help" className="text-blue-400 hover:text-blue-300 underline" target="_blank">help page</a> for more examples.
-                    </p>
-                </div>
-            }
-        />
         </div>
     )
 }
