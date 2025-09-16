@@ -1,7 +1,6 @@
 # TO DO
 
 ## Styling
-- Need fix: "side characters" stage on progress tracker bumps up on mobile view (since the words are pushed to 2 lines)
 
 ## Content
 
@@ -10,7 +9,6 @@
 
 
 ## Considerations
-- Export button on character sheet on prompt pgs (after submitting) to "save" current character state
 - Pages to scroll back to top when navigating between
-- On gameover screen, show log of all prompts?
+- On gameover screen, show log of all prompt questions?
 

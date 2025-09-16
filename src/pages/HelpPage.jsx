@@ -65,7 +65,7 @@ const HelpPage = () => {
                         </span>
                     </h1>
                     <p className="md:text-lg text-gray-200 leading-relaxed max-w-3xl mx-auto">
-                        This page is designed to help you along the vampire creation process and game play. While each page during vampire creation will have instructions, below are some general guidelines and rules, along with examples for each aspect of the creation process for some inspiration. Examples of completed vampire characters are included at the bottom of the page.
+                        This page is designed to help you along the vampire creation process and during gameplay. While each page during vampire creation will have instructions, below are some general guidelines and rules, along with examples for each aspect of the creation process for inspiration. Examples of completed vampire characters are included at the bottom of the page.
                     </p>
                 </div>
                 {/* Jump To nav box */}
@@ -118,7 +118,7 @@ const HelpPage = () => {
                                         Start by imagining a person in the distant past. You can draw upon real history, fantasize your own, or weave the two together. This person will become your vampire. 
                                     </p>
                                     <p className="mb-4">
-                                        In character creation, you will create your &quot;origin experience&quot; -- a sentence encapsulating your mortal history. State your name, then describe your background. Feel free to include as many details as you like.
+                                        In character creation, you will create your &quot;origin experience&quot; - a sentence encapsulating your mortal history. State your name, then describe your background. Feel free to include as many details as you like.
                                     </p>
                                     <p>Examples:</p>
                                     <div className="ml-12 mt-2">
@@ -161,8 +161,8 @@ const HelpPage = () => {
                                     <div className="ml-12 mt-2">
                                         <ul className="list-disc">
                                             <li className="pb-2">Swordplay</li>
-                                            <li className="pb-2">Relaxing Banter</li>
-                                            <li className="pb-2">Operate Heavy Machinery</li>
+                                            <li className="pb-2">Relaxing banter</li>
+                                            <li className="pb-2">Operate heavy machinery</li>
                                             <li className="pb-2">Beermaking</li>
                                             <li className="pb-2">Deception</li>
                                             <li className="pb-2">Ballroom dancing</li>
@@ -174,10 +174,10 @@ const HelpPage = () => {
                             {section.id === 'resources' && (
                                 <div className="max-w-6xl bg-zinc-800 p-6 rounded-lg border border-solid border-stone-400">
                                     <p className="mb-4">
-                                        Resources are assets or structures that are useful to your vampire, or items they value. They can be items your vampire carries around with them, or posessions that cannot be physically hauled away with the vampire when they leave an area. Big or small, a Resource is a Resource.
+                                        Resources are assets or structures that are useful to your vampire, or items they value. They can be items your vampire carries around with them, or possessions that cannot be physically hauled away with the vampire when they leave an area. Big or small, a Resource is a Resource.
                                     </p>
                                     <p className="mb-4">When creating your vampire, the Resources you create should be Resources they obtained while still mortal.</p>
-                                    <p className="mb-4">When a Prompt instructs you to create Resources, be sure to create ones that are contextually appropriate -- even if this leads to Resources that aren&apos;t necessarily the most exciting or useful.</p>
+                                    <p className="mb-4">When a Prompt instructs you to create Resources, be sure to create ones that are contextually appropriate, even if this leads to Resources that aren&apos;t necessarily the most exciting or useful.</p>
                                     <p>Examples:</p>
                                     <div className="ml-12 mt-2">
                                         <ul className="list-disc">
@@ -197,7 +197,7 @@ const HelpPage = () => {
                                     <p className="mb-4">
                                         Conversion refers to the event in which your character turned into a vampire. It is comprised of three aspects: the Immortal, the Mark, and the Memory encapsulating the event. 
                                     </p>
-                                    <p className="mb-4">The Immortal is the creature that gifted (or cursed) your vampire with unlife. Give your Immortal a name and briefly describe them, as you would any character. To restate, Immortals are undying supernatural beings. They may be other vampires, angels or demons, ghosts, animated corpses, or whatever you may conjure.</p>
+                                    <p className="mb-4">The Immortal is the creature that gifted (or cursed) your vampire with unlife. Give your Immortal a name and briefly describe them, as you would any character. Immortals are undying supernatural beings. They may be other vampires, angels or demons, ghosts, animated corpses, or whatever you may conjure.</p>
                                     <p className="mb-4">A Mark is a visible indication of your vampire&apos;s undying state, or any other thing that sets them apart from mortal people. A Mark is imparted by the Immortal and something your vampire carries for their entire existence. How your vampire received their Mark should be told through the Memory.</p>
                                     <p>Examples:</p>
                                     <div className="ml-12 mt-2">
@@ -242,7 +242,7 @@ const HelpPage = () => {
                                             <ul className="list-disc pl-5">
                                                 <li>Samwise Gamgee, my most loyal companion, who has vowed to always look after me</li>
                                                 <li>Gandalf, trusted friend and grand wizard, who passes to me wisdom and knowledge</li>
-                                                <li>Gollum, a once-hobbit creature consumed by his shackling thirst for his precious: my ring</li>
+                                                <li>Gollum, a once-hobbit creature consumed by his shackling thirst for his precious: the ring I possess</li>
                                             </ul>
                                         </div>
                                         <div className="mb-6">
@@ -266,7 +266,7 @@ const HelpPage = () => {
                                             <ul className="list-disc pl-5">
                                                 <li>I am Frodo Baggins, a hobbit from Bag End in the Shire-reckoning year 1400.</li>
                                                 <li>Sam journeys with me to Mordor and slays the spider Shelob, saving me.</li>
-                                                <li>Gandalf visits the Shire and teaches me how to blow smoke rings.</li>
+                                                <li>Gandalf visits the Shire and teaches me how to blow smoke rings from a pipe.</li>
                                                 <li>Gollum tries to steal my ring at Mount Doom by jumping on me and violently attacking.</li>
                                                 <li>Slipping the ring onto my finger, I enter the spirit world where the blaze of Sauron&apos;s eye drains me of my blood, turning me into a vampire.</li>
                                             </ul>
@@ -319,7 +319,7 @@ const HelpPage = () => {
                                             <h2 className="font-semibold mb-2 border-b border-red-300 max-w-48 text-red-300">Memories</h2>
                                             <ul className="list-disc pl-5">
                                                 <li>I am Spongebob Squarepants, a fry-cooking sponge from 20th century Bikini Bottom.</li>
-                                                <li>Patrick and I are tasked with painting the inside of Mr. Krabs&apos;s house, but the walls are crowded with frames; panic erupts as paint drips onto his precious first dollar, only for us to learn it was a prank.</li>
+                                                <li>Patrick and I are tasked with painting the inside of Mr. Krabs&apos;s house, but the walls are crowded with frames; panic erupts as paint drips onto his precious first dollar, only for us to learn it was all a prank.</li>
                                                 <li>Squidward asks for help blowing bubbles, so I show him the technique; he ends up blowing a bubble so large, it absorbs his home and floats away.</li>
                                                 <li>I visit Sandy in her dome for the first time; the lack of water almost kills me as I shrivel and crackle in dryness.</li>
                                                 <li>Plankton, revealing himself in his demon form, enters my brain using a brain-control device that turns me into a vampire, in the hopes of stealing the Krabby Patty secret formula.</li>

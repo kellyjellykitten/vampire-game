@@ -15,13 +15,13 @@ const HomePage = () => {
         {
             id: 'survival-mechanics',
             title: 'Navigate the Mortal World',
-            description: 'You see the world around you with devoid, pale eyes, and know you must hide your true nature. But how will you feed your ever-growing, tormenting hunger? How will you ensure your survival? Or do you aspire beyond, to the possibility of endless power and domination over all mortals? Events occur and each one brings its own challenges. You will meet new people and kill others once precious to you. Gather found items and discard old ones. Discover new skills and forget others. ',
+            description: 'You see the world around you with pale eyes and know you must hide your true nature. But how will you feed your ever-growing, tormenting hunger? How will you ensure your survival? Or do you aspire beyond, to the possibility of endless power and domination over all mortals? Events occur and each one brings its own challenges. You will meet new people and kill others once precious to you. Gather found items and discard old ones. Discover new skills and forget others. ',
             backgroundImage: survivalMechanicsBg
         },
         {
             id: 'story-branches',
             title: 'Forge Your Dark Legacy',
-            description: 'Your journeys take you through murky waters and misty lands. How are you progressing? You may be a ruthless ruler of civilization with an endless supply of fresh blood at your feet and spawns to fulfill your darkest demands. Perhaps you kill all your past loved ones, lose all items of importance to you, and wither away as a sorry soul thirsting for your old life. Along either path, you will leave your mark on society from your time as a vampire, experiencing erratic encounters and weaving your immortal story.',
+            description: 'Your journey take you through murky waters and misty lands. How are you progressing? You may be a ruthless ruler of civilization with an endless supply of fresh blood at your feet and spawns to fulfill your darkest demands. Perhaps you kill all your past loved ones, lose all items of importance to you, and wither away as a sorry soul thirsting for your old life. Along either path, you will leave your mark on society from your time as a vampire, experiencing erratic encounters and weaving your immortal story.',
             backgroundImage: storyBranchesBg
         }
     ];

@@ -170,7 +170,7 @@ export const gamePrompts = [
     },
     {
         id: 20,
-        text: "You are unknowingly transported like cargo as you slumber. Who might have moved you? You awaken an uncertain amount of time later, somewhere entirely foreign. Lose all Resources you didn’t keep on your person. What can you see around you?",
+        text: "You are unknowingly transported like cargo as you slumber. Who might have moved you? You awaken an uncertain amount of time later, somewhere entirely foreign. Lose all Resources you did not keep on your person. What can you see around you?",
         instructions: {
             loseResource: true,
             loseResourceCount: 7,
